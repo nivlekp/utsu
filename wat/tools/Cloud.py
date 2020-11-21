@@ -1,20 +1,7 @@
-import abjad as aj
+import abjad
+from abjadext import nauert
 import random
 import numpy as np
-
-class Note(aj.Note):
-    """
-    My definition of the Note class derived from abjad.Note.
-    In addition to the properties of abjad.Note, we need time instance at which
-    the note begins and how long it lasts for. Both properties should be in seconds.
-    """
-    def __init__(self, note, instance, duration):
-        # First init the super class (aj.Note), the argument supplied is
-        # only a dummy for now. The actual duration is in second. The written
-        # duration shall be changed when actually mapped to the score.
-        super().__init__(note, aj.Duration(1,4))
-        self.instance = instance
-        self.duration = duration
 
 class Cloud:
     """
@@ -47,16 +34,18 @@ class Cloud:
         self._nnotes = round(self._duration * self._arate)
         if seed is None:
             #seed = 938479287
-            seed = 2938749234
+            #seed = 2938749234
+            seed = 982374
         np.random.seed(seed)
         random.seed(seed)
-        self.seq = self._gen_cloud()
+        self._pitches, self._instances, self._durations = self._gen_cloud()
 
     def _gen_cloud(self):
         instances = self._gen_note_start_instance()
         durations = self._gen_note_duration()
         pitches = self._gen_rand_pitch_seq()
-        return [Note(p, i, d) for p, i, d in zip(pitches, instances, durations)]
+        return (pitches, instances, durations)
+        #return [Note(p, i, d) for p, i, d in zip(pitches, instances, durations)]
 
     def _gen_note_start_instance(self):
         """
@@ -93,21 +82,35 @@ class Cloud:
         """Generate a random pitch sequence given the length and pitches."""
         return [random.choice(self._pitches) for _ in range(self._nnotes)]
 
+    def make_cloud(self):
+        q_event_sequence = \
+            nauert.QEventSequence.from_millisecond_pitch_pairs(
+            tuple(zip(self.durations_in_millesecond, self._pitches)))
+        quantizer = nauert.Quantizer()
+        result = quantizer(q_event_sequence)
+        staff = abjad.Staff([result])
+        score = abjad.Score([staff])
+        abjad.show(score)
+
     @property
     def instances(self):
-        return [note.instance for note in self.seq]
+        return self._instances
+        #return [note.instance for note in self.seq]
 
     @property
     def pitches(self):
-        return [note.written_pitch.number for note in self.seq]
+        return self._pitches
+        #return [note.written_pitch.number for note in self.seq]
 
     @property
     def durations(self):
-        return [note.duration for note in self.seq]
+        return self._durations
+        #return [note.duration for note in self.seq]
 
     @property
     def durations_in_millesecond(self):
-        return [note.duration * 1000 for note in self.seq]
+        return [dur*1000 for dur in self._durations]
 
 if __name__ == "__main__":
-    cloud = Cloud(1, 1, [i-7 for i in range(30)], 4)
+    cloud = Cloud(1, 1, [i-7 for i in range(30)], 20)
+    cloud.make_cloud()

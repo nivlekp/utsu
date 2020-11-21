@@ -7,9 +7,9 @@ if __name__ == '__main__':
         author_email='osamupang@gmail.com',
         install_requires=[
             'numpy',
-        ]
-        name='wut',
-        packages['wut'],
+        ],
+        name='wat',
+        packages=['wat'],
         version='0.1',
         zip_safe=False,
         )

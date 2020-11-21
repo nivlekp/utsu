@@ -1,6 +1,6 @@
 import abjad
 from abjadext import nauert
-from cloud import Cloud
+from .Cloud import Cloud
 
 def make_cloud():
     srate = 0.2
