@@ -85,12 +85,11 @@ class Cloud:
     def make_cloud(self):
         q_event_sequence = \
             nauert.QEventSequence.from_millisecond_pitch_pairs(
-            tuple(zip(self.durations_in_millesecond, self._pitches)))
+                tuple(zip(self.durations_in_millesecond, self._pitches)))
         quantizer = nauert.Quantizer()
         result = quantizer(q_event_sequence)
-        staff = abjad.Staff([result])
-        score = abjad.Score([staff])
-        abjad.show(score)
+        return result
+        #abjad.show(score)
 
     @property
     def instances(self):
