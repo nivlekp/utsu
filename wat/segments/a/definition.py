@@ -9,5 +9,6 @@ segment_maker = wat.SegmentMaker(
     service_rate=0.4,
     segment_duration=10,
     pitches=[i-7 for i in range(30)],
-    seed=293874,
+    #seed=293874,
+    seed=928734,
     )
