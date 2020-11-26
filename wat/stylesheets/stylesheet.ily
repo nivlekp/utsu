@@ -10,7 +10,7 @@
   }
   tagline = ##f
   title = "Wat"
-  instrument = Solo piano
+  instrument = "For solo piano"
 }
 
 \layout {
