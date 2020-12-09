@@ -29,6 +29,8 @@ class SegmentMaker(abjad.SegmentMaker):
         service_rate=None,
         segment_duration=None,
         pitches=None,
+        queue_type="M/M/1",
+        rest_threshold=0.2,
         seed=None,
     ):
         super(SegmentMaker, self).__init__()
@@ -44,6 +46,8 @@ class SegmentMaker(abjad.SegmentMaker):
         self.service_rate = service_rate
         self.segment_duration = segment_duration
         self.pitches = pitches
+        self.queue_type = queue_type
+        self.rest_threshold = rest_threshold
         self.seed = seed
 
     def _make_score(self):
@@ -75,6 +79,8 @@ class SegmentMaker(abjad.SegmentMaker):
             srate=self.service_rate,
             pitches=self.pitches,
             duration=self.segment_duration,
+            queue_type=self.queue_type,
+            rest_threshold=self.rest_threshold,
             seed=self.seed,
         )
         result = cloud.make_cloud()
