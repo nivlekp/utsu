@@ -14,7 +14,7 @@ class SegmentRenderer(SegmentHandler):
         for seg in self._segments:
             path = self._segments_dir / seg
             assert self._is_segment_directory(path)
-            ly_path = path / 'illustration.ly'
+            ly_path = path / "illustration.ly"
             assert ly_path.exists()
             command = "{} -dno-point-and-click -o {} {}".format(
                 "lilypond", str(ly_path).replace(".ly", ""), str(ly_path)

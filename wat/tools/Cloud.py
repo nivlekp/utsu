@@ -102,6 +102,7 @@ class Cloud:
         # else:
         #     pass
         durations.append(self._durations[0])
+        pitches.append(self._pitches[0])
         arrival_index = 1
         curr_time = 0.0
         offset = self._durations[0]
@@ -112,6 +113,7 @@ class Cloud:
                     # previous note has not finished yet, so we should queue
                     # the newly arrived note
                     q.put(arrival_index)
+                    offset = offset + curr_time - self._instances[arrival_index]
                     curr_time = self._instances[arrival_index]
                     arrival_index = arrival_index + 1
                 else:
@@ -130,6 +132,7 @@ class Cloud:
                 # queue the current note
                 if curr_time + offset > self._instances[arrival_index]:
                     q.put(arrival_index)
+                    offset = offset + curr_time - self._instances[arrival_index]
                     curr_time = self._instances[arrival_index]
                     arrival_index = arrival_index + 1
                 else:
@@ -137,10 +140,10 @@ class Cloud:
                     # of the next note, so we should dequeue the first note in
                     # the queue
                     index = q.get()
+                    curr_time = curr_time + offset
                     offset = self._durations[index]
                     durations.append(self._durations[index])
                     pitches.append(self._pitches[index])
-                    curr_time = self._instances[index]
             # rest_dur = self._instances[index]-self._instances[index-1]-durations[-1]
             # if rest_dur > self._rest_threshold:
             #    durations.append(rest_dur)

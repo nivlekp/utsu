@@ -4,11 +4,13 @@ import abjad
 from abjadext import nauert
 
 from wat.tools.ScoreTemplate import ScoreTemplate
+
 try:
     from .Cloud import Cloud
 except ImportError:
     import wat
     from wat.tools.Cloud import Cloud
+
 
 class SegmentMaker(abjad.SegmentMaker):
     """
@@ -17,6 +19,7 @@ class SegmentMaker(abjad.SegmentMaker):
     >>> import wat
 
     """
+
     def __init__(
         self,
         name=None,
@@ -33,7 +36,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._rhythm_definitions = []
         self._segment_directory = None
         self._score = None
-        #self.markup_leaves = markup_leaves
+        # self.markup_leaves = markup_leaves
         self.name = name
         self.metronome_marks = metronome_marks or []
         self.time_signatures = time_signatures or []
@@ -72,12 +75,12 @@ class SegmentMaker(abjad.SegmentMaker):
             srate=self.service_rate,
             pitches=self.pitches,
             duration=self.segment_duration,
-            seed=self.seed
+            seed=self.seed,
         )
         result = cloud.make_cloud()
-        self._score['Piano RH Voice'].extend(result)
-        #breakpoint()
-        #self._lilypond_file.extend(self._score)
+        self._score["Piano RH Voice"].extend(result)
+        # breakpoint()
+        # self._lilypond_file.extend(self._score)
 
     def run(
         self,
@@ -91,7 +94,7 @@ class SegmentMaker(abjad.SegmentMaker):
         previous_metadata: abjad.OrderedDict = None,
         previous_persist: abjad.OrderedDict = None,
         remove: typing.List[abjad.Tag] = None,
-        segment_directory = None,
+        segment_directory=None,
     ) -> abjad.LilyPondFile:
         """
         Runs segment-maker.
@@ -107,14 +110,15 @@ class SegmentMaker(abjad.SegmentMaker):
         assert isinstance(self._lilypond_file, abjad.LilyPondFile)
         return self._lilypond_file
 
+
 if __name__ == "__main__":
     segment_maker = SegmentMaker(
-        metronome_marks=wat.metronome_marks['60'],
+        metronome_marks=wat.metronome_marks["60"],
         arrival_rate=0.2,
         service_rate=0.4,
         segment_duration=10,
-        pitches=[i-7 for i in range(30)],
+        pitches=[i - 7 for i in range(30)],
         seed=293874,
-        )
+    )
     lilypond_file = segment_maker.run()
     abjad.f(lilypond_file)
