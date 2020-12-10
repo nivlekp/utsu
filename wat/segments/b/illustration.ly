@@ -17,14 +17,20 @@
                 \context Voice = "Piano RH Voice"
                 {
                     {
-                        \times 8/13 {
-                            \tempo 4=60
-                            \time 4/4
-                            a''4
+                        \times 2/3 {
+                            \times 2/3 {
+                                \tempo 4=60
+                                \time 4/4
+                                r16
+                                a''8
+                                ~
+                            }
+                            a''8
                             ~
-                            a''16.
-                            r32
-                            r32
+                            \times 4/5 {
+                                a''8
+                                r32
+                            }
                         }
                         r4
                         r4

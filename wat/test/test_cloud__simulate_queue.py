@@ -132,3 +132,139 @@ def test_cloud__simulate_queue_01():
         None,
         0,
     ]
+
+
+def test_cloud__simulate_queue_02():
+    arate = 1
+    srate = 2
+    duration = 10
+    pitches = [0]
+    cloud = wat.Cloud(
+        arate=arate,
+        srate=srate,
+        pitches=pitches,
+        duration=duration,
+        queue_type="M/M/1",
+        rest_threshold=0.0,
+    )
+
+    number_of_notes = cloud._nnotes
+    assert number_of_notes == duration * arate
+
+    cloud._instances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    cloud._durations = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+    assert len(cloud.instances) == len(cloud.durations)
+    cloud._simulate_queue()
+    np.testing.assert_almost_equal(
+        cloud.durations,
+        [
+            1,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+        ],
+    )
+
+    assert cloud.pitches == [
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+    ]
+
+
+def test_cloud__simulate_queue_03():
+    arate = 1
+    srate = 2
+    duration = 10
+    pitches = [0]
+    cloud = wat.Cloud(
+        arate=arate,
+        srate=srate,
+        pitches=pitches,
+        duration=duration,
+        queue_type="M/M/1",
+        rest_threshold=0.0,
+    )
+
+    number_of_notes = cloud._nnotes
+    assert number_of_notes == duration * arate
+
+    cloud._instances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    cloud._durations = [2.1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+    assert len(cloud.instances) == len(cloud.durations)
+    cloud._simulate_queue()
+    np.testing.assert_almost_equal(
+        cloud.durations,
+        [
+            1,
+            2.1,
+            0.5,
+            0.5,
+            0.5,
+            0.4,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+        ],
+    )
+
+    assert cloud.pitches == [
+        None,
+        0,
+        0,
+        0,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+        None,
+        0,
+    ]

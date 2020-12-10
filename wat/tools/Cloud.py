@@ -95,16 +95,17 @@ class Cloud:
         assert self._instances is not None and len(self._instances) > 0
         durations = []
         pitches = []
+        curr_time = 0.0
         q = queue.Queue()
-        # if self._instances[0] > self._rest_threshold:
-        #     durations.append(self._instances[0])
-        #     pitches.append(None)
-        # else:
-        #     pass
+        if self._instances[0] > self._rest_threshold:
+            durations.append(self._instances[0])
+            pitches.append(None)
+            curr_time = self._instances[0]
+        else:
+            pass
         durations.append(self._durations[0])
         pitches.append(self._pitches[0])
         arrival_index = 1
-        curr_time = 0.0
         offset = self._durations[0]
         while arrival_index < len(self._instances):
             # or maybe we don't have to care whether the queue is empty or not
