@@ -7,6 +7,7 @@ if __name__ == "__main__":
         author_email="osamupang@gmail.com",
         install_requires=[
             "numpy",
+            "abjad",
         ],
         name="wat",
         packages=["wat"],
