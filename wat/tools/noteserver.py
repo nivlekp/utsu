@@ -1,5 +1,8 @@
 def _get_closest_server(servers):
-    return min((idx, server.offset_instance) for (idx, server) in enumerate(servers))
+    offset_instance, idx = min(
+        (server.offset_instance, idx) for (idx, server) in enumerate(servers)
+    )
+    return idx, offset_instance
 
 
 class NoteServer(object):
