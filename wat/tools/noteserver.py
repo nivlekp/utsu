@@ -1,20 +1,20 @@
 def _get_closest_server(servers):
     return min((idx, server.offset_instance) for (idx, server) in enumerate(servers))
 
-class NoteServer(object):
 
+class NoteServer(object):
     def __init__(self, rest_threshold=0.0):
         self._durations = []
         self._pitches = []
         self._offset_instance = 0.0
-        self._rest_threshold=rest_threshold
+        self._rest_threshold = rest_threshold
         pass
 
     def serve(self, curr_time, duration, pitch):
         """
         Serve one note
         """
-        #TODO: model rest_threshold
+        # TODO: model rest_threshold
         if curr_time > self._offset_instance:
             self._durations.append(curr_time - self._offset_instance)
             self._pitches.append(None)

@@ -44,9 +44,11 @@ class Cloud:
         self._duration = duration
         self._pitches = pitches
         self._nnotes = round(self._duration * self._arate)
-        self._arrival_model, self._service_model, nservers = tuple(queue_type.split('/'))
+        self._arrival_model, self._service_model, nservers = tuple(
+            queue_type.split("/")
+        )
         self._nservers = int(nservers)
-        #self._queue_type = queue_type
+        # self._queue_type = queue_type
         self._rest_threshold = rest_threshold
         np.random.seed(seed)
         random.seed(seed)
@@ -95,18 +97,23 @@ class Cloud:
         Simulate the queue based on the queue type.
         At the moment, this only works for M/M/1 queue.
         """
-        #TODO: model rest_threshold
+        # TODO: model rest_threshold
         assert self._instances is not None and len(self._instances) > 0
-        servers = [noteserver.NoteServer(rest_threshold=self._rest_threshold) for _ in range(self._nservers)]
+        servers = [
+            noteserver.NoteServer(rest_threshold=self._rest_threshold)
+            for _ in range(self._nservers)
+        ]
         curr_time = 0.0
         q = queue.Queue()
-        #if self._instances[0] > self._rest_threshold:
+        # if self._instances[0] > self._rest_threshold:
         #    servers[0].serve(curr_time, self._instances[0], None)
         #    curr_time = self._instances[0]
-        #servers[0].serve(curr_time, self._durations[0], self._pitches[0])
+        # servers[0].serve(curr_time, self._durations[0], self._pitches[0])
         arrival_index = 0
         while arrival_index < len(self._instances) or not q.empty():
-            server_index, closest_offset_instance = noteserver._get_closest_server(servers)
+            server_index, closest_offset_instance = noteserver._get_closest_server(
+                servers
+            )
             if q.empty():
                 if closest_offset_instance > self._instances[arrival_index]:
                     # previous note has not finished yet, so we should queue
@@ -116,22 +123,30 @@ class Cloud:
                     arrival_index = arrival_index + 1
                 else:
                     curr_time = self._instances[arrival_index]
-                    servers[server_index].serve(curr_time, self._durations[arrival_index], self._pitches[arrival_index])
+                    servers[server_index].serve(
+                        curr_time,
+                        self._durations[arrival_index],
+                        self._pitches[arrival_index],
+                    )
                     arrival_index = arrival_index + 1
-            else: # there's already a client in the queue
+            else:  # there's already a client in the queue
                 # queue the current note
-                if arrival_index < len(self._instances) and closest_offset_instance > self._instances[arrival_index]:
+                if (
+                    arrival_index < len(self._instances)
+                    and closest_offset_instance > self._instances[arrival_index]
+                ):
                     q.put(arrival_index)
                     curr_time = self._instances[arrival_index]
                     arrival_index = arrival_index + 1
                 else:
                     index = q.get()
                     curr_time = closest_offset_instance
-                    servers[server_index].serve(curr_time, self._durations[index], self._pitches[index])
+                    servers[server_index].serve(
+                        curr_time, self._durations[index], self._pitches[index]
+                    )
 
         self._durations_per_server = [server.durations for server in servers]
         self._pitches_per_server = [server.pitches for server in servers]
-
 
     #   def _simulate_queue(self):
     #       """
