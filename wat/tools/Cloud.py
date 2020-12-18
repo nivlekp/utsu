@@ -105,10 +105,6 @@ class Cloud:
         ]
         curr_time = 0.0
         q = queue.Queue()
-        # if self._instances[0] > self._rest_threshold:
-        #    servers[0].serve(curr_time, self._instances[0], None)
-        #    curr_time = self._instances[0]
-        # servers[0].serve(curr_time, self._durations[0], self._pitches[0])
         arrival_index = 0
         while arrival_index < len(self._instances) or not q.empty():
             server_index, closest_offset_instance = noteserver._get_closest_server(
@@ -148,79 +144,10 @@ class Cloud:
         self._durations_per_server = [server.durations for server in servers]
         self._pitches_per_server = [server.pitches for server in servers]
 
-    #   def _simulate_queue(self):
-    #       """
-    #       Simulate the queue based on the queue type.
-    #       At the moment, this only works for M/M/1 queue.
-    #       """
-    #       assert self._instances is not None and len(self._instances) > 0
-    #       durations = []
-    #       pitches = []
-    #       curr_time = 0.0
-    #       q = queue.Queue()
-    #       if self._instances[0] > self._rest_threshold:
-    #           durations.append(self._instances[0])
-    #           pitches.append(None)
-    #           curr_time = self._instances[0]
-    #       else:
-    #           pass
-    #       durations.append(self._durations[0])
-    #       pitches.append(self._pitches[0])
-    #       arrival_index = 1
-    #       offset = self._durations[0]
-    #       while arrival_index < len(self._instances) or not q.empty():
-    #           # or maybe we don't have to care whether the queue is empty or not
-    #           if q.empty():  # empty queue
-    #               if curr_time + offset > self._instances[arrival_index]:
-    #                   # previous note has not finished yet, so we should queue
-    #                   # the newly arrived note
-    #                   q.put(arrival_index)
-    #                   offset = offset + curr_time - self._instances[arrival_index]
-    #                   curr_time = self._instances[arrival_index]
-    #                   arrival_index = arrival_index + 1
-    #               else:
-    #                   # previous note will already be finished before the arrival
-    #                   # of next note, so we should insert rest then start the
-    #                   # next one
-    #                   rest_dur = self._instances[arrival_index] - curr_time - offset
-    #                   durations.append(rest_dur)
-    #                   pitches.append(None)
-    #                   offset = self._durations[arrival_index]
-    #                   durations.append(self._durations[arrival_index])
-    #                   pitches.append(self._pitches[arrival_index])
-    #                   curr_time = self._instances[arrival_index]
-    #                   arrival_index = arrival_index + 1
-    #           else:  # there's already a client in the queue
-    #               # queue the current note
-    #               if (
-    #                   arrival_index < len(self._instances)
-    #                   and curr_time + offset > self._instances[arrival_index]
-    #               ):
-    #                   q.put(arrival_index)
-    #                   offset = offset + curr_time - self._instances[arrival_index]
-    #                   curr_time = self._instances[arrival_index]
-    #                   arrival_index = arrival_index + 1
-    #               else:
-    #                   # previous note will already be finished before the arrival
-    #                   # of the next note, so we should dequeue the first note in
-    #                   # the queue
-    #                   index = q.get()
-    #                   curr_time = curr_time + offset
-    #                   offset = self._durations[index]
-    #                   durations.append(self._durations[index])
-    #                   pitches.append(self._pitches[index])
-    #           # rest_dur = self._instances[index]-self._instances[index-1]-durations[-1]
-    #           # if rest_dur > self._rest_threshold:
-    #           #    durations.append(rest_dur)
-    #           #    pitches.append(None)
-
-    #     self._durations = durations
-    #     self._pitches = pitches
-
     def make_cloud(self):
         self._simulate_queue()
         q_event_sequence = nauert.QEventSequence.from_millisecond_pitch_pairs(
-            tuple(zip(self.durations_in_millesecond, self._pitches))
+            tuple(zip(self.durations_imps[0], self.pitches_per_server[0]))
         )
         quantizer = nauert.Quantizer()
         result = quantizer(q_event_sequence)
@@ -237,6 +164,10 @@ class Cloud:
     @property
     def durations(self):
         return self._durations
+
+    @property
+    def durations_imps(self):
+        return [[dur * 1000 for dur in durs] for durs in self._durations_per_server]
 
     @property
     def durations_in_millesecond(self):
