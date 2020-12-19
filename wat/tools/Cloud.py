@@ -22,6 +22,7 @@ class Cloud:
         queue_type="M/M/1",
         rest_threshold=0.2,
         seed=982374,
+        voice_name="Piano RH Voice",
     ):
         """
         Generate a cloud, given the arate, duration in second and pitch pitches.
@@ -52,6 +53,7 @@ class Cloud:
         self._rest_threshold = rest_threshold
         np.random.seed(seed)
         random.seed(seed)
+        self._voice_name = voice_name
         self._pitches, self._instances, self._durations = self._gen_cloud()
 
     def _gen_cloud(self):
@@ -144,13 +146,14 @@ class Cloud:
         self._durations_per_server = [server.durations for server in servers]
         self._pitches_per_server = [server.pitches for server in servers]
 
-    def make_cloud(self):
+    def make_cloud(self, *arguments, **keywords):
         self._simulate_queue()
+        measurewise_q_schema = nauert.MeasurewiseQSchema(*arguments, **keywords)
         q_event_sequence = nauert.QEventSequence.from_millisecond_pitch_pairs(
             tuple(zip(self.durations_imps[0], self.pitches_per_server[0]))
         )
         quantizer = nauert.Quantizer()
-        result = quantizer(q_event_sequence)
+        result = quantizer(q_event_sequence, q_schema=measurewise_q_schema)
         return result
 
     @property
@@ -180,6 +183,10 @@ class Cloud:
     @property
     def pitches_per_server(self):
         return self._pitches_per_server
+
+    @property
+    def voice_name(self):
+        return self._voice_name
 
 
 if __name__ == "__main__":

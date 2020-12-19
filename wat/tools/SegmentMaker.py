@@ -4,12 +4,7 @@ import abjad
 from abjadext import nauert
 
 from wat.tools.ScoreTemplate import ScoreTemplate
-
-try:
-    from .Cloud import Cloud
-except ImportError:
-    import wat
-    from wat.tools.Cloud import Cloud
+from wat.tools.cloud import Cloud
 
 
 class SegmentMaker(abjad.SegmentMaker):
@@ -25,13 +20,7 @@ class SegmentMaker(abjad.SegmentMaker):
         name=None,
         metronome_marks=None,
         time_signatures=None,
-        arrival_rate=None,
-        service_rate=None,
-        segment_duration=None,
-        pitches=None,
-        queue_type="M/M/1",
-        rest_threshold=0.2,
-        seed=None,
+        clouds=None,
     ):
         super(SegmentMaker, self).__init__()
         self._lilypond_file = None
@@ -40,15 +29,18 @@ class SegmentMaker(abjad.SegmentMaker):
         self._score = None
         # self.markup_leaves = markup_leaves
         self.name = name
-        self.metronome_marks = metronome_marks or []
-        self.time_signatures = time_signatures or []
-        self.arrival_rate = arrival_rate
-        self.service_rate = service_rate
-        self.segment_duration = segment_duration
-        self.pitches = pitches
-        self.queue_type = queue_type
-        self.rest_threshold = rest_threshold
-        self.seed = seed
+        # NOTE: in here we only allow one metronome mark, and one
+        # time_signature per cloud
+        self._metronome_marks = metronome_marks if isinstance(metronome_marks, list) else [metronome_marks]
+        self._time_signatures = time_signatures if isinstance(time_signatures, list) else [time_signatures]
+        if clouds is None:
+            raise Exception("Please include at least one cloud")
+        if not isinstance(clouds, list):
+            self._clouds = [clouds]
+        else:
+            self._clouds = clouds
+        if not all(isinstance(cloud, Cloud) for cloud in self._clouds):
+            raise Exception("clouds should be of the type Cloud")
 
     def _make_score(self):
         template = ScoreTemplate()
@@ -64,6 +56,9 @@ class SegmentMaker(abjad.SegmentMaker):
         for item in lilypond_file.items[:]:
             if getattr(item, "name", None) in ("layout", "paper"):
                 lilypond_file.items.remove(item)
+        for item in lilypond_file.items[:]:
+            if getattr(item, "name", None) == "header":
+                lilypond_file.items.remove(item)
         self._lilypond_file = lilypond_file
 
     @property
@@ -74,19 +69,13 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._metadata
 
     def _make_cloud(self):
-        cloud = Cloud(
-            arate=self.arrival_rate,
-            srate=self.service_rate,
-            pitches=self.pitches,
-            duration=self.segment_duration,
-            queue_type=self.queue_type,
-            rest_threshold=self.rest_threshold,
-            seed=self.seed,
-        )
-        result = cloud.make_cloud()
-        self._score["Piano RH Voice"].extend(result)
-        # breakpoint()
-        # self._lilypond_file.extend(self._score)
+        for cloud, tempo, time_signature in zip(
+            self._clouds, self._metronome_marks, self._time_signatures
+        ):
+            schema_specs = {"tempo": tempo, "time_signature": time_signature}
+            breakpoint()
+            result = cloud.make_cloud(schema_specs)
+            self._score[cloud.voice_name].extend(result)
 
     def run(
         self,

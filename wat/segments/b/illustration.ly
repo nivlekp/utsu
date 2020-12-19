@@ -5,8 +5,6 @@
 
 \include "../../stylesheets/stylesheet.ily" %! abjad.LilyPondFile._get_formatted_includes()
 
-\header {}
-
 \score { %! abjad.LilyPondFile._get_formatted_blocks()
     \context Score = "Piano Score"
     <<
