@@ -31,8 +31,12 @@ class SegmentMaker(abjad.SegmentMaker):
         self.name = name
         # NOTE: in here we only allow one metronome mark, and one
         # time_signature per cloud
-        self._metronome_marks = metronome_marks if isinstance(metronome_marks, list) else [metronome_marks]
-        self._time_signatures = time_signatures if isinstance(time_signatures, list) else [time_signatures]
+        self._metronome_marks = (
+            metronome_marks if isinstance(metronome_marks, list) else [metronome_marks]
+        )
+        self._time_signatures = (
+            time_signatures if isinstance(time_signatures, list) else [time_signatures]
+        )
         if clouds is None:
             raise Exception("Please include at least one cloud")
         if not isinstance(clouds, list):
@@ -73,8 +77,7 @@ class SegmentMaker(abjad.SegmentMaker):
             self._clouds, self._metronome_marks, self._time_signatures
         ):
             schema_specs = {"tempo": tempo, "time_signature": time_signature}
-            breakpoint()
-            result = cloud.make_cloud(schema_specs)
+            result = cloud.make_cloud(**schema_specs)
             self._score[cloud.voice_name].extend(result)
 
     def run(

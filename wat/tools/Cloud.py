@@ -187,10 +187,3 @@ class Cloud:
     @property
     def voice_name(self):
         return self._voice_name
-
-
-if __name__ == "__main__":
-    cloud = Cloud(0.5, 1, [i - 7 for i in range(30)], 20, 8839892)
-    breakpoint()
-    result = cloud.make_cloud()
-    abjad.show(result)

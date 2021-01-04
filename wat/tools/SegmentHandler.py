@@ -11,6 +11,7 @@ class SegmentHandler:
 
     def __init__(self, segments):
         self._segments_dir = Path(wat.segments.__path__[0])
+        self._builds_dir = Path(wat.__path__[0]) / "builds"
         self._segments = segments
 
     def __call__(self):
