@@ -10,16 +10,13 @@ from wat.tools.cloud import Cloud
 class SegmentMaker(abjad.SegmentMaker):
     """
     Segment-maker.
-
-    >>> import wat
-
     """
-
     def __init__(
         self,
         name=None,
         metronome_marks=None,
         time_signatures=None,
+        clefs=None,
         clouds=None,
     ):
         super(SegmentMaker, self).__init__()
@@ -37,6 +34,8 @@ class SegmentMaker(abjad.SegmentMaker):
         self._time_signatures = (
             time_signatures if isinstance(time_signatures, list) else [time_signatures]
         )
+        self._clefs = clefs if isinstance(clefs, list) else [clefs]
+        self._clefs = [abjad.Clef(clef) for clef in self._clefs]
         if clouds is None:
             raise Exception("Please include at least one cloud")
         if not isinstance(clouds, list):
@@ -73,11 +72,12 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._metadata
 
     def _make_cloud(self):
-        for cloud, tempo, time_signature in zip(
-            self._clouds, self._metronome_marks, self._time_signatures
+        for cloud, tempo, time_signature, clef in zip(
+            self._clouds, self._metronome_marks, self._time_signatures, self._clefs
         ):
             schema_specs = {"tempo": tempo, "time_signature": time_signature}
             result = cloud.make_cloud(**schema_specs)
+            abjad.attach(clef, result[0][0])
             self._score[cloud.voice_name].extend(result)
 
     def run(
@@ -107,16 +107,3 @@ class SegmentMaker(abjad.SegmentMaker):
         self._make_cloud()
         assert isinstance(self._lilypond_file, abjad.LilyPondFile)
         return self._lilypond_file
-
-
-if __name__ == "__main__":
-    segment_maker = SegmentMaker(
-        metronome_marks=wat.metronome_marks["60"],
-        arrival_rate=0.2,
-        service_rate=0.4,
-        segment_duration=10,
-        pitches=[i - 7 for i in range(30)],
-        seed=293874,
-    )
-    lilypond_file = segment_maker.run()
-    abjad.f(lilypond_file)
