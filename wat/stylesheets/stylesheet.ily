@@ -22,4 +22,5 @@
 }
 
 \paper {
+  indent = 0\cm
 }
