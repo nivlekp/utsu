@@ -11,6 +11,7 @@ class SegmentMaker(abjad.SegmentMaker):
     """
     Segment-maker.
     """
+
     def __init__(
         self,
         name=None,

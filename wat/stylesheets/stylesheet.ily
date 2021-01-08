@@ -15,6 +15,10 @@
 
 \layout {
   \accidentalStyle neo-modern
+  \context {
+    \Score
+    proportionalNotationDuration = #(ly:make-moment 1/40)
+  }
 }
 
 \paper {
