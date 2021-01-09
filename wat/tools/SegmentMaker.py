@@ -18,6 +18,8 @@ class SegmentMaker(abjad.SegmentMaker):
         metronome_marks=None,
         time_signatures=None,
         clefs=None,
+        search_trees=None,
+        use_full_measures=None,
         clouds=None,
     ):
         super(SegmentMaker, self).__init__()
@@ -40,6 +42,22 @@ class SegmentMaker(abjad.SegmentMaker):
             self._clefs = [abjad.Clef(clef) for clef in self._clefs]
         else:
             self._clefs = [None] * len(self._metronome_marks)
+        if search_trees is not None:
+            search_trees = (
+                search_trees if isinstance(search_trees, list) else [search_trees]
+            )
+            self._search_trees = [
+                nauert.UnweightedSearchTree(tree) for tree in search_trees
+            ]
+        else:
+            self._search_trees = [None] * len(self._metronome_marks)
+        if use_full_measures is not None:
+            use_full_measures = (
+                use_full_measures
+                if isinstance(use_full_measures, list)
+                else [use_full_measures]
+            )
+            self._use_full_measures = [None] * len(self._metronome_marks)
         if clouds is None:
             raise Exception("Please include at least one cloud")
         if not isinstance(clouds, list):
@@ -76,10 +94,22 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._metadata
 
     def _make_cloud(self):
-        for cloud, tempo, time_signature, clef in zip(
-            self._clouds, self._metronome_marks, self._time_signatures, self._clefs
+        for cloud, tempo, time_signature, clef, search_tree, use_full_measure in zip(
+            self._clouds,
+            self._metronome_marks,
+            self._time_signatures,
+            self._clefs,
+            self._search_trees,
+            self._use_full_measures,
         ):
-            schema_specs = {"tempo": tempo, "time_signature": time_signature}
+            schema_specs = {
+                "tempo": tempo,
+                "time_signature": time_signature,
+            }
+            if search_tree is not None:
+                schema_specs["search_tree"] = search_tree
+            if use_full_measure is not None:
+                schema_specs["use_full_measure"] = use_full_measure
             result = cloud.make_cloud(**schema_specs)
             if clef is not None:
                 abjad.attach(clef, result[0][0])
