@@ -22,7 +22,7 @@ class Cloud:
         queue_type="M/M/1",
         rest_threshold=0.2,
         seed=982374,
-        voice_name="Piano RH Voice",
+        voice_names=["Piano RH Voice"],
     ):
         """
         Generate a cloud, given the arate, duration in second and pitch pitches.
@@ -53,7 +53,8 @@ class Cloud:
         self._rest_threshold = rest_threshold
         np.random.seed(seed)
         random.seed(seed)
-        self._voice_name = voice_name
+        assert len(voice_names) == self._nservers
+        self._voice_names = voice_names
         self._pitches, self._instances, self._durations = self._gen_cloud()
 
     def _gen_cloud(self):
@@ -148,13 +149,16 @@ class Cloud:
 
     def make_cloud(self, *arguments, **keywords):
         self._simulate_queue()
+        results = []
         measurewise_q_schema = nauert.MeasurewiseQSchema(*arguments, **keywords)
-        q_event_sequence = nauert.QEventSequence.from_millisecond_pitch_pairs(
-            tuple(zip(self.durations_imps[0], self.pitches_per_server[0]))
-        )
         quantizer = nauert.Quantizer()
-        result = quantizer(q_event_sequence, q_schema=measurewise_q_schema)
-        return result
+        for durations_ms, pitches in zip(self.durations_msps, self.pitches_per_server):
+            q_event_sequence = nauert.QEventSequence.from_millisecond_pitch_pairs(
+                tuple(zip(durations_ms, pitches))
+            )
+            result = quantizer(q_event_sequence, q_schema=measurewise_q_schema)
+            results.append(result)
+        return results
 
     @property
     def instances(self):
@@ -169,7 +173,10 @@ class Cloud:
         return self._durations
 
     @property
-    def durations_imps(self):
+    def durations_msps(self):
+        """
+        Durations in millesecond per server
+        """
         return [[dur * 1000 for dur in durs] for durs in self._durations_per_server]
 
     @property
@@ -185,5 +192,5 @@ class Cloud:
         return self._pitches_per_server
 
     @property
-    def voice_name(self):
-        return self._voice_name
+    def voice_names(self):
+        return self._voice_names
