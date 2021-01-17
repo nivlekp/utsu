@@ -57,6 +57,8 @@ class SegmentMaker(abjad.SegmentMaker):
                 if isinstance(use_full_measures, list)
                 else [use_full_measures]
             )
+            self._use_full_measures = use_full_measures
+        else:
             self._use_full_measures = [None] * len(self._metronome_marks)
         if clouds is None:
             raise Exception("Please include at least one cloud")
@@ -110,10 +112,11 @@ class SegmentMaker(abjad.SegmentMaker):
                 schema_specs["search_tree"] = search_tree
             if use_full_measure is not None:
                 schema_specs["use_full_measure"] = use_full_measure
-            result = cloud.make_cloud(**schema_specs)
+            results = cloud.make_cloud(**schema_specs)
             if clef is not None:
-                abjad.attach(clef, result[0][0])
-            self._score[cloud.voice_name].extend(result)
+                abjad.attach(clef, results[0][0][0])
+            for result, voice_name in zip(results, cloud.voice_names):
+                self._score[voice_name].extend(result)
 
     def run(
         self,

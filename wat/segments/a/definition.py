@@ -3,8 +3,8 @@ import wat
 
 duration = 30
 
-search_tree_rh = {2: {2: None, 3: None} , 3: None, 5: None, 7: None}
-search_tree_lh = {2: {2: None, 3: None} , 3: None, 5: None, 7: None}
+search_tree_rh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
+search_tree_lh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
 
 pitch_set_rh = wat.tools.gen_pitches_from_sieve(
     sieve=wat.sieves["C"], origin=0, low=0, high=wat.highest_piano_note
@@ -24,7 +24,7 @@ cloud_rh = wat.Cloud(
     queue_type="M/M/1",
     rest_threshold=0.0,
     seed=928734,
-    voice_name="Piano RH Voice",
+    voice_names=["Piano RH Voice"],
 )
 
 
@@ -36,7 +36,7 @@ cloud_lh = wat.Cloud(
     queue_type="M/M/1",
     rest_threshold=0.0,
     seed=928477773,
-    voice_name="Piano LH Voice",
+    voice_names=["Piano LH Voice"],
 )
 
 

@@ -22,7 +22,7 @@ cloud_rh = wat.Cloud(
     queue_type="M/M/1",
     rest_threshold=0.0,
     seed=82746662,
-    voice_name="Piano RH Voice",
+    voice_names=["Piano RH Voice"],
 )
 
 
@@ -34,7 +34,7 @@ cloud_lh = wat.Cloud(
     queue_type="M/M/1",
     rest_threshold=0.0,
     seed=168743,
-    voice_name="Piano LH Voice",
+    voice_names=["Piano LH Voice"],
 )
 
 
