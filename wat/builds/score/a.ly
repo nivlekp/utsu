@@ -4,92 +4,10 @@
         <<
             \context Staff = "RH Staff"
             <<
-                \context Voice = "Piano RH Voice"
-                {
-                    {
-                        \tempo 4=60
-                        \time 4/4
-                        \clef "treble"
-                        r4
-                        r4
-                        r4
-                        \times 4/5 {
-                            r16
-                            r16
-                            r16
-                            ef''8
-                            ~
-                        }
-                    }
-                    {
-                        ef''1
-                        ~
-                    }
-                    {
-                        ef''1
-                        ~
-                    }
-                    {
-                        ef''1
-                        ~
-                    }
-                    {
-                        ef''2.
-                        ~
-                        \times 4/5 {
-                            ef''16
-                            \grace {
-                                d''16
-                                d''16
-                            }
-                            r16
-                            r16
-                            r16
-                            r16
-                        }
-                    }
-                    {
-                        cs''4
-                        ~
-                        \times 2/3 {
-                            cs''16
-                            r16
-                            r16
-                        }
-                        r8
-                        r4
-                        r4
-                    }
-                    {
-                        \times 4/7 {
-                            r16
-                            r16
-                            f''4
-                            ~
-                            f''16
-                            ~
-                        }
-                        f''4
-                        ~
-                        \times 2/3 {
-                            f''4
-                            d''8
-                            ~
-                        }
-                        d''4
-                        ~
-                    }
-                    {
-                        d''8
-                        r8
-                        r4
-                        r4
-                        r4
-                    }
-                }
                 \context Voice = "Piano RH Voice1"
                 {
                     {
+                        \override Stem.direction = #down
                         \tempo 4=60
                         \time 4/4
                         \clef "treble"
@@ -97,8 +15,10 @@
                         r4
                         r4
                         r4
+                        \revert Stem.direction
                     }
                     {
+                        \override Stem.direction = #down
                         r4
                         r4
                         \times 4/7 {
@@ -112,8 +32,10 @@
                         }
                         cs'4
                         ~
+                        \revert Stem.direction
                     }
                     {
+                        \override Stem.direction = #down
                         cs'4
                         ~
                         \times 4/7 {
@@ -132,8 +54,10 @@
                         }
                         c'4
                         ~
+                        \revert Stem.direction
                     }
                     {
+                        \override Stem.direction = #down
                         \times 2/3 {
                             c'4
                             e'8
@@ -142,8 +66,10 @@
                         e'4
                         r4
                         r4
+                        \revert Stem.direction
                     }
                     {
+                        \override Stem.direction = #down
                         \times 4/7 {
                             r16
                             r16
@@ -156,8 +82,10 @@
                         }
                         c'2.
                         ~
+                        \revert Stem.direction
                     }
                     {
+                        \override Stem.direction = #down
                         c'4
                         ~
                         \times 4/7 {
@@ -176,6 +104,106 @@
                             af'4
                             r8
                         }
+                        \revert Stem.direction
+                    }
+                }
+                \context Voice = "Piano RH Voice"
+                {
+                    {
+                        \override Stem.direction = #up
+                        \tempo 4=60
+                        \time 4/4
+                        \clef "treble"
+                        r4
+                        r4
+                        r4
+                        \times 4/5 {
+                            r16
+                            r16
+                            r16
+                            ef''8
+                            ~
+                        }
+                        \revert Stem.direction
+                    }
+                    {
+                        \override Stem.direction = #up
+                        ef''1
+                        ~
+                        \revert Stem.direction
+                    }
+                    {
+                        \override Stem.direction = #up
+                        ef''1
+                        ~
+                        \revert Stem.direction
+                    }
+                    {
+                        \override Stem.direction = #up
+                        ef''1
+                        ~
+                        \revert Stem.direction
+                    }
+                    {
+                        \override Stem.direction = #up
+                        ef''2.
+                        ~
+                        \times 4/5 {
+                            ef''16
+                            \grace {
+                                d''16
+                                d''16
+                            }
+                            r16
+                            r16
+                            r16
+                            r16
+                        }
+                        \revert Stem.direction
+                    }
+                    {
+                        \override Stem.direction = #up
+                        cs''4
+                        ~
+                        \times 2/3 {
+                            cs''16
+                            r16
+                            r16
+                        }
+                        r8
+                        r4
+                        r4
+                        \revert Stem.direction
+                    }
+                    {
+                        \override Stem.direction = #up
+                        \times 4/7 {
+                            r16
+                            r16
+                            f''4
+                            ~
+                            f''16
+                            ~
+                        }
+                        f''4
+                        ~
+                        \times 2/3 {
+                            f''4
+                            d''8
+                            ~
+                        }
+                        d''4
+                        ~
+                        \revert Stem.direction
+                    }
+                    {
+                        \override Stem.direction = #up
+                        d''8
+                        r8
+                        r4
+                        r4
+                        r4
+                        \revert Stem.direction
                     }
                 }
             >>

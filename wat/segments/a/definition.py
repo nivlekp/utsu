@@ -1,3 +1,5 @@
+import abjad
+
 import wat
 
 
@@ -70,4 +72,5 @@ segment_maker = wat.SegmentMaker(
     use_full_measures=[False, False, False],
     clouds=[cloud_rh_voice0, cloud_rh_voice1, cloud_lh],
     clefs=["treble", "treble", "bass"],
+    stem_directions=[abjad.Up, abjad.Down, None],
 )

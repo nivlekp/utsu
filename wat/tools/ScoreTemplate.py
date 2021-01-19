@@ -8,7 +8,7 @@ class ScoreTemplate(abjad.ScoreTemplate):
 
     def __call__(self):
         piano_RH_staff = abjad.Staff(
-            [abjad.Voice(name="Piano RH Voice"), abjad.Voice(name="Piano RH Voice1")],
+            [abjad.Voice(name="Piano RH Voice1"), abjad.Voice(name="Piano RH Voice")],
             name="RH Staff",
             simultaneous=True,
         )

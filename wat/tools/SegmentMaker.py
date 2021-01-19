@@ -18,6 +18,7 @@ class SegmentMaker(abjad.SegmentMaker):
         metronome_marks=None,
         time_signatures=None,
         clefs=None,
+        stem_directions=None,
         search_trees=None,
         use_full_measures=None,
         clouds=None,
@@ -42,6 +43,10 @@ class SegmentMaker(abjad.SegmentMaker):
             self._clefs = [abjad.Clef(clef) for clef in self._clefs]
         else:
             self._clefs = [None] * len(self._metronome_marks)
+        if stem_directions is not None:
+            self._stem_directions = stem_directions if isinstance(stem_directions, list) else [stem_directions]
+        else:
+            self._stem_directions = [None] * len(self._metronome_marks)
         if search_trees is not None:
             search_trees = (
                 search_trees if isinstance(search_trees, list) else [search_trees]
@@ -96,11 +101,12 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._metadata
 
     def _make_cloud(self):
-        for cloud, tempo, time_signature, clef, search_tree, use_full_measure in zip(
+        for cloud, tempo, time_signature, clef, stem_direction, search_tree, use_full_measure in zip(
             self._clouds,
             self._metronome_marks,
             self._time_signatures,
             self._clefs,
+            self._stem_directions,
             self._search_trees,
             self._use_full_measures,
         ):
@@ -115,6 +121,9 @@ class SegmentMaker(abjad.SegmentMaker):
             results = cloud.make_cloud(**schema_specs)
             if clef is not None:
                 abjad.attach(clef, results[0][0][0])
+            if stem_direction is not None:
+                for container in results[0]:
+                    abjad.override(container).stem.direction = stem_direction
             for result, voice_name in zip(results, cloud.voice_names):
                 self._score[voice_name].extend(result)
 
