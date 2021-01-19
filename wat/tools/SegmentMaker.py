@@ -124,6 +124,7 @@ class SegmentMaker(abjad.SegmentMaker):
             if stem_direction is not None:
                 for container in results[0]:
                     abjad.override(container).stem.direction = stem_direction
+                    abjad.override(container).rest.direction = stem_direction
             for result, voice_name in zip(results, cloud.voice_names):
                 self._score[voice_name].extend(result)
 

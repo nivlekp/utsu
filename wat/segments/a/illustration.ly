@@ -15,6 +15,7 @@
                 \context Voice = "Piano RH Voice1"
                 {
                     {
+                        \override Rest.direction = #down
                         \override Stem.direction = #down
                         \tempo 4=60
                         \time 4/4
@@ -23,9 +24,11 @@
                         r4
                         r4
                         r4
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #down
                         \override Stem.direction = #down
                         r4
                         r4
@@ -40,9 +43,11 @@
                         }
                         cs'4
                         ~
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #down
                         \override Stem.direction = #down
                         cs'4
                         ~
@@ -62,9 +67,11 @@
                         }
                         c'4
                         ~
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #down
                         \override Stem.direction = #down
                         \times 2/3 {
                             c'4
@@ -74,9 +81,11 @@
                         e'4
                         r4
                         r4
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #down
                         \override Stem.direction = #down
                         \times 4/7 {
                             r16
@@ -90,9 +99,11 @@
                         }
                         c'2.
                         ~
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #down
                         \override Stem.direction = #down
                         c'4
                         ~
@@ -112,12 +123,14 @@
                             af'4
                             r8
                         }
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                 }
                 \context Voice = "Piano RH Voice"
                 {
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         \tempo 4=60
                         \time 4/4
@@ -132,27 +145,35 @@
                             ef''8
                             ~
                         }
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         ef''1
                         ~
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         ef''1
                         ~
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         ef''1
                         ~
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         ef''2.
                         ~
@@ -167,9 +188,11 @@
                             r16
                             r16
                         }
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         cs''4
                         ~
@@ -181,9 +204,11 @@
                         r8
                         r4
                         r4
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         \times 4/7 {
                             r16
@@ -202,15 +227,18 @@
                         }
                         d''4
                         ~
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                     {
+                        \override Rest.direction = #up
                         \override Stem.direction = #up
                         d''8
                         r8
                         r4
                         r4
                         r4
+                        \revert Rest.direction
                         \revert Stem.direction
                     }
                 }
