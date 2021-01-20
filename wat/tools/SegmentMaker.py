@@ -44,7 +44,11 @@ class SegmentMaker(abjad.SegmentMaker):
         else:
             self._clefs = [None] * len(self._metronome_marks)
         if stem_directions is not None:
-            self._stem_directions = stem_directions if isinstance(stem_directions, list) else [stem_directions]
+            self._stem_directions = (
+                stem_directions
+                if isinstance(stem_directions, list)
+                else [stem_directions]
+            )
         else:
             self._stem_directions = [None] * len(self._metronome_marks)
         if search_trees is not None:
@@ -101,7 +105,15 @@ class SegmentMaker(abjad.SegmentMaker):
         return self._metadata
 
     def _make_cloud(self):
-        for cloud, tempo, time_signature, clef, stem_direction, search_tree, use_full_measure in zip(
+        for (
+            cloud,
+            tempo,
+            time_signature,
+            clef,
+            stem_direction,
+            search_tree,
+            use_full_measure,
+        ) in zip(
             self._clouds,
             self._metronome_marks,
             self._time_signatures,

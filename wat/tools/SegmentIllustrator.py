@@ -24,7 +24,7 @@ class SegmentIllustrator(SegmentHandler):
     def _write_segments_to_build(self, segment_file, seg):
         score_path = self._builds_dir / "score"
         formatted_blocks = segment_file.score_block
-        #print(abjad.lilypond(formatted_blocks))
+        # print(abjad.lilypond(formatted_blocks))
         with open(str(score_path / (seg + ".ly")), "w") as file_pointer:
             file_pointer.write(abjad.lilypond(formatted_blocks))
         # TODO: change this method to a better one
