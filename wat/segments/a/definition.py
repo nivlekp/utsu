@@ -3,30 +3,30 @@ import abjad
 import wat
 
 
-duration = 30
+duration = 80
 
 search_tree_rh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
 search_tree_lh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
 
-pitch_set_rh_higher = wat.tools.gen_pitches_from_sieve(
+pitch_set_rh_higher = wat.gen_pitches_from_sieve(
     sieve=wat.sieves["C"],
     origin=0,
     low=wat.highest_piano_note // 4,
     high=wat.highest_piano_note // 2,
 )
 
-pitch_set_rh_lower = wat.tools.gen_pitches_from_sieve(
+pitch_set_rh_lower = wat.gen_pitches_from_sieve(
     sieve=wat.sieves["C"], origin=0, low=0, high=wat.highest_piano_note // 4
 )
 
-pitch_set_lh = wat.tools.gen_pitches_from_sieve(
+pitch_set_lh = wat.gen_pitches_from_sieve(
     sieve=wat.sieves["C"], origin=0, low=wat.lowest_piano_note, high=0
 )
 
 
 cloud_rh_voice0 = wat.Cloud(
-    arate=0.2,
-    srate=0.4,
+    arate=0.4,
+    srate=0.8,
     pitches=pitch_set_rh_higher,
     duration=duration,
     queue_type="M/M/1",
@@ -37,8 +37,8 @@ cloud_rh_voice0 = wat.Cloud(
 
 
 cloud_rh_voice1 = wat.Cloud(
-    arate=0.2,
-    srate=0.4,
+    arate=0.3,
+    srate=0.6,
     pitches=pitch_set_rh_lower,
     duration=duration,
     queue_type="M/M/1",

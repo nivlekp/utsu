@@ -131,12 +131,18 @@ class SegmentMaker(abjad.SegmentMaker):
             if use_full_measure is not None:
                 schema_specs["use_full_measure"] = use_full_measure
             results = cloud.make_cloud(**schema_specs)
+            # FIXME
             if clef is not None:
-                abjad.attach(clef, results[0][0][0])
+                try:
+                    abjad.attach(clef, results[0][0][0])
+                except:
+                    abjad.attach(clef, results[0][0][0][0])
             if stem_direction is not None:
                 for container in results[0]:
                     abjad.override(container).stem.direction = stem_direction
                     abjad.override(container).rest.direction = stem_direction
+                    abjad.override(container).tie.direction = stem_direction
+                    abjad.override(container).tuplet_bracket.direction = stem_direction
             for result, voice_name in zip(results, cloud.voice_names):
                 self._score[voice_name].extend(result)
 
