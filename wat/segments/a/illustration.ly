@@ -43,9 +43,6 @@
                             ~
                         }
                         cs'8.
-                        \grace {
-                            r16
-                        }
                         c'4
                         ~
                         c'16
@@ -218,13 +215,11 @@
                             r16
                             r16
                             r16
-                            \grace {
-                                d'16
-                            }
-                            r16
-                            r16
+                            d'8
+                            ~
                         }
-                        r4
+                        d'4
+                        ~
                         \revert Rest.direction
                         \revert Stem.direction
                         \revert Tie.direction
@@ -235,10 +230,8 @@
                         \override Stem.direction = #down
                         \override Tie.direction = #down
                         \override TupletBracket.direction = #down
-                        r4
-                        r4
-                        r4
-                        r4
+                        d'1
+                        ~
                         \revert Rest.direction
                         \revert Stem.direction
                         \revert Tie.direction
@@ -249,9 +242,10 @@
                         \override Stem.direction = #down
                         \override Tie.direction = #down
                         \override TupletBracket.direction = #down
-                        r4
+                        d'4
+                        ~
                         \times 4/7 {
-                            r16
+                            d'16
                             d'4.
                             ~
                         }
@@ -286,10 +280,8 @@
                         }
                         \times 4/7 {
                             bf'4.
-                            \grace {
-                                af'16
-                            }
-                            r16
+                            af'16
+                            ~
                         }
                         \revert Rest.direction
                         \revert Stem.direction
@@ -301,10 +293,10 @@
                         \override Stem.direction = #down
                         \override Tie.direction = #down
                         \override TupletBracket.direction = #down
-                        r4
-                        r4
+                        af'2
+                        ~
                         \times 4/7 {
-                            r16
+                            af'16
                             c'8.
                             r16
                             r16
@@ -742,9 +734,6 @@
                         }
                         \times 2/3 {
                             cs''4
-                            \grace {
-                                r16
-                            }
                             f''8
                             ~
                         }

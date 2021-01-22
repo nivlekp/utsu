@@ -11,7 +11,10 @@
         \context StaffGroup = "Piano Staff Group"
         <<
             \context Staff = "RH Staff"
-            {
+            <<
+                \context Voice = "Piano RH Voice1"
+                {
+                }
                 \context Voice = "Piano RH Voice"
                 {
                     {
@@ -66,9 +69,6 @@
                         }
                         \times 2/3 {
                             af''''16.
-                        }
-                        \grace {
-                            r16
                         }
                         bf'32.
                         r64
@@ -156,9 +156,6 @@
                             \times 2/3 {
                                 r16
                                 bf'16
-                                \grace {
-                                    r16
-                                }
                                 c'16
                                 ~
                             }
@@ -190,19 +187,17 @@
                                 ~
                             }
                             ef''''32
-                            \grace {
-                                c'16
-                            }
-                            r32
-                            r16
-                            r8
+                            c'8..
+                            ~
                         }
-                        r4
+                        c'4
+                        ~
                     }
                     {
-                        r4
+                        c'4
+                        ~
                         \times 2/3 {
-                            r16
+                            c'16
                             bf''''16
                             r16
                         }
@@ -279,21 +274,15 @@
                             r32
                             r32
                             r32
-                            \grace {
-                                f'''16
-                            }
-                            r32
-                            r32
-                            r32
-                            r32
-                            r32
+                            f'''8
+                            ~
+                            f'''32
+                            ~
                         }
                         \times 4/5 {
-                            r16
-                            r16
-                            r16
-                            r16
-                            r32
+                            f'''4
+                            ~
+                            f'''32
                             d'''32
                         }
                         r64
@@ -382,9 +371,6 @@
                             af''''32
                             bf'''32
                             e'32
-                            \grace {
-                                r16
-                            }
                             fs'''8..
                             ~
                         }
@@ -428,13 +414,10 @@
                         \times 2/3 {
                             r16
                             r16
-                            \grace {
-                                bf'16
-                            }
-                            r16
+                            bf'16
+                            ~
                         }
-                        r32
-                        r64
+                        bf'32.
                         af''''64
                         ~
                         \times 2/3 {
@@ -524,7 +507,7 @@
                         r4
                     }
                 }
-            }
+            >>
             \context Staff = "LH Staff"
             {
                 \context Voice = "Piano LH Voice"
