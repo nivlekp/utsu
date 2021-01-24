@@ -2,7 +2,7 @@
 
 [ ] Accomodate octava / write the notename explicitly
 
-[ ] Experiment with differenet q-grid
+[x] Experiment with differenet q-grid
 
 [-] Accomodate multiple servers in a cloud in the `make_cloud` function
 
