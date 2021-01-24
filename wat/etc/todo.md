@@ -4,11 +4,11 @@
 
 [ ] Experiment with differenet q-grid
 
-[ ] Accomodate multiple servers in a cloud in the `make_cloud` function
+[-] Accomodate multiple servers in a cloud in the `make_cloud` function
 
 [ ] Proportional duration
 
-[ ] Concat all the segments
+[x] Concat all the segments
 
 [ ] System too close together (sometimes)
 
@@ -16,4 +16,4 @@
 
 [ ] Check note grouping (measure 2, 14, 18 of segment a)
 
-[ ] fix grace note to rest
+[x] fix grace note to rest
