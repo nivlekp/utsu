@@ -17,10 +17,10 @@ class Cloud:
 
     def __init__(
         self,
-        arate,
-        srate,
-        pitches,
-        duration,
+        arate=1,
+        srate=1,
+        pitches=[0],
+        duration=1,
         queue_type="M/M/1",
         rest_threshold=0.2,
         seed=982374,

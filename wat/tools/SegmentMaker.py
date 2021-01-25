@@ -2,8 +2,8 @@ import typing
 
 import abjad
 from abjadext import nauert
-from wat.tools.ScoreTemplate import ScoreTemplate
-from wat.tools.cloud import Cloud
+from .ScoreTemplate import ScoreTemplate
+from .cloud import Cloud
 
 
 class SegmentMaker(abjad.SegmentMaker):
