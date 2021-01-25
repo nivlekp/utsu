@@ -134,7 +134,7 @@ class SegmentMaker(abjad.SegmentMaker):
             if use_full_measure is not None:
                 schema_specs["use_full_measure"] = use_full_measure
             results = cloud.make_cloud(**schema_specs)
-            #TODO: attach tempi
+            # TODO: attach tempi
             # For now, because we are only handling single server per queue,
             # thus
             all_results.append(results)
