@@ -3,9 +3,9 @@ import typing
 import abjad
 from abjadext import nauert
 
+from ..materials import highest_note_without_octava, lowest_note_without_octava
 from .ScoreTemplate import ScoreTemplate
 from .cloud import Cloud
-from ..materials import highest_note_without_octava, lowest_note_without_octava
 
 
 class SegmentMaker(abjad.SegmentMaker):
@@ -132,12 +132,12 @@ class SegmentMaker(abjad.SegmentMaker):
             if use_full_measure is not None:
                 schema_specs["use_full_measure"] = use_full_measure
             results = cloud.make_cloud(**schema_specs)
-            # FIXME
+            # For now, because we are only handling single server per queue,
+            # thus
+            result = results[0]
             if clef is not None:
-                try:
-                    abjad.attach(clef, results[0][0][0])
-                except:
-                    abjad.attach(clef, results[0][0][0][0])
+                first_leaf = abjad.select(result).leaf(0)
+                abjad.attach(clef, first_leaf)
             if stem_direction is not None:
                 for container in results[0]:
                     abjad.override(container).stem.direction = stem_direction
@@ -152,8 +152,6 @@ class SegmentMaker(abjad.SegmentMaker):
         selector = abjad.select().notes()
         result = selector(voice)
         for leaf in result:
-            assert isinstance(leaf, abjad.Note)
-            print(leaf.written_pitch)
             if leaf.written_pitch > highest_note_without_octava:
                 interval = abjad.NumberedInterval.from_pitch_carriers(
                     abjad.NumberedPitch(highest_note_without_octava),
