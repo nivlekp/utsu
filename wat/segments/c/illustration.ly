@@ -386,6 +386,7 @@
                             g''''4.
                         }
                     }
+                    r1
                 }
             >>
             \context Staff = "LH Staff"

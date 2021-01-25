@@ -105,7 +105,9 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         return self._metadata
 
-    def _make_cloud(self):
+    def _make_clouds(self):
+        max_length = 0
+        all_results = []
         for (
             cloud,
             tempo,
@@ -132,9 +134,12 @@ class SegmentMaker(abjad.SegmentMaker):
             if use_full_measure is not None:
                 schema_specs["use_full_measure"] = use_full_measure
             results = cloud.make_cloud(**schema_specs)
+            #TODO: attach tempi
             # For now, because we are only handling single server per queue,
             # thus
+            all_results.append(results)
             result = results[0]
+            max_length = len(result) if len(result) > max_length else max_length
             if clef is not None:
                 first_leaf = abjad.select(result).leaf(0)
                 abjad.attach(clef, first_leaf)
@@ -145,29 +150,39 @@ class SegmentMaker(abjad.SegmentMaker):
                     abjad.override(container).tie.direction = stem_direction
                     abjad.override(container).tuplet_bracket.direction = stem_direction
             self._post_processing(results)
+        for cloud, results in zip(self._clouds, all_results):
             for result, voice_name in zip(results, cloud.voice_names):
+                if len(result) < max_length:
+                    rest = abjad.Rest()
+                    # TODO: at the moment just hard-coding
+                    rest.written_duration = abjad.Duration((4, 4))
+                    spacer_rests = [rest] * (max_length - len(result))
+                    result.extend(spacer_rests)
                 self._score[voice_name].extend(result)
+
+    def _attach_ottava(self, leaf):
+        if leaf.written_pitch > highest_note_without_octava:
+            interval = abjad.NumberedInterval.from_pitch_carriers(
+                abjad.NumberedPitch(highest_note_without_octava),
+                leaf.written_pitch,
+            )
+            octaves = interval.octaves + 1
+            abjad.attach(abjad.Ottava(n=octaves), leaf)
+        elif leaf.written_pitch < lowest_note_without_octava:
+            interval = abjad.NumberedInterval.from_pitch_carriers(
+                leaf.written_pitch,
+                abjad.NumberedPitch(lowest_note_without_octava),
+            )
+            octaves = interval.octaves + 1
+            abjad.attach(abjad.Ottava(n=-octaves), leaf)
+        else:
+            abjad.attach(abjad.Ottava(n=0), leaf)
 
     def _post_processing(self, voice):
         selector = abjad.select().notes()
         result = selector(voice)
         for leaf in result:
-            if leaf.written_pitch > highest_note_without_octava:
-                interval = abjad.NumberedInterval.from_pitch_carriers(
-                    abjad.NumberedPitch(highest_note_without_octava),
-                    leaf.written_pitch,
-                )
-                octaves = interval.octaves + 1
-                abjad.attach(abjad.Ottava(n=octaves), leaf)
-            elif leaf.written_pitch < lowest_note_without_octava:
-                interval = abjad.NumberedInterval.from_pitch_carriers(
-                    leaf.written_pitch,
-                    abjad.NumberedPitch(lowest_note_without_octava),
-                )
-                octaves = interval.octaves + 1
-                abjad.attach(abjad.Ottava(n=-octaves), leaf)
-            else:
-                abjad.attach(abjad.Ottava(n=0), leaf)
+            self._attach_ottava(leaf)
 
     def run(
         self,
@@ -193,6 +208,6 @@ class SegmentMaker(abjad.SegmentMaker):
         self._segment_directory = segment_directory
         self._make_score()
         self._make_lilypond_file()
-        self._make_cloud()
+        self._make_clouds()
         assert isinstance(self._lilypond_file, abjad.LilyPondFile)
         return self._lilypond_file
