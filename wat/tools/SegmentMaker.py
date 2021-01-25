@@ -2,7 +2,6 @@ import typing
 
 import abjad
 from abjadext import nauert
-
 from wat.tools.ScoreTemplate import ScoreTemplate
 from wat.tools.cloud import Cloud
 

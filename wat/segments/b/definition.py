@@ -47,5 +47,6 @@ segment_maker = wat.SegmentMaker(
     metronome_marks=[wat.metronome_marks["60"], wat.metronome_marks["60"]],
     time_signatures=[(4, 4), (4, 4)],
     search_trees=[search_tree_rh, search_tree_lh],
+    use_full_measures=[False, True],
     clouds=[cloud_rh, cloud_lh],
 )

@@ -1,7 +1,5 @@
 import abjad
-
 import wat
-
 
 duration = 80
 

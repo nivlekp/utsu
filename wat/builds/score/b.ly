@@ -391,206 +391,133 @@
                 \context Voice = "Piano LH Voice"
                 {
                     {
-                        \tempo 4=60
-                        \time 4/4
-                        r8
-                        b8
-                        ~
                         \times 4/7 {
-                            b16
-                            c,,4.
-                            ~
-                        }
-                        \times 4/7 {
-                            c,,16
-                            r16
-                            r16
-                            r16
-                            r16
-                            r16
-                            r16
-                        }
-                        r4
-                    }
-                    {
-                        r4
-                        r16
-                        b4..
-                        g,,16
-                        r16
-                        \times 4/5 {
-                            r32
-                            r32
-                            r32
-                            r32
-                            af32
-                            ~
+                            \tempo 4=60
+                            \time 4/4
+                            r4
+                            b4
+                            c,,2
+                            r4
+                            r4
+                            r4
                         }
                     }
                     {
-                        af4
-                        ~
                         \times 4/5 {
-                            af16
-                            a,,,16
-                            c,,8.
-                            ~
+                            r4
+                            r8
+                            b2
+                            g,,8
+                            r8
+                            r8
                         }
+                    }
+                    {
                         \times 2/3 {
-                            c,,16
-                            r16
-                            r8
-                            r8
+                            af2
+                            \grace {
+                                a,,,16
+                            }
+                            c,,4
+                            r4
+                            r2
                         }
-                        r4
                     }
                     {
-                        r4
-                        r4
-                        r4
-                        r4
+                        r1
                     }
                     {
-                        r4
-                        r4
-                        r4
+                        r2
                         \times 4/5 {
-                            r32
-                            c,,16
-                            r32
-                            r32
+                            r8
+                            r8
+                            r8
+                            c,,8
+                            f,8
+                            ~
                         }
-                        f,8
-                        ~
                     }
                     {
-                        f,8
-                        r8
-                        r4
+                        \times 4/5 {
+                            f,8
+                            r8
+                            r8
+                            r8
+                            r8
+                        }
                         r4
                         a,,,4
                         ~
                     }
                     {
-                        \times 4/5 {
-                            a,,,8.
-                            r16
-                            r16
+                        \times 4/7 {
+                            a,,,4
+                            r4
+                            r4
+                            r4
+                            r4
+                            r4
+                            r4
                         }
-                        r4
-                        r4
-                        r4
                     }
                     {
-                        r4
-                        \times 4/7 {
-                            r16
-                            r16
-                            b16
+                        \times 4/5 {
+                            r8
+                            r8
+                            r8
+                            b8
                             bf,8
-                            r16
-                            r16
-                        }
-                        \times 4/7 {
-                            r16
-                            r16
-                            r16
-                            r16
-                            c,,8.
                             ~
                         }
-                        c,,4
+                        \times 2/3 {
+                            bf,4
+                            c,,2
+                        }
                     }
                     {
-                        a,,,2.
-                        ~
                         \times 2/3 {
-                            a,,,8
+                            a,,,1
+                            ~
+                            a,,,4
                             af,4
                         }
                     }
                     {
+                        \times 2/3 {
+                            b,,1
+                            d2
+                            ~
+                        }
+                    }
+                    {
+                        \times 4/5 {
+                            d4
+                            af,4.
+                            ~
+                        }
+                        af,4
+                        \grace {
+                            af16
+                        }
+                        f,4
+                    }
+                    {
+                        \times 4/7 {
+                            d4
+                            c,,2
+                            c,,2
+                            f,2
+                        }
+                    }
+                    {
                         b,,2
-                        ~
-                        \times 2/3 {
-                            b,,4
-                            d8
-                            ~
-                        }
-                        d4
-                        ~
+                        d2
                     }
                     {
-                        \times 2/3 {
-                            d4
-                            ~
-                            d16
-                            af,16
-                            ~
-                        }
-                        af,2
                         \times 4/5 {
-                            af32
-                            f,4
-                            ~
-                            f,32
-                        }
-                    }
-                    {
-                        \times 4/7 {
-                            d4
-                            c,,8.
-                            ~
-                        }
-                        \times 4/5 {
-                            c,,8..
-                            c,,16.
-                            ~
-                        }
-                        c,,4
-                        ~
-                        \times 4/5 {
-                            c,,32
+                            fs,,4
                             f,8
-                            ~
-                        }
-                        f,16
-                        b,,16
-                        ~
-                    }
-                    {
-                        b,,4
-                        ~
-                        \times 4/5 {
-                            b,,4
-                            ~
-                            b,,32
-                            d32
-                            ~
-                        }
-                        d4
-                        ~
-                        \times 4/5 {
-                            d4
-                            ~
-                            d32
-                            fs,,32
-                            ~
-                        }
-                    }
-                    {
-                        \times 4/7 {
-                            fs,,4.
-                            f,16
-                            ~
-                        }
-                        \times 4/5 {
-                            f,16.
-                            r32
-                            r32
-                        }
-                        \times 2/3 {
-                            r16
+                            r8
                             g,,8
                             ~
                         }
@@ -600,93 +527,58 @@
                     }
                     {
                         f,2
-                        fs,,4
-                        ~
-                        \times 4/7 {
-                            fs,,8
-                            d16
-                            r16
-                            r16
-                            r16
-                            r16
+                        \times 2/3 {
+                            fs,,2
+                            d4
+                            ~
                         }
                     }
                     {
-                        r4
-                        r4
+                        d2
                         bf,4
                         r4
                     }
                     {
-                        r8
-                        r16
-                        c,,16
-                        ~
                         \times 4/5 {
-                            c,,8.
-                            r16
-                            r16
+                            r4
+                            c,,4
+                            r4
+                            r4
+                            r4
                         }
-                        r4
-                        r4
                     }
                     {
                         \times 2/3 {
-                            r8
-                            r8
-                            fs8
+                            r4
+                            fs4
+                            fs,,4
                             ~
                         }
                         \times 4/5 {
-                            fs32
-                            r32
-                            r32
-                            fs,,32
-                            r32
-                        }
-                        r8
-                        r4
-                        \times 2/3 {
-                            r16
+                            fs,,4.
                             af4
-                            ~
-                            af16
                             ~
                         }
                     }
                     {
                         af2
                         ~
-                        \times 4/7 {
-                            af8.
+                        \times 4/5 {
+                            af8
                             af,4
+                            r8
+                            b,,8
                             ~
-                        }
-                        \times 4/7 {
-                            af,16
-                            r16
-                            r16
-                            b,,16
-                            r16
-                            r16
-                            r16
                         }
                     }
                     {
-                        r4
                         \times 4/5 {
-                            r16
-                            af,4
-                            ~
+                            b,,4.
+                            af,4.
+                            r8
+                            r8
+                            r4
                         }
-                        \times 4/7 {
-                            af,8.
-                            r16
-                            r16
-                            r16
-                            r16
-                        }
-                        r4
                     }
                 }
             }
