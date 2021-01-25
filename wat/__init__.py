@@ -11,7 +11,6 @@ from wat.tools import (
     Cloud,
     NoteServer,
     SegmentMaker,
-    _get_closest_server,
     gen_pitches_from_sieve,
 )
 
@@ -19,7 +18,6 @@ __all__ = [
     "SegmentMaker",
     "Cloud",
     "NoteServer",
-    "_get_closest_server",
     "gen_pitches_from_sieve",
     "metronome_marks",
     "sieves",
