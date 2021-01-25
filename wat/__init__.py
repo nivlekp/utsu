@@ -7,12 +7,7 @@ from wat.materials import (
     metronome_marks,
     sieves,
 )
-from wat.tools import (
-    Cloud,
-    NoteServer,
-    SegmentMaker,
-    gen_pitches_from_sieve,
-)
+from wat.tools import Cloud, NoteServer, SegmentMaker, gen_pitches_from_sieve
 
 __all__ = [
     "SegmentMaker",

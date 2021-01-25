@@ -12,7 +12,6 @@ from . import noteserver
 class Cloud:
     """
     A class to represent a musical Cloud.
-    >>> cloud = Cloud(1, 2, [i-7 for i in range(30)], 20, 'M/M/1', 9237843)
     """
 
     def __init__(
@@ -165,6 +164,7 @@ class Cloud:
                 q_event_sequence,
                 q_schema=measurewise_q_schema,
                 grace_handler=grace_handler,
+                attach_tempos=False,
             )
             results.append(result)
         return results

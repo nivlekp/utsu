@@ -2,8 +2,10 @@ import typing
 
 import abjad
 from abjadext import nauert
+
 from .ScoreTemplate import ScoreTemplate
 from .cloud import Cloud
+from ..materials import highest_note_without_octava, lowest_note_without_octava
 
 
 class SegmentMaker(abjad.SegmentMaker):
@@ -142,8 +144,32 @@ class SegmentMaker(abjad.SegmentMaker):
                     abjad.override(container).rest.direction = stem_direction
                     abjad.override(container).tie.direction = stem_direction
                     abjad.override(container).tuplet_bracket.direction = stem_direction
+            self._post_processing(results)
             for result, voice_name in zip(results, cloud.voice_names):
                 self._score[voice_name].extend(result)
+
+    def _post_processing(self, voice):
+        selector = abjad.select().notes()
+        result = selector(voice)
+        for leaf in result:
+            assert isinstance(leaf, abjad.Note)
+            print(leaf.written_pitch)
+            if leaf.written_pitch > highest_note_without_octava:
+                interval = abjad.NumberedInterval.from_pitch_carriers(
+                    abjad.NumberedPitch(highest_note_without_octava),
+                    leaf.written_pitch,
+                )
+                octaves = interval.octaves + 1
+                abjad.attach(abjad.Ottava(n=octaves), leaf)
+            elif leaf.written_pitch < lowest_note_without_octava:
+                interval = abjad.NumberedInterval.from_pitch_carriers(
+                    leaf.written_pitch,
+                    abjad.NumberedPitch(lowest_note_without_octava),
+                )
+                octaves = interval.octaves + 1
+                abjad.attach(abjad.Ottava(n=-octaves), leaf)
+            else:
+                abjad.attach(abjad.Ottava(n=0), leaf)
 
     def run(
         self,
