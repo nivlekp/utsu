@@ -91,6 +91,7 @@
                             r8
                             \ottava 1
                             fs''''8
+                            \ottava 0
                             r8
                             r8
                             \ottava 1
@@ -105,11 +106,13 @@
                     }
                     {
                         \times 8/11 {
+                            \ottava 0
                             r8
                             \ottava 0
                             a''8
                             \ottava 1
                             af'''8
+                            \ottava 0
                             r8
                             r8
                             r8
@@ -121,6 +124,7 @@
                             }
                             \ottava 1
                             fs''''4
+                            \ottava 0
                             r8
                             \ottava 0
                             d''8
@@ -166,6 +170,7 @@
                         \times 8/13 {
                             \ottava 1
                             c''''8
+                            \ottava 0
                             r8
                             r8
                             r8
@@ -214,6 +219,7 @@
                             r8
                             \ottava 1
                             c''''4
+                            \ottava 0
                             r8
                             r8
                             r8
@@ -277,6 +283,7 @@
                             fs''''8
                             \ottava 2
                             af''''8
+                            \ottava 0
                             r8
                             \ottava 0
                             ef'''4.
@@ -445,6 +452,7 @@
                             b,8
                             \ottava -1
                             cs,,8
+                            \ottava 0
                             r8
                             r8
                             r8
@@ -479,6 +487,7 @@
                             \times 2/3 {
                                 \ottava -1
                                 b,,,4
+                                \ottava 0
                                 r4
                                 \ottava -1
                                 bf,,4
@@ -536,6 +545,7 @@
                             f,,2.
                             \ottava -1
                             b,,,8
+                            \ottava 0
                             r8
                             \ottava 0
                             c,4
@@ -605,6 +615,7 @@
                             c,8
                             \ottava -1
                             f,,8
+                            \ottava 0
                             r8
                             \ottava -1
                             fs,,4.
@@ -642,6 +653,7 @@
                             }
                             \ottava -1
                             b,,,8
+                            \ottava 0
                             r8
                         }
                     }
@@ -715,6 +727,7 @@
                             r8
                             \ottava -1
                             b,,,8
+                            \ottava 0
                             r8
                             r8
                             r8
@@ -729,6 +742,7 @@
                     {
                         \ottava -1
                         cs,,4
+                        \ottava 0
                         r4
                         r2
                     }

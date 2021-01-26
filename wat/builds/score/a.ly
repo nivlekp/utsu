@@ -1192,6 +1192,7 @@
                             r16
                             \ottava -2
                             bf,,,16
+                            \ottava 0
                             r16
                             r16
                             r16
@@ -1204,6 +1205,7 @@
                             r16
                             \ottava -2
                             bf,,,8
+                            \ottava 0
                             r16
                             \ottava 0
                             b,,16
@@ -1222,6 +1224,7 @@
                             r16
                             \ottava -1
                             bf,,16
+                            \ottava 0
                             r16
                         }
                         r8
@@ -1249,6 +1252,7 @@
                     {
                         \ottava -2
                         a,,,8
+                        \ottava 0
                         r8
                         r4
                         \times 4/7 {
@@ -1373,9 +1377,11 @@
                         }
                         \ottava -1
                         c,,4.
+                        \ottava 0
                         r8
                         \ottava -1
                         fs,,8
+                        \ottava 0
                         r4
                     }
                     {
@@ -1399,6 +1405,7 @@
                         ~
                         \ottava -2
                         a,,,16
+                        \ottava 0
                         r16
                         r8
                         r4

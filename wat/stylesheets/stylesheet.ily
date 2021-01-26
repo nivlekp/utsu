@@ -19,18 +19,19 @@
 \layout {
   indent = 0\cm
   ragged-last = ##t
-  ragged-right = ##t
+  %ragged-right = ##t
   \accidentalStyle neo-modern
   \context {
     \Score
-    \override SpacingSpanner.strict-note-spacing = ##t
-    \override SpacingSpanner.strict-grace-spacing = ##t
-    proportionalNotationDuration = #(ly:make-moment 1 32)
+    %\override SpacingSpanner.strict-note-spacing = ##t
+    %\override SpacingSpanner.strict-grace-spacing = ##t
+    proportionalNotationDuration = #(ly:make-moment 1 24)
     \override StaffGrouper.staff-staff-spacing.padding = #8
     \override StaffGrouper.staff-staff-spacing.basic-distance = #8
   }
   \context {
     \Staff
+    \override Flag.stencil = #modern-straight-flag
   }
 }
 

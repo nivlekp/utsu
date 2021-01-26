@@ -161,6 +161,9 @@ class SegmentMaker(abjad.SegmentMaker):
                 self._score[voice_name].extend(result)
 
     def _attach_ottava(self, leaf):
+        """
+        Attach ottava.
+        """
         if leaf.written_pitch > highest_note_without_octava:
             interval = abjad.NumberedInterval.from_pitch_carriers(
                 abjad.NumberedPitch(highest_note_without_octava),
@@ -168,6 +171,7 @@ class SegmentMaker(abjad.SegmentMaker):
             )
             octaves = interval.octaves + 1
             abjad.attach(abjad.Ottava(n=octaves), leaf)
+            return True
         elif leaf.written_pitch < lowest_note_without_octava:
             interval = abjad.NumberedInterval.from_pitch_carriers(
                 leaf.written_pitch,
@@ -175,14 +179,23 @@ class SegmentMaker(abjad.SegmentMaker):
             )
             octaves = interval.octaves + 1
             abjad.attach(abjad.Ottava(n=-octaves), leaf)
+            return True
         else:
             abjad.attach(abjad.Ottava(n=0), leaf)
+            return False
 
     def _post_processing(self, voice):
-        selector = abjad.select().notes()
-        result = selector(voice)
+        """
+        Process the voice after quantization.
+        """
+        previously_attached = False
+        result = abjad.select(voice).leaves()
         for leaf in result:
-            self._attach_ottava(leaf)
+            if isinstance(leaf, abjad.Note):
+                previously_attached = self._attach_ottava(leaf)
+            if isinstance(leaf, abjad.Rest) and previously_attached:
+                abjad.attach(abjad.Ottava(n=0), leaf)
+                previously_attached = False
 
     def run(
         self,
