@@ -25,7 +25,9 @@
     \Score
     \override SpacingSpanner.strict-note-spacing = ##t
     \override SpacingSpanner.strict-grace-spacing = ##t
-    proportionalNotationDuration = #(ly:make-moment 1 64)
+    proportionalNotationDuration = #(ly:make-moment 1 32)
+    \override StaffGrouper.staff-staff-spacing.padding = #8
+    \override StaffGrouper.staff-staff-spacing.basic-distance = #8
   }
   \context {
     \Staff
@@ -33,10 +35,11 @@
 }
 
 \paper {
-  system-sytem-spacing.basic-distance = #8
-  score-system-spacing =
-    #'((basic-distance . 100)
-       (minimum-distance . 100)
-       (padding . 100)
-       (stretchability . 100))
+  % system-sytem-spacing.basic-distance = #8
+  % score-system-spacing =
+  %   #'((basic-distance . 100)
+  %      (minimum-distance . 100)
+  %      (padding . 100)
+  %      (stretchability . 100))
+  system-system-spacing.padding = #8
 }

@@ -17,3 +17,7 @@
 [ ] Check note grouping (measure 2, 14, 18 of segment a)
 
 [x] fix grace note to rest
+
+[ ] Make notehead shape of oval
+
+[ ] Make stems longer
