@@ -1,6 +1,6 @@
 # Things TODO
 
-[ ] Accomodate octava / write the notename explicitly
+[x] Accomodate octava / write the notename explicitly
 
 [x] Experiment with differenet q-grid
 

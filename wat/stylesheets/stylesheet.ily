@@ -23,7 +23,12 @@
   \accidentalStyle neo-modern
   \context {
     \Score
-    proportionalNotationDuration = #(ly:make-moment 1 30)
+    \override SpacingSpanner.strict-note-spacing = ##t
+    \override SpacingSpanner.strict-grace-spacing = ##t
+    proportionalNotationDuration = #(ly:make-moment 1 64)
+  }
+  \context {
+    \Staff
   }
 }
 
