@@ -12,7 +12,7 @@
     \fontsize #3 "Tsz Kiu Pang"
   }
   tagline = ##f
-  title = "Wat"
+  title = "Utsu"
   instrument = "For solo piano"
 }
 
