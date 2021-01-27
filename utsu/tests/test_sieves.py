@@ -1,5 +1,5 @@
 import abjad
-import wat
+import utsu
 
 
 def test_sieves_00():
@@ -7,7 +7,7 @@ def test_sieves_00():
     origin = 1
     low = -2
     high = 3
-    pitches = wat.tools.gen_pitches_from_sieve(sieve, origin, low, high)
+    pitches = utsu.tools.gen_pitches_from_sieve(sieve, origin, low, high)
     assert pitches == [1, 2]
 
 
@@ -16,5 +16,5 @@ def test_sieves_01():
     origin = 6
     low = -12
     high = 11
-    pitches = wat.tools.gen_pitches_from_sieve(sieve, origin, low, high)
+    pitches = utsu.tools.gen_pitches_from_sieve(sieve, origin, low, high)
     assert pitches == [-11, -6, -5, 1, 6, 7]

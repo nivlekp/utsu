@@ -32,6 +32,7 @@
   \context {
     \Staff
     \override Flag.stencil = #modern-straight-flag
+    \override Stem.length = #10
   }
 }
 

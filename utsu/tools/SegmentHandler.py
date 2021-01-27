@@ -1,7 +1,7 @@
 import importlib
 from pathlib import Path
 
-import wat
+import utsu
 
 
 class SegmentHandler:
@@ -10,8 +10,8 @@ class SegmentHandler:
     """
 
     def __init__(self, segments):
-        self._segments_dir = Path(wat.segments.__path__[0])
-        self._builds_dir = Path(wat.__path__[0]) / "builds"
+        self._segments_dir = Path(utsu.segments.__path__[0])
+        self._builds_dir = Path(utsu.__path__[0]) / "builds"
         self._segments = segments
 
     def __call__(self):

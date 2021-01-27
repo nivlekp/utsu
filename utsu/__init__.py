@@ -1,5 +1,5 @@
-from wat import segments
-from wat.materials import (
+from utsu import segments
+from utsu.materials import (
     highest_note_without_octava,
     highest_piano_note,
     lowest_note_without_octava,
@@ -7,7 +7,7 @@ from wat.materials import (
     metronome_marks,
     sieves,
 )
-from wat.tools import Cloud, NoteServer, SegmentMaker, gen_pitches_from_sieve
+from utsu.tools import Cloud, NoteServer, SegmentMaker, gen_pitches_from_sieve
 
 __all__ = [
     "SegmentMaker",

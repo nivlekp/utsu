@@ -1,6 +1,6 @@
 import numpy as np
 
-import wat
+import utsu
 
 
 def test_cloud__simulate_queue_00():
@@ -8,7 +8,7 @@ def test_cloud__simulate_queue_00():
     srate = 2
     duration = 10
     pitches = [0]
-    cloud = wat.Cloud(
+    cloud = utsu.Cloud(
         arate=arate,
         srate=srate,
         pitches=pitches,
@@ -76,7 +76,7 @@ def test_cloud__simulate_queue_01():
     srate = 2
     duration = 10
     pitches = [0]
-    cloud = wat.Cloud(
+    cloud = utsu.Cloud(
         arate=arate,
         srate=srate,
         pitches=pitches,
@@ -138,7 +138,7 @@ def test_cloud__simulate_queue_02():
     srate = 2
     duration = 10
     pitches = [0]
-    cloud = wat.Cloud(
+    cloud = utsu.Cloud(
         arate=arate,
         srate=srate,
         pitches=pitches,
@@ -209,7 +209,7 @@ def test_cloud__simulate_queue_03():
     srate = 2
     duration = 10
     pitches = [0]
-    cloud = wat.Cloud(
+    cloud = utsu.Cloud(
         arate=arate,
         srate=srate,
         pitches=pitches,
@@ -274,7 +274,7 @@ def test_cloud__simulate_queue_04():
     srate = 2
     duration = 10
     pitches = [0]
-    cloud = wat.Cloud(
+    cloud = utsu.Cloud(
         arate=arate,
         srate=srate,
         pitches=pitches,

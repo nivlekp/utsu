@@ -11,4 +11,5 @@
         \include "b.ly"
         \include "c.ly"
     }
+    \midi { }
 } %! abjad.LilyPondFile._get_formatted_blocks()

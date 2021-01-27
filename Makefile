@@ -15,7 +15,7 @@ clean:
 	rm -Rif .cache
 	rm -Rif .tox
 	rm -Rif __pycache__
-	rm -Rif build
+	#rm -Rif build
 	rm -Rif dist
 	rm -Rif htmlcov
 	rm -Rif prof
@@ -67,7 +67,7 @@ mypy:
 	# fix mypy errors and then run mypy over tests/ directory
 	# mypy tests
 
-project = wat
+project = utsu
 
 pytest:
 	pytest .

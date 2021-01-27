@@ -1,28 +1,28 @@
 import abjad
-import wat
+import utsu
 
 duration = 80
 
 search_tree_rh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
 search_tree_lh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
 
-pitch_set_rh_higher = wat.gen_pitches_from_sieve(
-    sieve=wat.sieves["C"],
+pitch_set_rh_higher = utsu.gen_pitches_from_sieve(
+    sieve=utsu.sieves["C"],
     origin=0,
-    low=wat.highest_piano_note // 4,
-    high=wat.highest_piano_note // 2,
+    low=utsu.highest_piano_note // 4,
+    high=utsu.highest_piano_note // 2,
 )
 
-pitch_set_rh_lower = wat.gen_pitches_from_sieve(
-    sieve=wat.sieves["C"], origin=0, low=0, high=wat.highest_piano_note // 4
+pitch_set_rh_lower = utsu.gen_pitches_from_sieve(
+    sieve=utsu.sieves["C"], origin=0, low=0, high=utsu.highest_piano_note // 4
 )
 
-pitch_set_lh = wat.gen_pitches_from_sieve(
-    sieve=wat.sieves["C"], origin=0, low=wat.lowest_piano_note, high=0
+pitch_set_lh = utsu.gen_pitches_from_sieve(
+    sieve=utsu.sieves["C"], origin=0, low=utsu.lowest_piano_note, high=0
 )
 
 
-cloud_rh_voice0 = wat.Cloud(
+cloud_rh_voice0 = utsu.Cloud(
     arate=0.4,
     srate=0.8,
     pitches=pitch_set_rh_higher,
@@ -34,7 +34,7 @@ cloud_rh_voice0 = wat.Cloud(
 )
 
 
-cloud_rh_voice1 = wat.Cloud(
+cloud_rh_voice1 = utsu.Cloud(
     arate=0.3,
     srate=0.6,
     pitches=pitch_set_rh_lower,
@@ -46,7 +46,7 @@ cloud_rh_voice1 = wat.Cloud(
 )
 
 
-cloud_lh = wat.Cloud(
+cloud_lh = utsu.Cloud(
     arate=0.4,
     srate=0.6,
     pitches=pitch_set_lh,
@@ -58,12 +58,12 @@ cloud_lh = wat.Cloud(
 )
 
 
-segment_maker = wat.SegmentMaker(
+segment_maker = utsu.SegmentMaker(
     name="a",
     metronome_marks=[
-        wat.metronome_marks["60"],
-        wat.metronome_marks["60"],
-        wat.metronome_marks["60"],
+        utsu.metronome_marks["60"],
+        utsu.metronome_marks["60"],
+        utsu.metronome_marks["60"],
     ],
     time_signatures=[(4, 4), (4, 4), (4, 4)],
     search_trees=[search_tree_rh, search_tree_rh, search_tree_lh],

@@ -8,8 +8,8 @@ if __name__ == "__main__":
             "numpy",
             "abjad",
         ],
-        name="wat",
-        packages=["wat"],
+        name="utsu",
+        packages=["utsu"],
         version="0.1",
         zip_safe=False,
     )

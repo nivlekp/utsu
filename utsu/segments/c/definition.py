@@ -1,4 +1,4 @@
-import wat
+import utsu
 
 duration = 64
 
@@ -21,17 +21,17 @@ search_tree_lh = {
 }
 
 
-pitch_set_rh = wat.tools.gen_pitches_from_sieve(
-    sieve=wat.sieves["B"], origin=0, low=0, high=wat.highest_piano_note
+pitch_set_rh = utsu.tools.gen_pitches_from_sieve(
+    sieve=utsu.sieves["B"], origin=0, low=0, high=utsu.highest_piano_note
 )
 
 
-pitch_set_lh = wat.tools.gen_pitches_from_sieve(
-    sieve=wat.sieves["B"], origin=0, low=wat.lowest_piano_note, high=0
+pitch_set_lh = utsu.tools.gen_pitches_from_sieve(
+    sieve=utsu.sieves["B"], origin=0, low=utsu.lowest_piano_note, high=0
 )
 
 
-cloud_rh = wat.Cloud(
+cloud_rh = utsu.Cloud(
     arate=1.5,
     srate=3.0,
     pitches=pitch_set_rh,
@@ -42,7 +42,7 @@ cloud_rh = wat.Cloud(
     voice_names=["Piano RH Voice"],
 )
 
-cloud_lh = wat.Cloud(
+cloud_lh = utsu.Cloud(
     arate=1.5,
     srate=3.0,
     pitches=pitch_set_lh,
@@ -54,9 +54,9 @@ cloud_lh = wat.Cloud(
 )
 
 
-segment_maker = wat.SegmentMaker(
+segment_maker = utsu.SegmentMaker(
     name="c",
-    metronome_marks=[wat.metronome_marks["60"], wat.metronome_marks["60"]],
+    metronome_marks=[utsu.metronome_marks["60"], utsu.metronome_marks["60"]],
     time_signatures=[(4, 4), (4, 4)],
     search_trees=[search_tree_rh, search_tree_lh],
     use_full_measures=[True, True],
