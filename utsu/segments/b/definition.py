@@ -14,7 +14,10 @@ pitch_set_rh = utsu.gen_pitches_from_sieve(
 
 
 pitch_set_lh = utsu.gen_pitches_from_sieve(
-    sieve=utsu.sieves["A"] & utsu.sieves["C"], origin=0, low=utsu.lowest_piano_note, high=0
+    sieve=utsu.sieves["A"] & utsu.sieves["C"],
+    origin=0,
+    low=utsu.lowest_piano_note,
+    high=0,
 )
 
 

@@ -7,6 +7,7 @@ if __name__ == "__main__":
         install_requires=[
             "numpy",
             "abjad",
+            "abjad-ext-nauert",
         ],
         name="utsu",
         packages=["utsu"],
