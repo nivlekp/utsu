@@ -15,7 +15,7 @@ class SegmentIllustrator(SegmentHandler):
         for seg in self._segments:
             segments_path = self._segments_dir / seg
             assert self._is_segment_directory(segments_path)
-            definition = importlib.import_module("wat.segments." + seg + ".definition")
+            definition = importlib.import_module("utsu.segments." + seg + ".definition")
             illustration_file = definition.segment_maker.run()
             with open(str(segments_path / "illustration.ly"), "w") as file_pointer:
                 file_pointer.write(abjad.lilypond(illustration_file))

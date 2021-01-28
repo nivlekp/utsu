@@ -107,3 +107,11 @@ test:
 	make isort-check
 	#make mypy
 	make pytest
+
+segments:
+	cd utsu; \
+	python tools/SegmentIllustrator.py a b c; \
+	python tools/SegmentRenderer.py a b c; \
+	cd builds/score; \
+	lilypond score.ly; \
+	open score.pdf

@@ -39,7 +39,7 @@ cloud_rh_voice1 = utsu.Cloud(
     srate=0.6,
     pitches=pitch_set_rh_lower,
     duration=duration,
-    queue_type="M/M/1",
+    queue_type="D/M/1",
     rest_threshold=0.0,
     seed=234780,
     voice_names=["Piano RH Voice1"],
@@ -47,8 +47,8 @@ cloud_rh_voice1 = utsu.Cloud(
 
 
 cloud_lh = utsu.Cloud(
-    arate=0.4,
-    srate=0.6,
+    arate=1.5,
+    srate=2.0,
     pitches=pitch_set_lh,
     duration=duration,
     queue_type="M/M/1",
