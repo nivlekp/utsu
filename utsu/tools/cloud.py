@@ -21,7 +21,7 @@ class Cloud:
         pitches=[0],
         duration=1,
         queue_type="M/M/1",
-        rest_threshold=0.2,
+        rest_threshold=0.0,
         seed=982374,
         voice_names=["Piano RH Voice"],
     ):
@@ -45,7 +45,7 @@ class Cloud:
         self._srate = srate
         self._duration = duration
         self._pitches = pitches
-        self._nnotes = round(self._duration * self._arate)
+        self._number_of_notes = round(self._duration * self._arate)
         self._arrival_model, self._service_model, nservers = tuple(
             queue_type.split("/")
         )
@@ -71,17 +71,17 @@ class Cloud:
         be computed using Poisson distribution with a mean of `arate` times
         `duration`. Then we could use uniform distribution to distribute each note
         on a random spot on the time line.
-
-        TODO: having said that, it is possible to move this one level up, that
-        is, in this class, number of notes in the duration could be a constant
-        computed by arate*duration, and the Poisson distribution should be
-        done one level up to generate arate. That way it is more
-        computationally efficient...
-
         UPDATE: we will take duration as a constant for simplicity.
         """
-        instances = np.random.uniform(0.0, self._duration, self._nnotes)
-        return sorted(instances)
+        if self.arrival_model == "M":
+            instances = np.random.uniform(0.0, self._duration, self._number_of_notes)
+            return sorted(instances)
+        elif self.arrival_model == "D":
+            each_duration = self._duration / self._number_of_notes
+            instances = [i * each_duration for i in range(self._number_of_notes)]
+            return np.array(instances)
+        else:
+            raise NotImplementedError
 
     def _gen_note_duration(self):
         """
@@ -89,12 +89,18 @@ class Cloud:
         Distribution used here should be Gaussian of some sort...
         UPDATE: maybe we should do uniform distribution after all...
         """
-        # return np.random.uniform(0.2, 1.0, self._nnotes)
-        return np.random.exponential(1 / self._srate, self._nnotes)
+        if self.service_model == "M":
+            return np.random.exponential(1 / self._srate, self._number_of_notes)
+        elif self.service_model == "D":
+            return np.array([1 / self._srate] * self._number_of_notes)
+        else:
+            raise NotImplementedError
 
     def _gen_rand_pitch_seq(self):
-        """Generate a random pitch sequence given the length and pitches."""
-        return [random.choice(self._pitches) for _ in range(self._nnotes)]
+        """
+        Generate a random pitch sequence given the length and pitches.
+        """
+        return [random.choice(self._pitches) for _ in range(self._number_of_notes)]
 
     def _simulate_queue(self):
         """
@@ -170,7 +176,11 @@ class Cloud:
         return results
 
     @property
-    def instances(self):
+    def arrival_model(self):
+        return self._arrival_model
+
+    @property
+    def arrival_instances(self):
         return self._instances
 
     @property
@@ -184,21 +194,39 @@ class Cloud:
     @property
     def durations_msps(self):
         """
-        Durations in millesecond per server
+        Durations in millesecond per server.
         """
         return [[dur * 1000 for dur in durs] for durs in self._durations_per_server]
 
     @property
     def durations_in_millesecond(self):
+        """
+        Returns the duration of each note in millesecond (before queue
+        simulation).
+        """
         return [dur * 1000 for dur in self._durations]
 
     @property
     def durations_per_server(self):
+        """
+        Durations in second per server.
+        """
         return self._durations_per_server
+
+    @property
+    def number_of_notes(self):
+        """
+        Returns the number of notes in the cloud.
+        """
+        return self._number_of_notes
 
     @property
     def pitches_per_server(self):
         return self._pitches_per_server
+
+    @property
+    def service_model(self):
+        return self._service_model
 
     @property
     def voice_names(self):

@@ -17,7 +17,7 @@ def test_cloud__simulate_queue_00():
         rest_threshold=0.0,
     )
 
-    number_of_notes = cloud._nnotes
+    number_of_notes = cloud.number_of_notes
     assert number_of_notes == duration * arate
 
     cloud._instances = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -85,7 +85,7 @@ def test_cloud__simulate_queue_01():
         rest_threshold=0.0,
     )
 
-    number_of_notes = cloud._nnotes
+    number_of_notes = cloud.number_of_notes
     assert number_of_notes == duration * arate
 
     cloud._instances = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -147,12 +147,12 @@ def test_cloud__simulate_queue_02():
         rest_threshold=0.0,
     )
 
-    number_of_notes = cloud._nnotes
+    number_of_notes = cloud.number_of_notes
     assert number_of_notes == duration * arate
 
     cloud._instances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     cloud._durations = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
-    assert len(cloud.instances) == len(cloud.durations)
+    assert len(cloud.arrival_instances) == len(cloud.durations)
     cloud._simulate_queue()
     np.testing.assert_almost_equal(
         cloud.durations_per_server[0],
@@ -218,12 +218,12 @@ def test_cloud__simulate_queue_03():
         rest_threshold=0.0,
     )
 
-    number_of_notes = cloud._nnotes
+    number_of_notes = cloud.number_of_notes
     assert number_of_notes == duration * arate
 
     cloud._instances = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     cloud._durations = [2.1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
-    assert len(cloud.instances) == len(cloud.durations)
+    assert len(cloud.arrival_instances) == len(cloud.durations)
     cloud._simulate_queue()
     np.testing.assert_almost_equal(
         cloud.durations_per_server[0],
@@ -283,12 +283,12 @@ def test_cloud__simulate_queue_04():
         rest_threshold=0.0,
     )
 
-    number_of_notes = cloud._nnotes
+    number_of_notes = cloud.number_of_notes
     assert number_of_notes == duration * arate
 
     cloud._instances = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]
     cloud._durations = [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
-    assert len(cloud.instances) == len(cloud.durations)
+    assert len(cloud.arrival_instances) == len(cloud.durations)
     cloud._simulate_queue()
     np.testing.assert_almost_equal(
         cloud.durations_per_server[0],
