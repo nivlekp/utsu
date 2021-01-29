@@ -1,11 +1,12 @@
 import utsu
+import pang
 
 duration = 80
 
 search_tree_rh = {2: {2: None, 3: None, 5: None}, 3: {2: None}, 5: {2: None}, 7: None}
 search_tree_lh = {2: {2: None, 3: None, 5: None}, 3: {2: None}, 5: {2: None}, 7: None}
 
-pitch_set_rh = utsu.gen_pitches_from_sieve(
+pitch_set_rh = pang.gen_pitches_from_sieve(
     sieve=utsu.sieves["A"] & utsu.sieves["C"],
     origin=0,
     low=0,
@@ -13,7 +14,7 @@ pitch_set_rh = utsu.gen_pitches_from_sieve(
 )
 
 
-pitch_set_lh = utsu.gen_pitches_from_sieve(
+pitch_set_lh = pang.gen_pitches_from_sieve(
     sieve=utsu.sieves["A"] & utsu.sieves["C"],
     origin=0,
     low=utsu.lowest_piano_note,
@@ -21,7 +22,7 @@ pitch_set_lh = utsu.gen_pitches_from_sieve(
 )
 
 
-cloud_rh = utsu.Cloud(
+cloud_rh = pang.Cloud(
     arate=0.5,
     srate=1.0,
     pitches=pitch_set_rh,
@@ -33,7 +34,7 @@ cloud_rh = utsu.Cloud(
 )
 
 
-cloud_lh = utsu.Cloud(
+cloud_lh = pang.Cloud(
     arate=0.5,
     srate=1.0,
     pitches=pitch_set_lh,
