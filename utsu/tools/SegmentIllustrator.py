@@ -31,8 +31,8 @@ class SegmentIllustrator(SegmentHandler):
         # TODO: change this method to a better one
         with open(str(score_path / (seg + ".ly")), "r") as file_pointer:
             block = file_pointer.read().splitlines(True)
-        #with open(str(score_path / (seg + ".ly")), "w") as file_pointer:
-            #file_pointer.writelines(block[1:-1])
+        # with open(str(score_path / (seg + ".ly")), "w") as file_pointer:
+        # file_pointer.writelines(block[1:-1])
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 import abjad
-import utsu
 import pang
+import utsu
 
 duration = 80
 

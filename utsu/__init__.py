@@ -1,3 +1,5 @@
+from utsu.tools import SegmentMaker
+
 from ._lib import (
     highest_note_without_octava,
     highest_piano_note,
@@ -6,7 +8,6 @@ from ._lib import (
     metronome_marks,
     sieves,
 )
-from utsu.tools import SegmentMaker
 
 __all__ = [
     "SegmentMaker",

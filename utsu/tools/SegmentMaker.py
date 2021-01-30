@@ -1,8 +1,8 @@
 import typing
 
 import abjad
-from abjadext import nauert
 import pang
+from abjadext import nauert
 
 from .._lib import highest_note_without_octava, lowest_note_without_octava
 from .ScoreTemplate import ScoreTemplate
@@ -188,7 +188,6 @@ class SegmentMaker(abjad.SegmentMaker):
                 abjad.attach(abjad.Ottava(n=0), leaf)
                 previously_attached = False
 
-
     def _configure_score(self):
         voice = self.score["Piano RH Voice"]
         abjad.override(voice).stem.direction = abjad.Up
@@ -200,7 +199,6 @@ class SegmentMaker(abjad.SegmentMaker):
         abjad.override(voice).rest.direction = abjad.Down
         abjad.override(voice).tie.direction = abjad.Down
         abjad.override(voice).tuplet_bracket.direction = abjad.Down
-
 
     def run(
         self,
