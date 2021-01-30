@@ -38,6 +38,7 @@ isort-check:
 	--multi-line=3 \
 	--project=abjad \
 	--project=abjadext \
+	--project=pang \
 	--thirdparty=ply \
 	--thirdparty=roman \
 	--thirdparty=uqbar \
@@ -52,6 +53,7 @@ isort-reformat:
 	--multi-line=3 \
 	--project=abjad \
 	--project=abjadext \
+	--project=pang \
 	--thirdparty=ply \
 	--thirdparty=roman \
 	--thirdparty=uqbar \

@@ -4,7 +4,7 @@ import abjad
 from abjadext import nauert
 import pang
 
-from ..materials import highest_note_without_octava, lowest_note_without_octava
+from .._lib import highest_note_without_octava, lowest_note_without_octava
 from .ScoreTemplate import ScoreTemplate
 
 

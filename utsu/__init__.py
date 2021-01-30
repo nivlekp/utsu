@@ -1,5 +1,4 @@
-from utsu import segments
-from utsu.materials import (
+from ._lib import (
     highest_note_without_octava,
     highest_piano_note,
     lowest_note_without_octava,
