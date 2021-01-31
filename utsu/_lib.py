@@ -24,10 +24,12 @@ def make_score_template():
         name="RH Staff",
         simultaneous=True,
     )
+    piano_RH_staff.remove_commands.append("Time_signature_engraver")
     piano_LH_staff = abjad.Staff(
         [abjad.Voice(name="Piano LH Voice")],
         name="LH Staff",
     )
+    piano_LH_staff.remove_commands.append("Time_signature_engraver")
     staff_group = abjad.StaffGroup(
         [piano_RH_staff, piano_LH_staff],
         name="Piano Staff Group",

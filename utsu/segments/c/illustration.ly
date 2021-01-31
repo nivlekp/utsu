@@ -10,6 +10,10 @@
     \context StaffGroup = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
+        \with
+        {
+            \remove Time_signature_engraver
+        }
         <<
             \context Voice = "Piano RH Voice1"
             {
@@ -396,6 +400,10 @@
             }
         >>
         \context Staff = "LH Staff"
+        \with
+        {
+            \remove Time_signature_engraver
+        }
         {
             \context Voice = "Piano LH Voice"
             {
