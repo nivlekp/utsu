@@ -1,3 +1,4 @@
+import pang
 import utsu
 
 duration = 64
@@ -21,17 +22,17 @@ search_tree_lh = {
 }
 
 
-pitch_set_rh = utsu.tools.gen_pitches_from_sieve(
+pitch_set_rh = pang.gen_pitches_from_sieve(
     sieve=utsu.sieves["B"], origin=0, low=0, high=utsu.highest_piano_note
 )
 
 
-pitch_set_lh = utsu.tools.gen_pitches_from_sieve(
+pitch_set_lh = pang.gen_pitches_from_sieve(
     sieve=utsu.sieves["B"], origin=0, low=utsu.lowest_piano_note, high=0
 )
 
 
-cloud_rh = utsu.Cloud(
+cloud_rh = pang.Cloud(
     arate=1.5,
     srate=3.0,
     pitches=pitch_set_rh,
@@ -42,7 +43,7 @@ cloud_rh = utsu.Cloud(
     voice_names=["Piano RH Voice"],
 )
 
-cloud_lh = utsu.Cloud(
+cloud_lh = pang.Cloud(
     arate=1.5,
     srate=3.0,
     pitches=pitch_set_lh,
@@ -62,3 +63,6 @@ segment_maker = utsu.SegmentMaker(
     use_full_measures=[True, True],
     clouds=[cloud_rh, cloud_lh],
 )
+
+if __name__ == "__main__":
+    segment_maker.run()

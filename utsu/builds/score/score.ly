@@ -7,9 +7,9 @@
 
 \score { %! abjad.LilyPondFile._get_formatted_blocks()
     {
-        \include "a.ly"
-        \include "b.ly"
-        \include "c.ly"
+        \include "_segments/a.ly"
+        \include "_segments/b.ly"
+        \include "_segments/c.ly"
     }
     % \midi { }
 } %! abjad.LilyPondFile._get_formatted_blocks()
