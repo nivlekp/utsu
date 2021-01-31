@@ -63,3 +63,6 @@ segment_maker = utsu.SegmentMaker(
     use_full_measures=[True, True],
     clouds=[cloud_rh, cloud_lh],
 )
+
+if __name__ == "__main__":
+    segment_maker.run()

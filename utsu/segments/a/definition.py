@@ -2,6 +2,7 @@ import abjad
 import pang
 import utsu
 
+
 duration = 80
 
 search_tree_rh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}

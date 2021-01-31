@@ -4,8 +4,11 @@ import abjad
 import pang
 from abjadext import nauert
 
-from .ScoreTemplate import ScoreTemplate
-from ._lib import highest_note_without_octava, lowest_note_without_octava
+from ._lib import (
+    highest_note_without_octava,
+    lowest_note_without_octava,
+    make_score_template,
+)
 
 
 class SegmentMaker(abjad.SegmentMaker):
@@ -80,8 +83,7 @@ class SegmentMaker(abjad.SegmentMaker):
             raise Exception("clouds should be of the type Cloud")
 
     def _make_score(self):
-        template = ScoreTemplate()
-        score = template()
+        score = make_score_template()
         self._score = score
 
     def _make_lilypond_file(self):
@@ -137,9 +139,17 @@ class SegmentMaker(abjad.SegmentMaker):
                 first_leaf = abjad.select(result).leaf(0)
                 abjad.attach(clef, first_leaf)
             if stem_direction is not None:
-                for container in results[0]:
-                    # TODO
-                    pass
+                for container in result:
+                    abjad.override(container).rest.direction = stem_direction
+                    abjad.override(container).stem.direction = stem_direction
+                    abjad.override(container).tie.direction = stem_direction
+                    abjad.override(container).tuplet_bracket.direction = stem_direction
+            # else:
+            #     grobs = ["rest", "stem", "tie", "tuplet_bracket"]
+            #     for grob in grobs:
+            #         revert_string = abjad.OverrideInterface.make_lilypond_revert_string(grob, "direction")
+            #         literal = abjad.LilyPondLiteral(revert_string)
+            #         abjad.attach(revert_string, voice)
             self._post_processing(results)
         for cloud, results in zip(self._clouds, all_results):
             for result, voice_name in zip(results, cloud.voice_names):
@@ -186,17 +196,14 @@ class SegmentMaker(abjad.SegmentMaker):
                 abjad.attach(abjad.Ottava(n=0), leaf)
                 previously_attached = False
 
-    def _configure_score(self):
-        voice = self.score["Piano RH Voice"]
-        abjad.override(voice).stem.direction = abjad.Up
-        abjad.override(voice).rest.direction = abjad.Up
-        abjad.override(voice).tie.direction = abjad.Up
-        abjad.override(voice).tuplet_bracket.direction = abjad.Up
-        voice = self.score["Piano RH Voice1"]
-        abjad.override(voice).stem.direction = abjad.Down
-        abjad.override(voice).rest.direction = abjad.Down
-        abjad.override(voice).tie.direction = abjad.Down
-        abjad.override(voice).tuplet_bracket.direction = abjad.Down
+    def _print_lilypond_file(self) -> None:
+        """
+        Prints `illustration.ly` file.
+        """
+        with open("illustration.ly", "w") as file_pointer:
+            file_pointer.write(abjad.lilypond(self._lilypond_file))
+        with open("build.ly", "w") as file_pointer:
+            file_pointer.write(abjad.lilypond(self._lilypond_file.items[0]))
 
     def run(
         self,
@@ -211,6 +218,7 @@ class SegmentMaker(abjad.SegmentMaker):
         previous_persist: abjad.OrderedDict = None,
         remove: typing.List[abjad.Tag] = None,
         segment_directory=None,
+        overwrite: bool = None,
     ) -> abjad.LilyPondFile:
         """
         Runs segment-maker.
@@ -220,9 +228,10 @@ class SegmentMaker(abjad.SegmentMaker):
         self._previous_metadata = abjad.OrderedDict(previous_metadata)
         self._previous_persist = abjad.OrderedDict(previous_persist)
         self._segment_directory = segment_directory
+        self._overwrite = overwrite
         self._make_score()
-        self._configure_score()
         self._make_lilypond_file()
         self._make_clouds()
         assert isinstance(self._lilypond_file, abjad.LilyPondFile)
+        self._print_lilypond_file()
         return self._lilypond_file
