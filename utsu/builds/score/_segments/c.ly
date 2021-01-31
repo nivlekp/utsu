@@ -100,7 +100,7 @@
                         c''''4
                         \ottava 0
                         cs'''8
-                        \ottava 2
+                        \ottava 1
                         b''''8
                     }
                 }
@@ -146,7 +146,7 @@
                         \ottava 0
                         c'4
                         \grace {
-                            \ottava 2
+                            \ottava 1
                             af''''16
                         }
                         \ottava 0
@@ -242,7 +242,7 @@
                         \ottava 0
                         ef'2
                         \grace {
-                            \ottava 2
+                            \ottava 1
                             b''''16
                         }
                         \ottava 1
@@ -261,7 +261,7 @@
                             \ottava 0
                             g'''16
                         }
-                        \ottava 2
+                        \ottava 1
                         af''''8
                         \grace {
                             \ottava 0
@@ -281,14 +281,14 @@
                         g''''4
                         \ottava 1
                         fs''''8
-                        \ottava 2
+                        \ottava 1
                         af''''8
                         \ottava 0
                         r8
                         \ottava 0
                         ef'''4.
                         \grace {
-                            \ottava 2
+                            \ottava 1
                             b''''16
                         }
                         \ottava 1
@@ -300,14 +300,14 @@
                 {
                     \times 8/11 {
                         \grace {
-                            \ottava 2
+                            \ottava 1
                             b''''16
                         }
                         \ottava 0
                         bf'8
                         \ottava 0
                         bf''8
-                        \ottava 2
+                        \ottava 1
                         af''''8
                         \ottava 0
                         a'8

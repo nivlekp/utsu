@@ -515,7 +515,7 @@
                         \ottava 0
                         af2
                         \grace {
-                            \ottava -2
+                            \ottava -1
                             a,,,16
                         }
                         \ottava -1
@@ -551,13 +551,13 @@
                         r8
                     }
                     r4
-                    \ottava -2
+                    \ottava -1
                     a,,,4
                     ~
                 }
                 {
                     \times 4/7 {
-                        \ottava -2
+                        \ottava -1
                         a,,,4
                         \ottava 0
                         r4
@@ -588,10 +588,10 @@
                 }
                 {
                     \times 2/3 {
-                        \ottava -2
+                        \ottava -1
                         a,,,1
                         ~
-                        \ottava -2
+                        \ottava -1
                         a,,,4
                         \ottava 0
                         af,4

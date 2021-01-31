@@ -100,6 +100,31 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         return self._metadata
 
+    def _override_directions(self, result, stem_direction):
+        if stem_direction is not None:
+            for container in result:
+                abjad.override(container).rest.direction = stem_direction
+                abjad.override(container).stem.direction = stem_direction
+                abjad.override(container).tie.direction = stem_direction
+                abjad.override(container).tuplet_bracket.direction = stem_direction
+        # else:
+        #     grobs = ["rest", "stem", "tie", "tuplet_bracket"]
+        #     for grob in grobs:
+        #         revert_string = abjad.OverrideInterface.make_lilypond_revert_string(grob, "direction")
+        #         literal = abjad.LilyPondLiteral(revert_string)
+        #         abjad.attach(revert_string, voice)
+
+    def _extend_voices(self, all_results, max_length):
+        for cloud, results in zip(self._clouds, all_results):
+            for result, voice_name in zip(results, cloud.voice_names):
+                if len(result) < max_length:
+                    rest = abjad.Rest()
+                    # TODO: at the moment just hard-coding
+                    rest.written_duration = abjad.Duration((4, 4))
+                    spacer_rests = [rest] * (max_length - len(result))
+                    result.extend(spacer_rests)
+                self._score[voice_name].extend(result)
+
     def _make_clouds(self):
         max_length = 0
         all_results = []
@@ -138,28 +163,9 @@ class SegmentMaker(abjad.SegmentMaker):
             if clef is not None:
                 first_leaf = abjad.select(result).leaf(0)
                 abjad.attach(clef, first_leaf)
-            if stem_direction is not None:
-                for container in result:
-                    abjad.override(container).rest.direction = stem_direction
-                    abjad.override(container).stem.direction = stem_direction
-                    abjad.override(container).tie.direction = stem_direction
-                    abjad.override(container).tuplet_bracket.direction = stem_direction
-            # else:
-            #     grobs = ["rest", "stem", "tie", "tuplet_bracket"]
-            #     for grob in grobs:
-            #         revert_string = abjad.OverrideInterface.make_lilypond_revert_string(grob, "direction")
-            #         literal = abjad.LilyPondLiteral(revert_string)
-            #         abjad.attach(revert_string, voice)
+            self._override_directions(result, stem_direction)
             self._post_processing(results)
-        for cloud, results in zip(self._clouds, all_results):
-            for result, voice_name in zip(results, cloud.voice_names):
-                if len(result) < max_length:
-                    rest = abjad.Rest()
-                    # TODO: at the moment just hard-coding
-                    rest.written_duration = abjad.Duration((4, 4))
-                    spacer_rests = [rest] * (max_length - len(result))
-                    result.extend(spacer_rests)
-                self._score[voice_name].extend(result)
+        self._extend_voices(all_results, max_length)
 
     def _attach_ottava(self, leaf):
         """
@@ -167,16 +173,22 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         if leaf.written_pitch > highest_note_without_octava:
             interval = abjad.NumberedInterval.from_pitch_carriers(
-                abjad.NumberedPitch(highest_note_without_octava), leaf.written_pitch,
+                abjad.NumberedPitch(highest_note_without_octava),
+                leaf.written_pitch,
             )
             octaves = interval.octaves + 1
+            # For now, just make 8va
+            octaves = 1
             abjad.attach(abjad.Ottava(n=octaves), leaf)
             return True
         elif leaf.written_pitch < lowest_note_without_octava:
             interval = abjad.NumberedInterval.from_pitch_carriers(
-                leaf.written_pitch, abjad.NumberedPitch(lowest_note_without_octava),
+                leaf.written_pitch,
+                abjad.NumberedPitch(lowest_note_without_octava),
             )
             octaves = interval.octaves + 1
+            # For now, just make 8vb
+            octaves = 1
             abjad.attach(abjad.Ottava(n=-octaves), leaf)
             return True
         else:
@@ -185,7 +197,8 @@ class SegmentMaker(abjad.SegmentMaker):
 
     def _post_processing(self, voice):
         """
-        Process the voice after quantization.
+        Process the voice after quantization. In the meantime, this just
+        attaches ottava.
         """
         previously_attached = False
         result = abjad.select(voice).leaves()
@@ -204,6 +217,12 @@ class SegmentMaker(abjad.SegmentMaker):
             file_pointer.write(abjad.lilypond(self._lilypond_file))
         with open("build.ly", "w") as file_pointer:
             file_pointer.write(abjad.lilypond(self._lilypond_file.items[0]))
+
+    def _configure_score(self):
+        staff = self._score["RH Staff"]
+        abjad.detach(abjad.TimeSignature, staff[0])
+        staff = self._score["LH Staff"]
+        abjad.detach(abjad.TimeSignature, staff[0])
 
     def run(
         self,
@@ -232,6 +251,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._make_score()
         self._make_lilypond_file()
         self._make_clouds()
+        self._configure_score()
         assert isinstance(self._lilypond_file, abjad.LilyPondFile)
         self._print_lilypond_file()
         return self._lilypond_file

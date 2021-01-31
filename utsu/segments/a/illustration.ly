@@ -1109,19 +1109,19 @@
                 }
                 {
                     r8
-                    \ottava -2
+                    \ottava -1
                     a,,,8
                     \times 4/5 {
                         \ottava 0
                         a8.
                         \ottava -1
                         fs,,16
-                        \ottava -2
+                        \ottava -1
                         a,,,16
                         ~
                     }
                     \times 4/7 {
-                        \ottava -2
+                        \ottava -1
                         a,,,8
                         \ottava 0
                         cs,4
@@ -1137,12 +1137,12 @@
                 {
                     r8
                     r16
-                    \ottava -2
+                    \ottava -1
                     bf,,,16
                     \times 2/3 {
                         \ottava 0
                         r16
-                        \ottava -2
+                        \ottava -1
                         bf,,,16
                         \ottava 0
                         b,,16
@@ -1170,12 +1170,12 @@
                     \times 2/3 {
                         \ottava 0
                         bf,16
-                        \ottava -2
+                        \ottava -1
                         a,,,8
                         ~
                     }
                     \times 2/3 {
-                        \ottava -2
+                        \ottava -1
                         a,,,16
                         \ottava 0
                         cs,8
@@ -1203,7 +1203,7 @@
                         \ottava 0
                         d8
                     }
-                    \ottava -2
+                    \ottava -1
                     a,,,4
                 }
                 {
@@ -1237,14 +1237,14 @@
                     \times 2/3 {
                         \ottava -1
                         bf,,16
-                        \ottava -2
+                        \ottava -1
                         a,,,8
                     }
-                    \ottava -2
+                    \ottava -1
                     a,,,8
                     \times 4/7 {
                         \grace {
-                            \ottava -2
+                            \ottava -1
                             a,,,16
                         }
                         \ottava -1
@@ -1383,7 +1383,7 @@
                     \times 4/5 {
                         \ottava 0
                         b,,8.
-                        \ottava -2
+                        \ottava -1
                         a,,,8
                     }
                     \ottava 0
@@ -1419,7 +1419,7 @@
                     \times 4/5 {
                         \ottava 0
                         b16
-                        \ottava -2
+                        \ottava -1
                         a,,,16
                         \ottava 0
                         d8.
@@ -1489,13 +1489,13 @@
                     \times 4/5 {
                         \ottava 0
                         fs4
-                        \ottava -2
+                        \ottava -1
                         a,,,16
                         ~
                     }
                 }
                 {
-                    \ottava -2
+                    \ottava -1
                     a,,,4
                     \times 4/5 {
                         \ottava 0
@@ -1557,11 +1557,11 @@
                     \times 4/7 {
                         \ottava 0
                         b,,16
-                        \ottava -2
+                        \ottava -1
                         bf,,,4.
                         ~
                     }
-                    \ottava -2
+                    \ottava -1
                     bf,,,8
                     \times 2/3 {
                         \ottava 0
@@ -1631,7 +1631,7 @@
                         \ottava -1
                         fs,,8.
                     }
-                    \ottava -2
+                    \ottava -1
                     bf,,,4
                     \grace {
                         \ottava 0
@@ -1652,7 +1652,7 @@
                     \times 4/7 {
                         \ottava -1
                         c,,8
-                        \ottava -2
+                        \ottava -1
                         a,,,16
                         \ottava -1
                         a,,4
@@ -1674,10 +1674,10 @@
                     }
                     \times 4/7 {
                         r16
-                        \ottava -2
+                        \ottava -1
                         a,,,4
                         ~
-                        \ottava -2
+                        \ottava -1
                         a,,,16
                         \ottava 0
                         r16
