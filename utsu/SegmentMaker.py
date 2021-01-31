@@ -4,8 +4,8 @@ import abjad
 import pang
 from abjadext import nauert
 
-from .._lib import highest_note_without_octava, lowest_note_without_octava
 from .ScoreTemplate import ScoreTemplate
+from ._lib import highest_note_without_octava, lowest_note_without_octava
 
 
 class SegmentMaker(abjad.SegmentMaker):
@@ -157,16 +157,14 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         if leaf.written_pitch > highest_note_without_octava:
             interval = abjad.NumberedInterval.from_pitch_carriers(
-                abjad.NumberedPitch(highest_note_without_octava),
-                leaf.written_pitch,
+                abjad.NumberedPitch(highest_note_without_octava), leaf.written_pitch,
             )
             octaves = interval.octaves + 1
             abjad.attach(abjad.Ottava(n=octaves), leaf)
             return True
         elif leaf.written_pitch < lowest_note_without_octava:
             interval = abjad.NumberedInterval.from_pitch_carriers(
-                leaf.written_pitch,
-                abjad.NumberedPitch(lowest_note_without_octava),
+                leaf.written_pitch, abjad.NumberedPitch(lowest_note_without_octava),
             )
             octaves = interval.octaves + 1
             abjad.attach(abjad.Ottava(n=-octaves), leaf)

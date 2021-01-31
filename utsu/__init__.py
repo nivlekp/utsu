@@ -1,5 +1,4 @@
-from utsu.tools import SegmentMaker
-
+from .SegmentMaker import SegmentMaker
 from ._lib import (
     highest_note_without_octava,
     highest_piano_note,
