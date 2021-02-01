@@ -10,6 +10,6 @@
         \include "_segments/a.ly"
         \include "_segments/b.ly"
         \include "_segments/c.ly"
+        \include "_segments/d.ly"
     }
-    % \midi { }
 } %! abjad.LilyPondFile._get_formatted_blocks()

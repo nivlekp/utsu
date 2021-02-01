@@ -44,7 +44,10 @@ class SegmentMaker(abjad.SegmentMaker):
         )
         if clefs is not None:
             self._clefs = clefs if isinstance(clefs, list) else [clefs]
-            self._clefs = [abjad.Clef(clef) for clef in self._clefs]
+            for clef in self._clefs:
+                if clef is not None:
+                    clef = abjad.Clef(clef)
+            # self._clefs = [abjad.Clef(clef) for clef in self._clefs]
         else:
             self._clefs = [None] * len(self._metronome_marks)
         if stem_directions is not None:
