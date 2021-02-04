@@ -44,9 +44,9 @@ class SegmentMaker(abjad.SegmentMaker):
         )
         if clefs is not None:
             self._clefs = clefs if isinstance(clefs, list) else [clefs]
-            for clef in self._clefs:
+            for i, clef in enumerate(self._clefs):
                 if clef is not None:
-                    clef = abjad.Clef(clef)
+                    self._clefs[i] = abjad.Clef(clef)
             # self._clefs = [abjad.Clef(clef) for clef in self._clefs]
         else:
             self._clefs = [None] * len(self._metronome_marks)
@@ -121,11 +121,11 @@ class SegmentMaker(abjad.SegmentMaker):
         for cloud, results in zip(self._clouds, all_results):
             for result, voice_name in zip(results, cloud.voice_names):
                 if len(result) < max_length:
-                    rest = abjad.Rest()
+                    rest = abjad.MultimeasureRest()
                     # TODO: at the moment just hard-coding
                     rest.written_duration = abjad.Duration((4, 4))
-                    spacer_rests = [rest] * (max_length - len(result))
-                    result.extend(spacer_rests)
+                    multimeasure_rests = [rest] * (max_length - len(result))
+                    result.extend(multimeasure_rests)
                 self._score[voice_name].extend(result)
 
     def _make_clouds(self):

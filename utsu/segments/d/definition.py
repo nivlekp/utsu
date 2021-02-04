@@ -4,8 +4,8 @@ import utsu
 
 duration = 64
 
-search_tree_rh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
-search_tree_lh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None}
+search_tree_rh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None, 11: None, 13: None}
+search_tree_lh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None, 11: None, 13: None}
 
 sieve = utsu.sieves["C"] and utsu.sieves["B"]
 
@@ -30,7 +30,7 @@ cloud_rh_voice0 = pang.Cloud(
     srate=0.8,
     pitches=pitch_set_rh_higher,
     duration=duration,
-    queue_type="D/D/1",
+    queue_type="D/M/1",
     rest_threshold=0.0,
     seed=928734,
     voice_names=["Piano RH Voice"],
@@ -54,7 +54,7 @@ cloud_lh = pang.Cloud(
     srate=2.0,
     pitches=pitch_set_lh,
     duration=duration,
-    queue_type="D/D/1",
+    queue_type="M/D/1",
     rest_threshold=0.0,
     seed=462897,
     voice_names=["Piano LH Voice"],

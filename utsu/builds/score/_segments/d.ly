@@ -19,8 +19,7 @@
                         \ottava 0
                         \time 4/4
                         ef'2.
-                        r4
-                        r4
+                        r2
                         r4
                         \ottava 0
                         c'4
@@ -55,14 +54,17 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 4/7 {
+                    \times 8/13 {
                         \ottava 0
-                        a'4
+                        a'8
                         r4
-                        r4
-                        r4
+                        r2
                         \ottava 0
-                        c'2.
+                        c'2
+                        ~
+                        \ottava 0
+                        c'8
+                        r8
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -74,11 +76,15 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 4/5 {
-                        r4
+                    \times 8/13 {
+                        r4.
                         r4
                         \ottava 0
                         b'2
+                        ~
+                        \ottava 0
+                        b'8
+                        r8
                         r4
                     }
                     \revert Rest.direction
@@ -91,12 +97,15 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 4/5 {
-                        r4
+                    \times 8/13 {
+                        r4.
                         \ottava 0
                         bf'2
-                        r4
-                        r4
+                        ~
+                        \ottava 0
+                        bf'8
+                        r8
+                        r2
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -108,14 +117,21 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 4/7 {
+                    \times 8/13 {
+                        r8
                         \ottava 0
-                        bf'2.
-                        r4
-                        r4
-                        r4
+                        bf'4
+                        ~
                         \ottava 0
-                        a'4
+                        bf'4
+                        ~
+                        \ottava 0
+                        bf'8
+                        r8
+                        r2
+                        r8
+                        \ottava 0
+                        a'8
                         ~
                     }
                     \revert Rest.direction
@@ -150,11 +166,13 @@
                     \times 4/7 {
                         \ottava 0
                         b'4
-                        r4
-                        r4
+                        r2
                         r4
                         \ottava 0
-                        a'2.
+                        a'4
+                        ~
+                        \ottava 0
+                        a'2
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -167,11 +185,12 @@
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
                     \times 4/7 {
-                        r4
-                        r4
-                        r4
+                        r2.
                         \ottava 0
-                        b'2.
+                        b'2
+                        ~
+                        \ottava 0
+                        b'4
                         r4
                     }
                     \revert Rest.direction
@@ -191,8 +210,7 @@
                     \times 2/3 {
                         \ottava 0
                         f'4
-                        r4
-                        r4
+                        r2
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -204,13 +222,19 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 2/3 {
-                        r4
+                    \times 8/13 {
+                        r8
+                        \ottava 0
+                        f'4
+                        ~
                         \ottava 0
                         f'2
+                        r2
+                        r8
+                        \ottava 0
+                        c'8
+                        ~
                     }
-                    r4
-                    r4
                     \revert Rest.direction
                     \revert Stem.direction
                     \revert Tie.direction
@@ -221,11 +245,14 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 4/5 {
+                    \times 8/11 {
                         \ottava 0
-                        c'2
-                        r4
-                        r4
+                        c'4.
+                        ~
+                        \ottava 0
+                        c'8
+                        r8
+                        r2
                         \ottava 0
                         b'4
                         ~
@@ -240,13 +267,14 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 4/5 {
+                    \times 8/11 {
                         \ottava 0
                         b'4
-                        r4
-                        r4
+                        r8
+                        r2
                         \ottava 0
                         bf'2
+                        ~
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -258,13 +286,21 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
-                    \times 4/7 {
-                        r4
-                        r4
-                        r4
+                    \times 8/13 {
                         \ottava 0
-                        c'2.
+                        bf'8
                         r4
+                        r4
+                        r8
+                        \ottava 0
+                        c'8
+                        ~
+                        \ottava 0
+                        c'2
+                        ~
+                        \ottava 0
+                        c'8
+                        r8
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -277,8 +313,7 @@
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
                     \times 2/3 {
-                        r4
-                        r4
+                        r2
                         \ottava 0
                         b'4
                         ~
@@ -299,16 +334,19 @@
                     \times 4/7 {
                         r4
                         \ottava 0
-                        a'2.
+                        a'2
+                        ~
+                        \ottava 0
+                        a'4
                         r4
-                        r4
-                        r4
+                        r2
                     }
                     \revert Rest.direction
                     \revert Stem.direction
                     \revert Tie.direction
                     \revert TupletBracket.direction
                 }
+                R1
             }
             \context Voice = "Piano RH Voice"
             {
@@ -317,94 +355,20 @@
                     \override Stem.direction = #up
                     \override Tie.direction = #up
                     \override TupletBracket.direction = #up
-                    \times 4/7 {
+                    \times 8/13 {
                         \ottava 0
                         \time 4/4
-                        af''2
-                        r4
-                        r4
+                        af''2..
+                        r8
                         \ottava 0
-                        e''2
-                        r4
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    r4
-                    \ottava 0
-                    e''4
-                    \times 2/3 {
-                        r4
-                        r4
-                        \ottava 0
-                        d''4
+                        e''8
                         ~
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 2/3 {
-                        \ottava 0
-                        d''4
-                        r4
-                        r4
-                    }
-                    \ottava 0
-                    a''4
-                    r4
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 4/7 {
-                        r4
-                        \ottava 0
-                        e''2
-                        r4
-                        r4
-                        \ottava 0
-                        a''2
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 4/7 {
-                        r4
-                        r4
-                        \ottava 0
-                        e''2
-                        r4
-                        r4
                         \ottava 0
                         e''4
                         ~
+                        \ottava 0
+                        e''8
+                        r8
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -416,88 +380,11 @@
                     \override Stem.direction = #up
                     \override Tie.direction = #up
                     \override TupletBracket.direction = #up
-                    \ottava 0
-                    e''4
-                    r4
-                    \times 2/3 {
+                    \times 8/13 {
+                        r4.
                         \ottava 0
-                        d''2
-                        r4
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 2/3 {
-                        r4
-                        \ottava 0
-                        d''2
-                    }
-                    r4
-                    \ottava 0
-                    af''4
-                    ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 4/7 {
-                        \ottava 0
-                        af''4
-                        r4
-                        r4
-                        \ottava 0
-                        bf''2
-                        r4
-                        r4
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 4/7 {
-                        \ottava 0
-                        d''2
-                        r4
-                        r4
-                        \ottava 0
-                        d''2
-                        r4
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    r4
-                    \ottava 0
-                    e''4
-                    \times 2/3 {
-                        r4
-                        r4
+                        e''4
+                        r2.
                         \ottava 0
                         d''4
                         ~
@@ -512,15 +399,69 @@
                     \override Stem.direction = #up
                     \override Tie.direction = #up
                     \override TupletBracket.direction = #up
-                    \times 2/3 {
+                    \times 8/13 {
+                        \ottava 0
+                        d''2..
+                        \ottava 0
+                        a''2
+                        r4
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/13 {
+                        r8
+                        \ottava 0
+                        e''8
+                        r8
+                        r2.
+                        \ottava 0
+                        a''2
+                        ~
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \ottava 0
+                    a''1
+                    ~
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/11 {
+                        \ottava 0
+                        a''2..
+                        \grace {
+                            \ottava 0
+                            e''16
+                            \ottava 0
+                            e''16
+                        }
                         \ottava 0
                         d''4
                         r4
-                        r4
                     }
-                    \ottava 0
-                    a''4
-                    r4
                     \revert Rest.direction
                     \revert Stem.direction
                     \revert Tie.direction
@@ -531,14 +472,128 @@
                     \override Stem.direction = #up
                     \override Tie.direction = #up
                     \override TupletBracket.direction = #up
-                    \times 4/7 {
+                    \times 8/13 {
                         r4
+                        \ottava 0
+                        d''8
+                        ~
+                        \ottava 0
+                        d''4
+                        ~
+                        \ottava 0
+                        d''8
+                        r8
+                        r4
+                        r8
+                        \ottava 0
+                        af''8
+                        ~
+                        \ottava 0
+                        af''4
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/13 {
+                        r4.
+                        r4
+                        \ottava 0
+                        bf''8
+                        r8
+                        r2.
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/13 {
+                        \ottava 0
+                        d''2..
+                        ~
+                        \ottava 0
+                        d''8
+                        \ottava 0
+                        d''8
+                        ~
+                        \ottava 0
+                        d''2
+                        ~
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \ottava 0
+                    d''1
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/11 {
+                        \grace {
+                            \ottava 0
+                            e''16
+                        }
+                        \ottava 0
+                        d''4.
+                        ~
+                        \ottava 0
+                        d''8
+                        r8
+                        \ottava 0
+                        a''8
+                        r8
+                        r2
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/13 {
+                        r8
+                        \ottava 0
+                        af''4
+                        ~
                         \ottava 0
                         af''2
-                        r4
-                        r4
+                        ~
+                        \ottava 0
+                        af''8
+                        r8
                         \ottava 0
                         bf''2
+                        ~
                     }
                     \revert Rest.direction
                     \revert Stem.direction
@@ -550,72 +605,99 @@
                     \override Stem.direction = #up
                     \override Tie.direction = #up
                     \override TupletBracket.direction = #up
-                    \times 4/7 {
+                    \times 8/13 {
+                        \ottava 0
+                        bf''8
                         r4
+                        r8
+                        \ottava 0
+                        e''8
+                        ~
+                        \ottava 0
+                        e''2.
+                        ~
+                        \ottava 0
+                        e''8
+                        \ottava 0
+                        a''8
+                        ~
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/11 {
+                        \ottava 0
+                        a''4
+                        r8
+                        r4
+                        r8
+                        \ottava 0
+                        e''8
+                        ~
+                        \ottava 0
+                        e''8
+                        r8
+                        r4
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/13 {
                         r4
                         \ottava 0
-                        e''2
-                        r4
-                        r4
+                        a''8
+                        ~
                         \ottava 0
                         a''4
                         ~
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \ottava 0
-                    a''4
-                    r4
-                    \times 2/3 {
                         \ottava 0
-                        e''2
+                        a''8
+                        r8
                         r4
-                    }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 2/3 {
-                        r4
+                        r8
                         \ottava 0
-                        a''2
-                    }
-                    r4
-                    \ottava 0
-                    d''4
-                    ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
-                }
-                {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
-                    \times 4/7 {
+                        d''8
+                        ~
                         \ottava 0
                         d''4
-                        r4
-                        r4
+                        ~
+                    }
+                    \revert Rest.direction
+                    \revert Stem.direction
+                    \revert Tie.direction
+                    \revert TupletBracket.direction
+                }
+                {
+                    \override Rest.direction = #up
+                    \override Stem.direction = #up
+                    \override Tie.direction = #up
+                    \override TupletBracket.direction = #up
+                    \times 8/13 {
                         \ottava 0
-                        d''2
-                        r4
+                        d''2..
+                        ~
+                        \ottava 0
+                        d''8
+                        \ottava 0
+                        d''8
+                        ~
+                        \ottava 0
+                        d''8
+                        r8
                         r4
                     }
                     \revert Rest.direction
@@ -623,6 +705,7 @@
                     \revert Tie.direction
                     \revert TupletBracket.direction
                 }
+                R1
             }
         >>
         \context Staff = "LH Staff"
@@ -634,292 +717,386 @@
             \context Voice = "Piano LH Voice"
             {
                 {
-                    \times 2/3 {
+                    \times 8/13 {
                         \ottava -1
                         \time 4/4
                         bf,,4
                         \ottava -1
-                        bf,,4
+                        bf,,8
                         \ottava 0
                         bf4
-                    }
-                    \times 2/3 {
                         \ottava 0
                         f4
+                        r4
                         \ottava 0
-                        ef4
+                        ef8
                         \ottava -1
-                        bf,,4
+                        bf,,8
+                        ~
+                        \ottava -1
+                        bf,,8
+                        \ottava 0
+                        r8
                     }
                 }
                 {
-                    \times 2/3 {
+                    \times 8/13 {
+                        r4.
+                        r4
                         \ottava 0
-                        a,4
+                        a,8
+                        r8
+                        r8
                         \ottava 0
-                        a,4
+                        a,8
+                        ~
+                        \ottava 0
+                        a,8
+                        r8
+                        r4
+                    }
+                }
+                {
+                    \times 8/13 {
                         \ottava 0
                         e,4
-                    }
-                    \times 2/3 {
                         \ottava 0
-                        f,4
+                        f,8
                         \ottava -1
                         b,,,4
                         \ottava -1
                         fs,,4
+                        \ottava -1
+                        b,,,8
+                        \ottava 0
+                        e8
+                        ~
+                        \ottava 0
+                        e8
+                        \ottava -1
+                        fs,,8
+                        ~
+                        \ottava -1
+                        fs,,8
+                        \ottava 0
+                        e,8
                     }
                 }
                 {
-                    \times 2/3 {
-                        \ottava -1
-                        b,,,4
-                        \ottava 0
-                        e4
-                        \ottava -1
-                        fs,,4
-                    }
-                    \times 2/3 {
-                        \ottava 0
-                        e,4
+                    \times 8/13 {
                         \ottava 0
                         af4
                         \ottava 0
-                        a,4
-                    }
-                }
-                {
-                    \times 2/3 {
+                        a,8
                         \ottava -1
                         g,,4
                         \ottava 0
                         b,4
                         \ottava 0
-                        ef4
-                    }
-                    \times 2/3 {
+                        ef8
                         \ottava -1
-                        cs,,4
+                        cs,,8
+                        ~
                         \ottava -1
-                        bf,,4
+                        cs,,8
+                        \ottava -1
+                        bf,,8
+                        ~
+                        \ottava -1
+                        bf,,8
                         \ottava 0
-                        a,4
+                        a,8
                     }
                 }
                 {
-                    \times 2/3 {
+                    \times 8/13 {
                         \ottava 0
                         c,4
                         \ottava 0
-                        a,4
+                        a,8
+                        ~
+                        \ottava 0
+                        a,8
+                        r8
+                        r4
                         \ottava -1
                         bf,,4
-                    }
-                    \times 2/3 {
                         \ottava 0
-                        bf4
-                        \ottava -1
-                        bf,,4
-                        \ottava 0
-                        e,4
+                        r2
                     }
                 }
                 {
-                    \times 2/3 {
-                        \ottava -1
-                        fs,,4
-                        \ottava -1
-                        bf,,4
-                        \ottava -1
-                        fs,,4
-                    }
-                    \times 2/3 {
-                        \ottava 0
-                        ef4
-                        \ottava 0
-                        a,4
-                        \ottava 0
-                        f4
-                    }
-                }
-                {
-                    \times 2/3 {
-                        \ottava -1
-                        cs,,4
-                        \ottava 0
-                        af4
-                        \ottava 0
-                        f,4
-                    }
-                    \times 2/3 {
-                        \ottava -1
-                        cs,,4
+                    \times 8/13 {
                         \ottava 0
                         bf4
                         \ottava -1
-                        f,,4
-                    }
-                }
-                {
-                    \times 2/3 {
-                        \ottava 0
-                        bf4
-                        \ottava -1
-                        bf,,4
-                        \ottava -1
-                        f,,4
-                    }
-                    \times 2/3 {
-                        \ottava 0
-                        bf4
-                        \ottava 0
-                        e4
-                        \ottava -1
-                        f,,4
-                    }
-                }
-                {
-                    \times 2/3 {
-                        \ottava 0
-                        e4
-                        \ottava 0
-                        a,4
-                        \ottava 0
-                        ef4
-                    }
-                    \times 2/3 {
+                        bf,,8
                         \ottava 0
                         e,4
                         \ottava -1
-                        b,,,4
+                        fs,,4
+                        \ottava 0
+                        r8
+                        \ottava -1
+                        bf,,8
+                        ~
+                        \ottava -1
+                        bf,,8
+                        \ottava -1
+                        fs,,8
                         \ottava 0
                         ef4
                     }
                 }
                 {
-                    \times 2/3 {
+                    \times 8/11 {
                         \ottava 0
-                        b,4
+                        a,8
                         \ottava 0
-                        b,4
+                        f4
+                        \ottava -1
+                        cs,,8
                         \ottava 0
-                        fs,4
-                    }
-                    \times 2/3 {
+                        r8
+                        r4
                         \ottava 0
                         af4
+                        \ottava 0
+                        f,8
                         \ottava -1
-                        f,,4
-                        \ottava -1
-                        f,,4
+                        cs,,8
+                        ~
                     }
                 }
                 {
-                    \times 2/3 {
-                        \ottava 0
-                        fs,4
-                        \ottava 0
-                        f4
+                    \times 8/13 {
                         \ottava -1
-                        cs,,4
-                    }
-                    \times 2/3 {
+                        cs,,8
+                        \ottava 0
+                        r8
+                        \ottava 0
+                        bf8
+                        ~
+                        \ottava 0
+                        bf8
                         \ottava -1
-                        b,,,4
-                        \ottava 0
-                        f4
-                        \ottava 0
-                        e4
-                    }
-                }
-                {
-                    \times 2/3 {
-                        \ottava 0
-                        e4
-                        \ottava 0
-                        ef4
-                        \ottava -1
-                        cs,,4
-                    }
-                    \times 2/3 {
-                        \ottava 0
-                        ef4
-                        \ottava -1
-                        g,,4
+                        f,,8
                         \ottava 0
                         bf4
-                    }
-                }
-                {
-                    \times 2/3 {
-                        \ottava -1
-                        f,,4
-                        \ottava 0
-                        ef4
-                        \ottava -1
-                        cs,,4
-                    }
-                    \times 2/3 {
-                        \ottava 0
-                        f,4
-                        \ottava 0
-                        e,4
-                        \ottava 0
-                        f,4
-                    }
-                }
-                {
-                    \times 2/3 {
                         \ottava -1
                         bf,,4
+                        \ottava -1
+                        f,,8
                         \ottava 0
-                        b,4
+                        bf8
+                        ~
                         \ottava 0
-                        ef4
+                        bf8
+                        \ottava 0
+                        e8
                     }
-                    \times 2/3 {
+                }
+                {
+                    \times 8/13 {
+                        r4.
+                        r4
+                        \ottava -1
+                        f,,8
+                        \ottava 0
+                        r8
+                        \ottava 0
+                        e4
+                        \ottava 0
+                        a,8
+                        \ottava 0
+                        ef8
+                        ~
+                        \ottava 0
+                        ef8
+                        r8
+                    }
+                }
+                {
+                    \times 8/13 {
+                        \ottava 0
+                        e,4
+                        \ottava -1
+                        b,,,8
+                        ~
+                        \ottava -1
+                        b,,,8
+                        \ottava 0
+                        r8
+                        \ottava 0
+                        ef8
+                        \ottava 0
+                        b,8
+                        ~
+                        \ottava 0
+                        b,8
+                        \ottava 0
+                        b,8
+                        ~
+                        \ottava 0
+                        b,8
+                        \ottava 0
+                        fs,8
                         \ottava 0
                         af4
+                    }
+                }
+                {
+                    \times 8/13 {
+                        \ottava -1
+                        f,,4
+                        \ottava -1
+                        f,,8
+                        \ottava 0
+                        fs,4
+                        \ottava 0
+                        f4
+                        r8
+                        \ottava -1
+                        cs,,8
+                        \ottava -1
+                        b,,,4
+                        \ottava 0
+                        f8
+                        \ottava 0
+                        e8
+                        ~
+                    }
+                }
+                {
+                    \times 8/13 {
+                        \ottava 0
+                        e8
+                        \ottava 0
+                        e4
+                        \ottava 0
+                        ef8
+                        \ottava -1
+                        cs,,8
+                        ~
+                        \ottava -1
+                        cs,,8
+                        \ottava 0
+                        ef8
+                        ~
+                        \ottava 0
+                        ef8
+                        r8
+                        r2
+                    }
+                }
+                {
+                    \times 8/13 {
+                        r4
+                        \ottava -1
+                        g,,8
+                        \ottava 0
+                        r8
+                        \ottava 0
+                        bf8
+                        ~
+                        \ottava 0
+                        bf8
+                        \ottava -1
+                        f,,8
+                        \ottava 0
+                        ef4
+                        \ottava -1
+                        cs,,8
+                        \ottava 0
+                        f,8
+                        ~
+                        \ottava 0
+                        f,8
+                        \ottava 0
+                        e,8
+                        ~
+                    }
+                }
+                {
+                    \times 8/13 {
+                        \ottava 0
+                        e,8
+                        \ottava 0
+                        f,8
+                        \ottava -1
+                        bf,,8
+                        ~
+                        \ottava -1
+                        bf,,8
+                        \ottava 0
+                        r8
+                        r4
+                        r8
+                        \ottava 0
+                        b,8
+                        r8
+                        \ottava 0
+                        ef8
+                        ~
+                        \ottava 0
+                        ef8
+                        r8
+                    }
+                }
+                {
+                    \times 8/13 {
+                        \ottava 0
+                        af8
                         \ottava 0
                         af4
                         \ottava -1
                         fs,,4
-                    }
-                }
-                {
-                    \times 2/3 {
                         \ottava 0
-                        af4
+                        af8
                         \ottava -1
-                        b,,,4
+                        b,,,8
+                        ~
+                        \ottava -1
+                        b,,,8
                         \ottava 0
-                        e4
-                    }
-                    \times 2/3 {
+                        e8
                         \ottava 0
                         f4
                         \ottava -1
                         b,,,4
-                        \ottava 0
-                        fs,4
                     }
                 }
                 {
-                    \times 2/3 {
+                    \times 8/13 {
+                        \ottava 0
+                        fs,8
+                        r8
                         \ottava -1
-                        fs,,4
+                        fs,,8
                         \ottava 0
                         bf4
                         \ottava 0
-                        e4
+                        e8
+                        \ottava 0
+                        a,8
+                        ~
+                        \ottava 0
+                        a,8
+                        \ottava 0
+                        ef8
+                        ~
+                        \ottava 0
+                        ef8
+                        r8
+                        r4
                     }
-                    \times 2/3 {
+                }
+                {
+                    \times 8/11 {
                         \ottava 0
-                        a,4
-                        \ottava 0
-                        ef4
-                        \ottava 0
-                        f,4
+                        f,8
+                        r4
+                        r1
                     }
                 }
             }

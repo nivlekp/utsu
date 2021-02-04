@@ -25,43 +25,47 @@
                         \time 4/4
                         r16
                         \ottava 1
-                        ef''''4
+                        ef''''16
+                        ~
+                        \ottava 1
+                        ef''''8
+                        ~
+                        \ottava 1
+                        ef''''16
                         \ottava 0
                         r16
                     }
-                    r4
-                    r4
-                    r4
+                    r2.
                 }
                 {
                     r4
                     \times 2/3 {
-                        r8
-                        r8
+                        r4
                         r16
                         \ottava 0
                         b'16
                         ~
                     }
                     \ottava 0
-                    b'4..
+                    b'4
+                    ~
+                    \ottava 0
+                    b'8.
                     \ottava 0
                     cs'16
-                    ~
                 }
                 {
                     \times 4/5 {
-                        \ottava 0
-                        cs'32
-                        r32
-                        r32
-                        r32
+                        r8
                         \ottava 1
-                        c''''32
+                        c''''16
+                        ~
+                        \ottava 1
+                        c''''8
                         ~
                     }
                     \ottava 1
-                    c''''4.
+                    c''''4
                     ~
                     \times 2/3 {
                         \ottava 1
@@ -70,9 +74,11 @@
                         r8
                     }
                     \times 4/5 {
-                        r32
                         \ottava 1
-                        bf'''8..
+                        bf'''8.
+                        ~
+                        \ottava 1
+                        bf'''16
                         \ottava 0
                         ef''16
                         ~
@@ -87,13 +93,13 @@
                         ef''16
                         r16
                     }
-                    \times 4/5 {
-                        r32
+                    \times 4/7 {
+                        r16
                         \ottava 0
-                        a''4
+                        a''8
                         ~
                         \ottava 0
-                        a''32
+                        a''4
                         ~
                     }
                     \ottava 0
@@ -105,16 +111,11 @@
                         \ottava 1
                         ef''''8
                         \ottava 0
-                        r16
-                        r16
-                        r16
-                        r16
+                        r4
                     }
                 }
                 {
-                    r4
-                    r4
-                    r4
+                    r2.
                     \times 2/3 {
                         r16
                         \ottava 1
@@ -125,30 +126,33 @@
                     r8
                 }
                 {
-                    \times 4/5 {
+                    \times 4/7 {
+                        r8.
+                        r8
                         r16
-                        r16
-                        r16
-                        r16
-                        r32
                         \ottava 0
-                        d''32
+                        d''16
                         ~
                     }
-                    \times 4/5 {
+                    \times 4/7 {
                         \ottava 0
-                        d''4
+                        d''8.
                         ~
                         \ottava 0
-                        d''32
-                        r32
+                        d''8
+                        ~
+                        \ottava 0
+                        d''16
+                        r16
                     }
                     r4
                     \times 4/5 {
-                        r16
-                        r16
+                        r8
                         \ottava 1
-                        f''''8.
+                        f''''16
+                        ~
+                        \ottava 1
+                        f''''8
                         ~
                     }
                 }
@@ -156,33 +160,32 @@
                     \ottava 1
                     f''''8
                     ~
-                    \times 4/5 {
+                    \times 2/3 {
                         \ottava 1
                         f''''16
                         \ottava 0
-                        r32
-                        r32
+                        r16
                         \ottava 1
-                        ef''''32
+                        ef''''16
                         ~
                     }
                     \times 4/7 {
                         \ottava 1
-                        ef''''4
+                        ef''''8.
+                        ~
+                        \ottava 1
+                        ef''''16
                         \ottava 0
                         r16
-                        r16
-                        r16
+                        r8
                     }
                     r4
-                    \times 4/5 {
+                    \times 4/7 {
+                        r8.
+                        r8
                         r16
-                        r16
-                        r16
-                        r16
-                        r32
                         \ottava 0
-                        b'32
+                        b'16
                     }
                 }
                 {
@@ -190,25 +193,19 @@
                     \ottava 0
                     ef''4
                     ~
-                    \times 4/5 {
+                    \times 4/7 {
                         \ottava 0
-                        ef''32
-                        r32
-                        r16
-                        r16
-                        r16
-                        r16
+                        ef''16
+                        r8
+                        r4
                     }
                     r4
                 }
                 {
                     r4
                     \times 4/7 {
-                        r16
-                        r16
-                        r16
-                        r16
-                        r16
+                        r8.
+                        r8
                         r16
                         \ottava 0
                         c'16
@@ -217,45 +214,40 @@
                     \times 4/5 {
                         \ottava 0
                         c'16
-                        r16
-                        r16
-                        r16
-                        r16
+                        r8
+                        r8
                     }
                     \times 2/3 {
                         \ottava 1
                         ef''''8
                         \ottava 0
-                        r8
-                        r8
+                        r4
                     }
                 }
                 {
                     \times 4/7 {
-                        r16
-                        r16
-                        r16
+                        r8.
                         r16
                         \ottava 0
-                        c'8.
+                        c'16
+                        ~
+                        \ottava 0
+                        c'8
                         ~
                     }
                     \ottava 0
                     c'4
-                    r4
-                    r4
+                    r2
                 }
                 {
                     \ottava 0
                     d''2
-                    r4
-                    r4
+                    r2
                 }
                 {
                     r4
                     \times 2/3 {
-                        r8
-                        r8
+                        r4
                         \ottava 1
                         ef''''8
                         ~
@@ -264,43 +256,49 @@
                         \ottava 1
                         ef''''8
                         \ottava 0
-                        r8
-                        r8
+                        r4
                     }
                     r4
                 }
                 {
                     r4
                     \times 4/5 {
-                        r16
-                        r16
-                        r16
+                        r8.
                         \ottava 1
                         bf'''8
                         ~
                     }
                     \ottava 1
-                    bf'''4.
-                    \times 4/5 {
-                        \ottava 0
-                        d'''32
-                        r32
-                        r32
-                        r32
+                    bf'''4
+                    ~
+                    \times 4/7 {
                         \ottava 1
-                        e''''32
+                        bf'''8.
+                        ~
+                        \ottava 1
+                        bf'''16
+                        \ottava 0
+                        d'''16
+                        ~
+                        \ottava 0
+                        d'''16
+                        \ottava 1
+                        e''''16
                         ~
                     }
                 }
                 {
-                    \times 4/5 {
+                    \times 4/7 {
                         \ottava 1
-                        e''''4
+                        e''''8.
                         ~
                         \ottava 1
-                        e''''32
+                        e''''8
+                        ~
+                        \ottava 1
+                        e''''16
                         \ottava 0
-                        c'32
+                        c'16
                         ~
                     }
                     \ottava 0
@@ -310,33 +308,40 @@
                         \ottava 0
                         c'16
                         \ottava 0
-                        bf'8.
+                        bf'8
+                        ~
                         \ottava 0
-                        ef''8.
+                        bf'16
+                        \ottava 0
+                        ef''16
+                        ~
+                        \ottava 0
+                        ef''8
                         ~
                     }
                     \times 4/5 {
                         \ottava 0
                         ef''16
                         \ottava 0
-                        ef''4
+                        ef''8
+                        ~
+                        \ottava 0
+                        ef''8
                         ~
                     }
                 }
                 {
-                    \times 4/5 {
+                    \times 4/7 {
                         \ottava 0
-                        ef''32
+                        ef''16
                         \ottava 0
-                        c'4
+                        c'8
                         ~
                         \ottava 0
-                        c'32
+                        c'4
                     }
                     \times 4/5 {
-                        r16
-                        r16
-                        r16
+                        r8.
                         r16
                         \ottava 0
                         e'16
@@ -360,57 +365,49 @@
                     \ottava 0
                     ef''4
                     ~
-                    \times 4/5 {
+                    \times 4/7 {
                         \ottava 0
                         ef''16
                         \ottava 0
-                        a''16.
+                        a''8
                         \ottava 1
-                        c''''32
+                        c''''16
                         \ottava 0
                         r16
-                        r16
+                        r8
                     }
-                    r4
-                    \times 4/5 {
-                        r32
-                        \ottava 0
-                        ef''4
-                        ~
-                        \ottava 0
-                        ef''32
-                        ~
-                    }
-                }
-                {
-                    \times 4/5 {
-                        \ottava 0
-                        ef''32
-                        r32
-                        r16
-                        r16
-                        r16
-                        r16
-                    }
-                    r4
-                    r8
-                    \times 4/5 {
-                        r32
-                        r32
-                        \ottava 0
-                        d''32
-                        r32
-                        r32
-                    }
-                    r4
-                }
-                {
-                    r4
                     r4
                     \times 4/7 {
                         r16
+                        \ottava 0
+                        ef''8
+                        ~
+                        \ottava 0
+                        ef''4
+                        ~
+                    }
+                }
+                {
+                    \times 4/7 {
+                        \ottava 0
+                        ef''16
+                        r8
+                        r4
+                    }
+                    r4
+                    \times 4/7 {
+                        r8.
+                        r8
+                        \ottava 0
+                        d''16
                         r16
-                        r16
+                    }
+                    r4
+                }
+                {
+                    r2
+                    \times 4/7 {
+                        r8.
                         r16
                         \ottava 0
                         d''16
@@ -423,11 +420,8 @@
                 }
                 {
                     \times 4/7 {
-                        r16
-                        r16
-                        r16
-                        r16
-                        r16
+                        r8.
+                        r8
                         r16
                         \ottava 0
                         c'''16
@@ -440,28 +434,36 @@
                     ~
                     \times 4/7 {
                         \ottava 0
-                        ef''4.
+                        ef''8.
+                        ~
+                        \ottava 0
+                        ef''8
+                        ~
+                        \ottava 0
+                        ef''16
                         r16
                     }
                     r4
                 }
                 {
-                    r4
-                    r4
+                    r2
                     \times 4/7 {
                         r16
                         \ottava 1
-                        ef''''4.
+                        ef''''8
+                        ~
+                        \ottava 1
+                        ef''''4
                         ~
                     }
-                    \times 4/5 {
+                    \times 4/7 {
                         \ottava 1
-                        ef''''32
+                        ef''''16
                         \ottava 0
-                        d''4
+                        d''8
                         ~
                         \ottava 0
-                        d''32
+                        d''4
                         ~
                     }
                 }
@@ -469,17 +471,13 @@
                     \ottava 0
                     d''4
                     ~
-                    \times 4/5 {
+                    \times 4/7 {
                         \ottava 0
-                        d''32
-                        r32
-                        r16
-                        r16
-                        r16
-                        r16
+                        d''16
+                        r8
+                        r4
                     }
-                    r4
-                    r4
+                    r2
                 }
             }
         >>
@@ -498,24 +496,27 @@
                         \ottava 0
                         b4
                         \ottava -1
-                        c,,2
+                        c,,4
+                        ~
+                        \ottava -1
+                        c,,4
                         \ottava 0
                         r4
-                        r4
-                        r4
+                        r2
                     }
                 }
                 {
                     \times 4/5 {
-                        r4
-                        r8
+                        r4.
                         \ottava 0
-                        b2
+                        b4.
+                        ~
+                        \ottava 0
+                        b8
                         \ottava -1
                         g,,8
                         \ottava 0
-                        r8
-                        r8
+                        r4
                     }
                 }
                 {
@@ -539,9 +540,7 @@
                 {
                     r2
                     \times 4/5 {
-                        r8
-                        r8
-                        r8
+                        r4.
                         \ottava -1
                         c,,8
                         \ottava 0
@@ -553,10 +552,8 @@
                     \times 4/5 {
                         \ottava 0
                         f,8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r4
+                        r4
                     }
                     r4
                     \ottava -1
@@ -568,19 +565,13 @@
                         \ottava -1
                         a,,,4
                         \ottava 0
-                        r4
-                        r4
-                        r4
-                        r4
-                        r4
-                        r4
+                        r2
+                        r1
                     }
                 }
                 {
                     \times 4/5 {
-                        r8
-                        r8
-                        r8
+                        r4.
                         \ottava 0
                         b8
                         \ottava 0
@@ -619,7 +610,10 @@
                         \ottava 0
                         d4
                         \ottava 0
-                        af,4.
+                        af,8
+                        ~
+                        \ottava 0
+                        af,4
                         ~
                     }
                     \ottava 0
@@ -691,8 +685,7 @@
                         c,,4
                         \ottava 0
                         r4
-                        r4
-                        r4
+                        r2
                     }
                 }
                 {
@@ -733,12 +726,10 @@
                         b,,4.
                         \ottava 0
                         af,4.
-                        r8
-                        r8
-                        r4
+                        r2
                     }
                 }
-                r1
+                R1
             }
         }
     >>

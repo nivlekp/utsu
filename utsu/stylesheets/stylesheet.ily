@@ -34,6 +34,9 @@
     \Staff
     \override Flag.stencil = #modern-straight-flag
     \override Stem.length = #10
+    tupletFullLength = ##t
+    %\override TupletBracket.break-overshoot = #'(-0.25 . 0)
+    \override TupletBracket.full-length-padding = #1.0
   }
 }
 

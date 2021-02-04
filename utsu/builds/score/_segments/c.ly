@@ -18,17 +18,12 @@
                         \ottava 0
                         \time 4/4
                         g'''8
-                        r8
-                        r8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r4
+                        r2
                         \ottava 0
                         bf'8
                         r8
-                        r8
-                        r8
+                        r4
                     }
                 }
                 {
@@ -54,7 +49,10 @@
                         \ottava 0
                         b'8
                         \ottava 1
-                        a'''4.
+                        a'''8
+                        ~
+                        \ottava 1
+                        a'''4
                         ~
                     }
                 }
@@ -88,11 +86,8 @@
                 }
                 {
                     \times 8/13 {
-                        r8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r4.
+                        r4
                         \ottava 1
                         fs''''8
                         \ottava 0
@@ -117,8 +112,7 @@
                         \ottava 1
                         af'''8
                         \ottava 0
-                        r8
-                        r8
+                        r4
                         r8
                         \ottava 0
                         c'8
@@ -142,21 +136,20 @@
                         \ottava 0
                         d''8
                         r8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r2
                         r8
                         \ottava 0
-                        c'4
+                        c'8
+                        ~
+                        \ottava 0
+                        c'8
                         \grace {
                             \ottava 1
                             af''''16
                         }
                         \ottava 0
                         f'8
-                        r8
-                        r8
+                        r4
                     }
                 }
                 {
@@ -165,7 +158,10 @@
                         \ottava 1
                         fs''''4
                         \ottava 0
-                        bf''4
+                        bf''8
+                        ~
+                        \ottava 0
+                        bf''8
                         \ottava 0
                         d''8
                     }
@@ -175,13 +171,11 @@
                         \ottava 1
                         c''''8
                         \ottava 0
-                        r8
-                        r8
+                        r4
                         r8
                         \ottava 0
                         e''8
-                        r8
-                        r8
+                        r4
                         \ottava 0
                         ef'''8
                         \ottava 0
@@ -201,32 +195,28 @@
                     \times 8/13 {
                         \ottava 0
                         af''8
-                        r8
-                        r8
+                        r4
                         r8
                         \ottava 0
                         d''8
-                        r8
-                        r8
+                        r4
                         \ottava 0
                         g'''8
                         r8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r2
                     }
                 }
                 {
                     \times 8/13 {
-                        r8
-                        r8
+                        r4
                         \ottava 1
-                        c''''4
+                        c''''8
+                        ~
+                        \ottava 1
+                        c''''8
                         \ottava 0
                         r8
-                        r8
-                        r8
+                        r4
                         \ottava 0
                         b'8
                         \ottava 0
@@ -244,7 +234,10 @@
                         \ottava 1
                         af'''8
                         \ottava 0
-                        ef'2
+                        ef'4
+                        ~
+                        \ottava 0
+                        ef'4
                         \grace {
                             \ottava 1
                             b''''16
@@ -290,7 +283,10 @@
                         \ottava 0
                         r8
                         \ottava 0
-                        ef'''4.
+                        ef'''8
+                        ~
+                        \ottava 0
+                        ef'''4
                         \grace {
                             \ottava 1
                             b''''16
@@ -316,8 +312,7 @@
                         \ottava 0
                         a'8
                         r8
-                        r8
-                        r8
+                        r4
                         \ottava 1
                         c''''2
                         ~
@@ -351,7 +346,10 @@
                             ef'''16
                         }
                         \ottava 1
-                        a'''4.
+                        a'''4
+                        ~
+                        \ottava 1
+                        a'''8
                         \ottava 0
                         c'8
                         \ottava 1
@@ -375,21 +373,21 @@
                 }
                 {
                     \times 8/13 {
-                        r8
-                        r8
-                        r8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r2..
                         r8
                         \ottava 0
-                        af''4
+                        af''8
+                        ~
+                        \ottava 0
+                        af''8
                         \ottava 1
-                        g''''4.
+                        g''''8
+                        ~
+                        \ottava 1
+                        g''''4
                     }
                 }
-                r1
+                R1
             }
         >>
         \context Staff = "LH Staff"
@@ -421,10 +419,10 @@
                 {
                     \times 8/11 {
                         \ottava 0
-                        b,2
+                        b,4.
                         ~
                         \ottava 0
-                        b,8
+                        b,4
                         \ottava 0
                         bf8
                         r8
@@ -449,7 +447,10 @@
                         \ottava 0
                         f8
                         \ottava -1
-                        bf,,4
+                        bf,,8
+                        ~
+                        \ottava -1
+                        bf,,8
                         \grace {
                             \ottava -1
                             g,,16
@@ -461,8 +462,7 @@
                         \ottava -1
                         cs,,8
                         \ottava 0
-                        r8
-                        r8
+                        r4
                         r8
                         \ottava 0
                         bf8
@@ -479,9 +479,15 @@
                     \times 8/13 {
                         r8
                         \ottava 0
-                        bf4.
+                        bf4
+                        ~
                         \ottava 0
-                        e,4.
+                        bf8
+                        \ottava 0
+                        e,8
+                        ~
+                        \ottava 0
+                        e,4
                         \ottava -1
                         cs,,2
                         \ottava 0
@@ -533,7 +539,10 @@
                         \ottava 0
                         f8
                         \ottava -1
-                        bf,,4
+                        bf,,8
+                        ~
+                        \ottava -1
+                        bf,,8
                         \ottava 0
                         fs,8
                         \grace {
@@ -550,13 +559,22 @@
                         \ottava -1
                         g,,8
                         \ottava -1
-                        f,,2.
+                        f,,8
+                        ~
+                        \ottava -1
+                        f,,2
+                        ~
+                        \ottava -1
+                        f,,8
                         \ottava -1
                         b,,,8
                         \ottava 0
                         r8
                         \ottava 0
-                        c,4
+                        c,8
+                        ~
+                        \ottava 0
+                        c,8
                         \ottava 0
                         af8
                     }
@@ -567,11 +585,17 @@
                         a,8
                         r8
                         \ottava -1
-                        f,,2..
+                        f,,8
+                        ~
+                        \ottava -1
+                        f,,2.
                         \ottava 0
                         bf8
                         \ottava 0
-                        e4
+                        e8
+                        ~
+                        \ottava 0
+                        e8
                         \ottava 0
                         af8
                         ~
@@ -586,13 +610,19 @@
                             e16
                         }
                         \ottava 0
-                        f4
+                        f8
+                        ~
+                        \ottava 0
+                        f8
                         \grace {
                             \ottava 0
                             bf16
                         }
                         \ottava 0
-                        b,4
+                        b,8
+                        ~
+                        \ottava 0
+                        b,8
                         \ottava -1
                         fs,,8
                         \ottava 0
@@ -613,8 +643,7 @@
                         \ottava 0
                         e,8
                         r8
-                        r8
-                        r8
+                        r4
                         \ottava -1
                         f,,8
                         \ottava 0
@@ -626,7 +655,10 @@
                         \ottava 0
                         r8
                         \ottava -1
-                        fs,,4.
+                        fs,,8
+                        ~
+                        \ottava -1
+                        fs,,4
                     }
                 }
                 {
@@ -638,9 +670,15 @@
                         \ottava -1
                         fs,,4
                         \ottava -1
-                        cs,,2.
+                        cs,,2
+                        ~
                         \ottava -1
-                        fs,,2.
+                        cs,,4
+                        \ottava -1
+                        fs,,4
+                        ~
+                        \ottava -1
+                        fs,,2
                         ~
                     }
                 }
@@ -672,7 +710,10 @@
                         \ottava 0
                         ef8
                         \ottava -1
-                        fs,,4.
+                        fs,,8
+                        ~
+                        \ottava -1
+                        fs,,4
                         \ottava 0
                         c,4
                         \ottava -1
@@ -691,15 +732,23 @@
                 {
                     \times 8/13 {
                         \ottava -1
-                        b,,,2
+                        b,,,4.
+                        ~
                         \ottava -1
-                        bf,,4
+                        b,,,8
+                        \ottava -1
+                        bf,,8
+                        ~
+                        \ottava -1
+                        bf,,8
                         \ottava 0
                         e8
-                        r8
-                        r8
+                        r4
                         \ottava 0
-                        f,4.
+                        f,4
+                        ~
+                        \ottava 0
+                        f,8
                         \ottava 0
                         ef8
                     }
@@ -709,16 +758,12 @@
                         r8
                         \ottava 0
                         fs,4
-                        r8
-                        r8
+                        r4
                         \ottava -1
                         b,,,8
                         \ottava 0
                         e,8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r2
                         \ottava -1
                         g,,8
                         \ottava 0
@@ -727,17 +772,13 @@
                 }
                 {
                     \times 8/13 {
-                        r8
-                        r8
-                        r8
-                        r8
-                        r8
+                        r4.
+                        r4
                         r8
                         \ottava -1
                         b,,,8
                         \ottava 0
-                        r8
-                        r8
+                        r4
                         r8
                         \ottava -1
                         f,,8
@@ -751,8 +792,7 @@
                     \ottava -1
                     cs,,4
                     \ottava 0
-                    r4
-                    r2
+                    r2.
                 }
             }
         }

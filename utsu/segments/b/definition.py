@@ -3,7 +3,7 @@ import utsu
 
 duration = 80
 
-search_tree_rh = {2: {2: None, 3: None, 5: None}, 3: {2: None}, 5: {2: None}, 7: None}
+search_tree_rh = {2: {2: None, 3: None}, 3: {2: None}, 5: None, 7: None}
 search_tree_lh = {2: {2: None, 3: None, 5: None}, 3: {2: None}, 5: {2: None}, 7: None}
 
 pitch_set_rh = pang.gen_pitches_from_sieve(
