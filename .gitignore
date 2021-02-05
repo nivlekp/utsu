@@ -6,7 +6,6 @@ eggs/
 .eggs/
 *.egg-info/
 
-*/builds/score/*.pdf
 */builds/score/_segments/*.ly
 */segments/*/*.pdf
 */segments/*/*.ly
