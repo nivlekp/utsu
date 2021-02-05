@@ -25,6 +25,7 @@ class SegmentMaker(abjad.SegmentMaker):
         stem_directions=None,
         search_trees=None,
         use_full_measures=None,
+        with_ottava=None,
         clouds=None,
     ):
         super(SegmentMaker, self).__init__()
@@ -76,6 +77,8 @@ class SegmentMaker(abjad.SegmentMaker):
             self._use_full_measures = use_full_measures
         else:
             self._use_full_measures = [None] * len(self._metronome_marks)
+        if with_ottava is not None:
+            self._with_ottava = with_ottava
         if clouds is None:
             raise Exception("Please include at least one cloud")
         if not isinstance(clouds, list):
@@ -167,7 +170,7 @@ class SegmentMaker(abjad.SegmentMaker):
                 first_leaf = abjad.select(result).leaf(0)
                 abjad.attach(clef, first_leaf)
             self._override_directions(result, stem_direction)
-            self._post_processing(results)
+            self._post_processing(results, cloud.voice_names)
         self._extend_voices(all_results, max_length)
 
     def _attach_ottava(self, leaf):
@@ -198,11 +201,22 @@ class SegmentMaker(abjad.SegmentMaker):
             abjad.attach(abjad.Ottava(n=0), leaf)
             return False
 
-    def _post_processing(self, voice):
+    def _get_staff_name(self, voice_name):
+        return self._score[voice_name]._parent.name
+
+    def _post_processing(self, voice, voice_names):
         """
         Process the voice after quantization. In the meantime, this just
         attaches ottava.
         """
+        staff_name = self._get_staff_name(voice_names[0])
+        if hasattr(self, "_with_ottava") and self._with_ottava[staff_name] != 0:
+            result = abjad.select(voice).leaves()
+            for leaf in result:
+                # FIXME:
+                # abjad.ottava(self._score[staff_name][:], start_ottava=abjad.Ottava(n=self._with_ottava[staff_name]))
+                abjad.attach(abjad.Ottava(n=self._with_ottava[staff_name]), leaf)
+            return
         previously_attached = False
         result = abjad.select(voice).leaves()
         for leaf in result:

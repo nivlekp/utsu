@@ -12,16 +12,16 @@ sieve = utsu.sieves["C"] and utsu.sieves["B"]
 pitch_set_rh_higher = pang.gen_pitches_from_sieve(
     sieve=sieve,
     origin=0,
-    low=utsu.highest_piano_note // 4,
-    high=utsu.highest_piano_note // 2,
+    low=utsu.highest_piano_note * 3 // 4,
+    high=utsu.highest_piano_note,
 )
 
 pitch_set_rh_lower = pang.gen_pitches_from_sieve(
-    sieve=sieve, origin=0, low=0, high=utsu.highest_piano_note // 4
+    sieve=sieve, origin=0, low=utsu.highest_piano_note // 2, high=utsu.highest_piano_note * 3 // 4
 )
 
 pitch_set_lh = pang.gen_pitches_from_sieve(
-    sieve=sieve, origin=0, low=utsu.lowest_piano_note, high=0
+    sieve=sieve, origin=0, low=utsu.lowest_piano_note // 2, high=0
 )
 
 
@@ -60,6 +60,8 @@ cloud_lh = pang.Cloud(
     voice_names=["Piano LH Voice"],
 )
 
+with_ottava = {"RH Staff": 1, "LH Staff": 0}
+
 
 segment_maker = utsu.SegmentMaker(
     name="d",
@@ -74,7 +76,9 @@ segment_maker = utsu.SegmentMaker(
     clouds=[cloud_rh_voice0, cloud_rh_voice1, cloud_lh],
     clefs=[None, None, None],
     stem_directions=[abjad.Up, abjad.Down, None],
+    with_ottava=with_ottava,
 )
+
 
 if __name__ == "__main__":
     segment_maker.run()
