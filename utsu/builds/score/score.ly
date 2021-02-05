@@ -11,5 +11,9 @@
         \include "_segments/b.ly"
         \include "_segments/c.ly"
         \include "_segments/d.ly"
+        \include "_segments/e.ly"
+        \bar "|."
     }
+    \layout { }
+    \midi { }
 } %! abjad.LilyPondFile._get_formatted_blocks()

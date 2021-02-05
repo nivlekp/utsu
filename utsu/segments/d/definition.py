@@ -7,7 +7,7 @@ duration = 64
 search_tree_rh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None, 11: None, 13: None}
 search_tree_lh = {2: {2: None, 3: None}, 3: None, 5: None, 7: None, 11: None, 13: None}
 
-sieve = utsu.sieves["C"] and utsu.sieves["B"]
+sieve = utsu.sieves["C"] & utsu.sieves["B"]
 
 pitch_set_rh_higher = pang.gen_pitches_from_sieve(
     sieve=sieve,
@@ -21,7 +21,7 @@ pitch_set_rh_lower = pang.gen_pitches_from_sieve(
 )
 
 pitch_set_lh = pang.gen_pitches_from_sieve(
-    sieve=sieve, origin=0, low=utsu.lowest_piano_note // 2, high=0
+    sieve=utsu.sieves["A"], origin=0, low=utsu.lowest_piano_note // 2, high=0
 )
 
 
