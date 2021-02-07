@@ -41,10 +41,12 @@ def make_score_template():
     )
     return score
 
+
 class DynamicMaker(object):
     """
     Dynamic Maker.
     """
+
     def __init__(self, average_intensity):
         self._average_intensity = average_intensity
 
