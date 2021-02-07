@@ -6,6 +6,24 @@
 %#(set-default-paper-size "a4")
 #(set-global-staff-size 16)
 
+#(define flat-brackets
+   (lambda (grob)
+     (let* ((pos (ly:tuplet-bracket::calc-positions grob))
+             (dir (ly:grob-property grob 'direction))
+             (y (if (= UP dir)
+                    (max (car pos) (cdr pos))
+                    (min (car pos) (cdr pos)))))
+       (cons y y))))
+
+% #(define flat-beams
+%    (lambda (grob)
+%      (let* ((pos (ly:beam::calc-positions grob))
+%              (dir (ly:grob-property grob 'direction))
+%              (y (if (= UP dir)
+%                     (max (car pos) (cdr pos))
+%                     (min (car pos) (cdr pos)))))
+%        (cons y y))))
+
 \header {
   composer = \markup {
     \override #'(font-name . "CMU Serif")
@@ -32,11 +50,32 @@
   }
   \context {
     \Staff
+    \override Beam.damping = #+inf.0
+    \override Beam.details.damping-direction-penalty = #0
+    \override Beam.details.round-to-zero-slope = #0
     \override Flag.stencil = #modern-straight-flag
     \override Stem.length = #10
+    % \override Beam.positions = #flat-beams
+    \override TupletBracket.positions = #flat-brackets
     tupletFullLength = ##t
+    %\override TupletBracket.breakable = ##f
+    % \override TupletBracket.full-length-to-extent = ##t
+    % \override TupletBracket.X-positions = #(lambda (grob)
+    %   (let ((xpos (ly:tuplet-bracket::calc-x-positions grob)))
+    %     (if (> (car xpos) (cdr xpos))
+    %       (let ((mid (/ (+ (car xpos) (cdr xpos)) 2)))
+    %         (format #t "\nwarning: Fixing invalid X-positions ~a" xpos)
+    %         (cons mid mid))
+    %       xpos)))
+    % tupletFullLengthNote = ##t
     %\override TupletBracket.break-overshoot = #'(-0.25 . 0)
-    \override TupletBracket.full-length-padding = #1.0
+    %\override TupletBracket.full-length-padding = #0.2
+  }
+  \context {
+    \Dynamics
+    % \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #0
+    % \override VerticalAxisGroup.staff-staff-spacing.padding = #0
+    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.basic-distance = #0
   }
 }
 

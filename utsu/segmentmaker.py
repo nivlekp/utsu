@@ -27,6 +27,7 @@ class SegmentMaker(abjad.SegmentMaker):
         use_full_measures=None,
         with_ottava=None,
         clouds=None,
+        dynamic_maker=None,
     ):
         super(SegmentMaker, self).__init__()
         self._lilypond_file = None
@@ -87,6 +88,7 @@ class SegmentMaker(abjad.SegmentMaker):
             self._clouds = clouds
         if not all(isinstance(cloud, pang.Cloud) for cloud in self._clouds):
             raise Exception("clouds should be of the type Cloud")
+        self._dynamic_maker = dynamic_maker
 
     def _make_score(self):
         score = make_score_template()
@@ -102,7 +104,7 @@ class SegmentMaker(abjad.SegmentMaker):
     @property
     def metadata(self):
         """
-        Gets metadata after run
+        Gets metadata after run.
         """
         return self._metadata
 
@@ -120,7 +122,8 @@ class SegmentMaker(abjad.SegmentMaker):
         #         literal = abjad.LilyPondLiteral(revert_string)
         #         abjad.attach(revert_string, voice)
 
-    def _extend_voices(self, all_results, max_length):
+    def _extend_voices(self, all_results):
+        max_length = self._segment_length
         for cloud, results in zip(self._clouds, all_results):
             for result, voice_name in zip(results, cloud.voice_names):
                 if len(result) < max_length:
@@ -171,7 +174,8 @@ class SegmentMaker(abjad.SegmentMaker):
                 abjad.attach(clef, first_leaf)
             self._override_directions(result, stem_direction)
             self._post_processing(results, cloud.voice_names)
-        self._extend_voices(all_results, max_length)
+        self._segment_length = max_length
+        self._extend_voices(all_results)
 
     def _attach_ottava(self, leaf):
         """
@@ -241,6 +245,9 @@ class SegmentMaker(abjad.SegmentMaker):
         staff = self._score["LH Staff"]
         abjad.detach(abjad.TimeSignature, staff[0])
 
+    def _make_dynamics(self):
+        self._dynamic_maker(score=self._score, segment_length=self._segment_length)
+
     def run(
         self,
         activate: typing.List[abjad.Tag] = None,
@@ -268,6 +275,7 @@ class SegmentMaker(abjad.SegmentMaker):
         self._make_score()
         self._make_lilypond_file()
         self._make_clouds()
+        self._make_dynamics()
         self._configure_score()
         assert isinstance(self._lilypond_file, abjad.LilyPondFile)
         self._print_lilypond_file()

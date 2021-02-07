@@ -1,4 +1,5 @@
 from ._lib import (
+    DynamicMaker,
     highest_note_without_octava,
     highest_piano_note,
     lowest_note_without_octava,

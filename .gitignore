@@ -8,5 +8,4 @@ eggs/
 
 */builds/score/_segments/*.ly
 */segments/*/*.pdf
-*/segments/*/*.ly
 */builds/score/*.midi

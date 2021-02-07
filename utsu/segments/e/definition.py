@@ -1,5 +1,5 @@
-import utsu
 import pang
+import utsu
 
 duration = 80
 
@@ -16,7 +16,7 @@ pitch_set_rh = pang.gen_pitches_from_sieve(
 )
 
 pitch_set_lh = pang.gen_pitches_from_sieve(
-    sieve=sieve, origin=0, low=-7, high=utsu.highest_piano_note//2
+    sieve=sieve, origin=0, low=-7, high=utsu.highest_piano_note // 2
 )
 
 
@@ -45,6 +45,7 @@ cloud_lh = pang.Cloud(
 
 with_ottava = {"RH Staff": 1, "LH Staff": 0}
 
+dynamic_maker = utsu.DynamicMaker(0)
 
 segment_maker = utsu.SegmentMaker(
     name="d",
@@ -58,6 +59,7 @@ segment_maker = utsu.SegmentMaker(
     clouds=[cloud_rh_voice, cloud_lh],
     clefs=[None, "treble"],
     with_ottava=with_ottava,
+    dynamic_maker=dynamic_maker,
 )
 
 

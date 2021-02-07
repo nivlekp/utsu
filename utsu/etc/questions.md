@@ -38,8 +38,6 @@ a -> 01
 b -> 02
 turn segments directory back to vanilla directory (not package)
 
-## 
-
 ## Wrapper and contents
 
 ## Research if github.io gives a second page

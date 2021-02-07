@@ -17,7 +17,10 @@ pitch_set_rh_higher = pang.gen_pitches_from_sieve(
 )
 
 pitch_set_rh_lower = pang.gen_pitches_from_sieve(
-    sieve=sieve, origin=0, low=utsu.highest_piano_note // 2, high=utsu.highest_piano_note * 3 // 4
+    sieve=sieve,
+    origin=0,
+    low=utsu.highest_piano_note // 2,
+    high=utsu.highest_piano_note * 3 // 4,
 )
 
 pitch_set_lh = pang.gen_pitches_from_sieve(
@@ -62,6 +65,7 @@ cloud_lh = pang.Cloud(
 
 with_ottava = {"RH Staff": 1, "LH Staff": 0}
 
+dynamic_maker = utsu.DynamicMaker(0)
 
 segment_maker = utsu.SegmentMaker(
     name="d",
@@ -76,6 +80,7 @@ segment_maker = utsu.SegmentMaker(
     clouds=[cloud_rh_voice0, cloud_rh_voice1, cloud_lh],
     clefs=[None, None, None],
     stem_directions=[abjad.Up, abjad.Down, None],
+    dynamic_maker=dynamic_maker,
     with_ottava=with_ottava,
 )
 
