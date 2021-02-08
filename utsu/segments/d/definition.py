@@ -65,7 +65,7 @@ cloud_lh = pang.Cloud(
 
 with_ottava = {"RH Staff": 1, "LH Staff": 0}
 
-dynamic_maker = utsu.DynamicMaker(0)
+dynamic_maker = utsu.DynamicMaker(1)
 
 segment_maker = utsu.SegmentMaker(
     name="d",

@@ -11,6 +11,7 @@ from ._lib import (
 from .segmentmaker import SegmentMaker
 
 __all__ = [
+    "DynamicMaker",
     "SegmentMaker",
     "highest_note_without_octava",
     "highest_piano_note",

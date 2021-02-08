@@ -54,7 +54,7 @@ cloud_lh = pang.Cloud(
     voice_names=["Piano LH Voice"],
 )
 
-dynamic_maker = utsu.DynamicMaker(0)
+dynamic_maker = utsu.DynamicMaker(3)
 
 segment_maker = utsu.SegmentMaker(
     name="c",

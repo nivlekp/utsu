@@ -55,7 +55,16 @@ class DynamicMaker(object):
         dynamic_context = score["Dynamics"]
         rests = [abjad.Skip("s1") for _ in range(self._segment_length)]
         dynamic_context.extend(rests)
-        abjad.attach(abjad.Dynamic("f"), dynamic_context[0])
+        ordinal = self._compute_intensity()
+        dynamic_string = abjad.Dynamic.dynamic_ordinal_to_dynamic_name(ordinal)
+        dynamic = abjad.Dynamic(dynamic_string)
+        abjad.attach(dynamic, dynamic_context[0])
+
+    def _compute_intensity(self):
+        """
+        Compute intensity based on the average_intensity.
+        """
+        return self._average_intensity
 
     @property
     def average_intensity(self):

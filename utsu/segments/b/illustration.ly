@@ -484,7 +484,7 @@
         \context Dynamics = "Dynamics"
         {
             s1
-            \f
+            \mp
             s1
             s1
             s1
