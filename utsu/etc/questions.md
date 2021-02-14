@@ -48,3 +48,32 @@ turn segments directory back to vanilla directory (not package)
 
 ## Follow the example docs in the main abjad repo
 More on examples, less words
+
+
+## Optimization
+.optimization --> .timing
+
+### Timing
+Python
+Abjad
+Lilypond
+
+Most recent run on the top of the log
+
+implement probably in `definition.py`
+or the pang repo
+
+
+## Graceskip
+
+## \oneVoice command
+\voiceOne
+\voiceTwo
+lilypond manual
+use lilypond literal in abjad
+
+## Ottava
+make it smarter (contour preserving)
+or attach note name instead
+
+## XeLaTeX

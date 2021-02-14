@@ -7,7 +7,7 @@
 
 \context Score = "Piano Score"
 <<
-    \context StaffGroup = "Piano Staff Group"
+    \context PianoStaff = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
         \with
@@ -256,6 +256,9 @@
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
                     \times 8/13 {
+                        \grace {
+                            s16 * 13/11
+                        }
                         \ottava 1
                         r8
                         \ottava 1
@@ -1045,6 +1048,9 @@
                 }
                 {
                     \times 8/13 {
+                        \grace {
+                            s16 * 13/11
+                        }
                         \ottava 0
                         e,4
                         \ottava 0

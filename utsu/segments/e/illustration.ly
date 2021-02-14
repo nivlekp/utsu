@@ -7,7 +7,7 @@
 
 \context Score = "Piano Score"
 <<
-    \context StaffGroup = "Piano Staff Group"
+    \context PianoStaff = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
         \with

@@ -7,7 +7,7 @@
 
 \context Score = "Piano Score"
 <<
-    \context StaffGroup = "Piano Staff Group"
+    \context PianoStaff = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
         \with
@@ -180,6 +180,9 @@
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
                     \times 4/7 {
+                        \grace {
+                            s16
+                        }
                         \ottava 0
                         e'8.
                         ~
@@ -276,6 +279,9 @@
                     \override Stem.direction = #down
                     \override Tie.direction = #down
                     \override TupletBracket.direction = #down
+                    \grace {
+                        s16 * 4/7
+                    }
                     \ottava 0
                     d'4
                     ~
@@ -638,6 +644,9 @@
                     \override Stem.direction = #up
                     \override Tie.direction = #up
                     \override TupletBracket.direction = #up
+                    \grace {
+                        s16 * 4/7
+                    }
                     \ottava 0
                     d''16
                     r8.
@@ -733,6 +742,9 @@
                     \override Stem.direction = #up
                     \override Tie.direction = #up
                     \override TupletBracket.direction = #up
+                    \grace {
+                        s16 * 4/7
+                    }
                     r2
                     \times 4/7 {
                         r16

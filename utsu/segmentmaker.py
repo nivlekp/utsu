@@ -137,6 +137,7 @@ class SegmentMaker(abjad.SegmentMaker):
     def _make_clouds(self):
         max_length = 0
         all_results = []
+        all_single_results = []
         for (
             cloud,
             tempo,
@@ -168,12 +169,14 @@ class SegmentMaker(abjad.SegmentMaker):
             # thus
             all_results.append(results)
             result = results[0]
+            all_single_results.append(result)
             max_length = len(result) if len(result) > max_length else max_length
             if clef is not None:
                 first_leaf = abjad.select(result).leaf(0)
                 abjad.attach(clef, first_leaf)
             self._override_directions(result, stem_direction)
             self._post_processing(results, cloud.voice_names)
+        pang.pad_voices_with_grace_skips(all_single_results)
         self._segment_length = max_length
         self._extend_voices(all_results)
 

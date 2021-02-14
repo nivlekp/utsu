@@ -34,6 +34,7 @@ def make_score_template():
     staff_group = abjad.StaffGroup(
         [piano_RH_staff, dynamics_staff, piano_LH_staff],
         name="Piano Staff Group",
+        lilypond_type="PianoStaff",
     )
     score = abjad.Score(
         [staff_group],
@@ -42,7 +43,7 @@ def make_score_template():
     return score
 
 
-class DynamicMaker(object):
+class DynamicMaker:
     """
     Dynamic Maker.
     """

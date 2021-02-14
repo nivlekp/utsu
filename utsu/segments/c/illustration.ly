@@ -7,7 +7,7 @@
 
 \context Score = "Piano Score"
 <<
-    \context StaffGroup = "Piano Staff Group"
+    \context PianoStaff = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
         \with
@@ -238,6 +238,9 @@
                 }
                 {
                     \times 8/13 {
+                        \grace {
+                            s16 * 13/14
+                        }
                         \ottava 1
                         af'''8
                         \ottava 0
@@ -733,6 +736,9 @@
                 }
                 {
                     \times 8/13 {
+                        \grace {
+                            s16 * 13/11
+                        }
                         \ottava 0
                         ef8
                         \ottava 0

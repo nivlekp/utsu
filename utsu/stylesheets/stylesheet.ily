@@ -37,7 +37,6 @@
 \layout {
   indent = 0\cm
   ragged-last = ##t
-  %ragged-right = ##t
   \accidentalStyle neo-modern
   \context {
     \Score
@@ -58,7 +57,7 @@
     % \override Beam.positions = #flat-beams
     \override TupletBracket.positions = #flat-brackets
     tupletFullLength = ##t
-    %\override TupletBracket.breakable = ##f
+    % \override TupletBracket.breakable = ##f
     % \override TupletBracket.full-length-to-extent = ##t
     % \override TupletBracket.X-positions = #(lambda (grob)
     %   (let ((xpos (ly:tuplet-bracket::calc-x-positions grob)))
