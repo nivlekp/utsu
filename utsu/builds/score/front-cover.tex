@@ -1,0 +1,45 @@
+\documentclass{report}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, landscape]{geometry}
+\usepackage{fontspec, graphicx, nopageno, tikz}
+\usepackage{xeCJK}
+\setCJKmainfont{MS Mincho}
+
+\usetikzlibrary{calc}
+\pagenumbering{gobble}
+\newlength{\drop}
+
+\begin{document}
+    \begin{titlepage}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 6pt]
+                ($(current page.north west) + (0.5in, -0.5in)$)
+                rectangle
+                ($(current page.south east) + (-0.5in, 0.5in)$);
+            \draw[line width = 3pt]
+                ($(current page.north west) + (0.7in, -0.7in)$)
+                rectangle ($(current page.south east) + (-0.7in, 0.7in)$);
+        \end{tikzpicture}
+
+        \centering
+        鬱
+
+        \vspace*{1\baselineskip}
+
+        utsu
+
+        \vfill
+
+        {\slshape for solo piano}
+
+        \vspace*{1\baselineskip}
+
+        {\slshape 2020/21}
+
+        \vfill
+
+        Tsz Kiu Pang
+
+    \end{titlepage}
+\end{document}
