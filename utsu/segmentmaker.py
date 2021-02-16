@@ -4,11 +4,7 @@ import abjad
 import pang
 from abjadext import nauert
 
-from ._lib import (
-    highest_note_without_octava,
-    lowest_note_without_octava,
-    make_score_template,
-)
+from ._lib import make_score_template
 
 
 class SegmentMaker(abjad.SegmentMaker):
@@ -25,7 +21,7 @@ class SegmentMaker(abjad.SegmentMaker):
         stem_directions=None,
         search_trees=None,
         use_full_measures=None,
-        with_ottava=None,
+        ottava_handlers=None,
         clouds=None,
         dynamic_maker=None,
     ):
@@ -78,8 +74,8 @@ class SegmentMaker(abjad.SegmentMaker):
             self._use_full_measures = use_full_measures
         else:
             self._use_full_measures = [None] * len(self._metronome_marks)
-        if with_ottava is not None:
-            self._with_ottava = with_ottava
+        if ottava_handlers is not None:
+            self._ottava_handlers = ottava_handlers
         if clouds is None:
             raise Exception("Please include at least one cloud")
         if not isinstance(clouds, list):
@@ -180,33 +176,33 @@ class SegmentMaker(abjad.SegmentMaker):
         self._segment_length = max_length
         self._extend_voices(all_results)
 
-    def _attach_ottava(self, leaf):
-        """
-        Attach ottava.
-        """
-        if leaf.written_pitch > highest_note_without_octava:
-            interval = abjad.NumberedInterval.from_pitch_carriers(
-                abjad.NumberedPitch(highest_note_without_octava),
-                leaf.written_pitch,
-            )
-            octaves = interval.octaves + 1
-            # For now, just make 8va
-            octaves = 1
-            abjad.attach(abjad.Ottava(n=octaves), leaf)
-            return True
-        elif leaf.written_pitch < lowest_note_without_octava:
-            interval = abjad.NumberedInterval.from_pitch_carriers(
-                leaf.written_pitch,
-                abjad.NumberedPitch(lowest_note_without_octava),
-            )
-            octaves = interval.octaves + 1
-            # For now, just make 8vb
-            octaves = 1
-            abjad.attach(abjad.Ottava(n=-octaves), leaf)
-            return True
-        else:
-            abjad.attach(abjad.Ottava(n=0), leaf)
-            return False
+    #     def _attach_ottava(self, leaf):
+    #         """
+    #         Attach ottava.
+    #         """
+    #         if leaf.written_pitch > highest_note_without_octava:
+    #             interval = abjad.NumberedInterval.from_pitch_carriers(
+    #                 abjad.NumberedPitch(highest_note_without_octava),
+    #                 leaf.written_pitch,
+    #             )
+    #             octaves = interval.octaves + 1
+    #             # For now, just make 8va
+    #             octaves = 1
+    #             abjad.attach(abjad.Ottava(n=octaves), leaf)
+    #             return True
+    #         elif leaf.written_pitch < lowest_note_without_octava:
+    #             interval = abjad.NumberedInterval.from_pitch_carriers(
+    #                 leaf.written_pitch,
+    #                 abjad.NumberedPitch(lowest_note_without_octava),
+    #             )
+    #             octaves = interval.octaves + 1
+    #             # For now, just make 8vb
+    #             octaves = 1
+    #             abjad.attach(abjad.Ottava(n=-octaves), leaf)
+    #             return True
+    #         else:
+    #             abjad.attach(abjad.Ottava(n=0), leaf)
+    #             return False
 
     def _get_staff_name(self, voice_name):
         return self._score[voice_name]._parent.name
@@ -217,21 +213,15 @@ class SegmentMaker(abjad.SegmentMaker):
         attaches ottava.
         """
         staff_name = self._get_staff_name(voice_names[0])
-        if hasattr(self, "_with_ottava") and self._with_ottava[staff_name] != 0:
-            result = abjad.select(voice).leaves()
-            for leaf in result:
-                # FIXME:
-                # abjad.ottava(self._score[staff_name][:], start_ottava=abjad.Ottava(n=self._with_ottava[staff_name]))
-                abjad.attach(abjad.Ottava(n=self._with_ottava[staff_name]), leaf)
-            return
-        previously_attached = False
-        result = abjad.select(voice).leaves()
-        for leaf in result:
-            if isinstance(leaf, abjad.Note):
-                previously_attached = self._attach_ottava(leaf)
-            if isinstance(leaf, abjad.Rest) and previously_attached:
-                abjad.attach(abjad.Ottava(n=0), leaf)
-                previously_attached = False
+        if (
+            hasattr(self, "_ottava_handlers")
+            and self._ottava_handlers[staff_name] is not None
+        ):
+            ottava_handler = self._ottava_handlers[staff_name]
+            assert isinstance(ottava_handler, pang.OttavaHandler)
+        else:
+            ottava_handler = pang.VerboseOttavaHandler()
+        ottava_handler(voice)
 
     def _print_lilypond_file(self) -> None:
         """

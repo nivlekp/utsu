@@ -43,7 +43,10 @@ cloud_lh = pang.Cloud(
 )
 
 
-with_ottava = {"RH Staff": 1, "LH Staff": 0}
+ottava_handlers = {
+    "RH Staff": pang.ManualOttavaHandler(n=1),
+    "LH Staff": pang.VerboseOttavaHandler(),
+}
 
 dynamic_maker = utsu.DynamicMaker(-3)
 
@@ -58,7 +61,7 @@ segment_maker = utsu.SegmentMaker(
     use_full_measures=[False, False],
     clouds=[cloud_rh_voice, cloud_lh],
     clefs=[None, "treble"],
-    with_ottava=with_ottava,
+    ottava_handlers=ottava_handlers,
     dynamic_maker=dynamic_maker,
 )
 

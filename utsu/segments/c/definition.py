@@ -56,6 +56,11 @@ cloud_lh = pang.Cloud(
 
 dynamic_maker = utsu.DynamicMaker(3)
 
+ottava_handlers = {
+    "RH Staff": pang.VerboseOttavaHandler(),
+    "LH Staff": pang.VerboseOttavaHandler(),
+}
+
 segment_maker = utsu.SegmentMaker(
     name="c",
     metronome_marks=[utsu.metronome_marks["60"], utsu.metronome_marks["60"]],
@@ -63,6 +68,7 @@ segment_maker = utsu.SegmentMaker(
     search_trees=[search_tree_rh, search_tree_lh],
     use_full_measures=[True, True],
     clouds=[cloud_rh, cloud_lh],
+    ottava_handlers=ottava_handlers,
     dynamic_maker=dynamic_maker,
 )
 

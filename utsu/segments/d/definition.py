@@ -63,9 +63,12 @@ cloud_lh = pang.Cloud(
     voice_names=["Piano LH Voice"],
 )
 
-with_ottava = {"RH Staff": 1, "LH Staff": 0}
-
 dynamic_maker = utsu.DynamicMaker(1)
+
+ottava_handlers = {
+    "RH Staff": pang.ManualOttavaHandler(n=1),
+    "LH Staff": pang.VerboseOttavaHandler(),
+}
 
 segment_maker = utsu.SegmentMaker(
     name="d",
@@ -80,8 +83,8 @@ segment_maker = utsu.SegmentMaker(
     clouds=[cloud_rh_voice0, cloud_rh_voice1, cloud_lh],
     clefs=[None, None, None],
     stem_directions=[abjad.Up, abjad.Down, None],
+    ottava_handlers=ottava_handlers,
     dynamic_maker=dynamic_maker,
-    with_ottava=with_ottava,
 )
 
 

@@ -22,12 +22,10 @@
             {
                 {
                     \times 8/11 {
-                        \ottava 0
                         \time 4/4
                         g'''8
                         r4
                         r2
-                        \ottava 0
                         bf'8
                         r8
                         r4
@@ -35,58 +33,41 @@
                 }
                 {
                     \times 8/13 {
-                        \ottava 0
                         ef'4
-                        \ottava 0
                         ef'''8
-                        \ottava 0
                         cs'''4
-                        \ottava 0
                         d''8
                         \grace {
-                            \ottava 0
                             e''16
                         }
-                        \ottava 0
                         g'''8
-                        \ottava 1
                         a'''8
-                        \ottava 1
+                        ^ \markup { a }
                         d''''8
-                        \ottava 0
+                        ^ \markup { d }
                         b'8
-                        \ottava 1
                         a'''8
+                        ^ \markup { a }
                         ~
-                        \ottava 1
                         a'''4
                         ~
                     }
                 }
                 {
                     \times 4/5 {
-                        \ottava 1
                         a'''4
-                        \ottava 0
                         g'''8
-                        \ottava 0
                         bf'8
                         \grace {
-                            \ottava 0
                             d''16
                         }
-                        \ottava 0
                         c'8
                         \grace {
-                            \ottava 0
                             g'''16
                         }
-                        \ottava 0
                         c'8
-                        \ottava 0
                         b'8
                         r8
-                        \ottava 0
                         g'''8
                         r8
                     }
@@ -95,66 +76,51 @@
                     \times 8/13 {
                         r4.
                         r4
-                        \ottava 1
                         fs''''8
-                        \ottava 0
+                        ^ \markup { f }
                         r8
                         r8
-                        \ottava 1
                         d''''8
-                        \ottava 1
+                        ^ \markup { d }
                         c''''4
-                        \ottava 0
+                        ^ \markup { c }
                         cs'''8
-                        \ottava 1
                         b''''8
+                        ^ \markup { b }
                     }
                 }
                 {
                     \times 8/11 {
-                        \ottava 0
                         r8
-                        \ottava 0
                         a''8
-                        \ottava 1
                         af'''8
-                        \ottava 0
                         r4
                         r8
-                        \ottava 0
                         c'8
                         \grace {
-                            \ottava 0
                             a'16
                         }
-                        \ottava 1
                         fs''''4
-                        \ottava 0
+                        ^ \markup { f }
                         r8
-                        \ottava 0
                         d''8
                         ~
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava 0
                         d''8
-                        \ottava 0
                         d''8
                         r8
                         r2
                         r8
-                        \ottava 0
                         c'8
                         ~
-                        \ottava 0
                         c'8
                         \grace {
-                            \ottava 1
                             af''''16
+                            ^ \markup { a }
                         }
-                        \ottava 0
                         f'8
                         r4
                     }
@@ -162,52 +128,39 @@
                 {
                     r2
                     \times 4/5 {
-                        \ottava 1
                         fs''''4
-                        \ottava 0
+                        ^ \markup { f }
                         bf''8
                         ~
-                        \ottava 0
                         bf''8
-                        \ottava 0
                         d''8
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava 1
                         c''''8
-                        \ottava 0
+                        ^ \markup { c }
                         r4
                         r8
-                        \ottava 0
                         e''8
                         r4
-                        \ottava 0
                         ef'''8
-                        \ottava 0
                         d''8
-                        \ottava 0
                         b'4
                         \grace {
-                            \ottava 0
                             b'16
                         }
-                        \ottava 0
                         ef'''8
                         r8
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava 0
                         af''8
                         r4
                         r8
-                        \ottava 0
                         d''8
                         r4
-                        \ottava 0
                         g'''8
                         r8
                         r2
@@ -216,23 +169,17 @@
                 {
                     \times 8/13 {
                         r4
-                        \ottava 1
                         c''''8
+                        ^ \markup { c }
                         ~
-                        \ottava 1
                         c''''8
-                        \ottava 0
                         r8
                         r4
-                        \ottava 0
                         b'8
-                        \ottava 0
                         g'''8
-                        \ottava 0
                         g'''8
                         r8
                         r8
-                        \ottava 0
                         af''8
                     }
                 }
@@ -241,143 +188,113 @@
                         \grace {
                             s16 * 13/14
                         }
-                        \ottava 1
                         af'''8
-                        \ottava 0
                         ef'4
                         ~
-                        \ottava 0
                         ef'4
                         \grace {
-                            \ottava 1
                             b''''16
+                            ^ \markup { b }
                         }
-                        \ottava 1
                         af'''4
-                        \ottava 0
                         c'8
-                        \ottava 1
                         af'''8
                         \grace {
-                            \ottava 0
                             af''16
                         }
-                        \ottava 1
                         fs''''8
+                        ^ \markup { f }
                         \grace {
-                            \ottava 0
                             g'''16
                         }
-                        \ottava 1
                         af''''8
+                        ^ \markup { a }
                         \grace {
-                            \ottava 0
                             ef'16
                         }
-                        \ottava 0
                         bf''8
-                        \ottava 0
                         d''8
                     }
                 }
                 {
                     \times 8/11 {
-                        \ottava 1
                         a'''8
-                        \ottava 1
+                        ^ \markup { a }
                         g''''4
-                        \ottava 1
+                        ^ \markup { g }
                         fs''''8
-                        \ottava 1
+                        ^ \markup { f }
                         af''''8
-                        \ottava 0
+                        ^ \markup { a }
                         r8
-                        \ottava 0
                         ef'''8
                         ~
-                        \ottava 0
                         ef'''4
                         \grace {
-                            \ottava 1
                             b''''16
+                            ^ \markup { b }
                         }
-                        \ottava 1
                         g''''8
-                        \ottava 0
+                        ^ \markup { g }
                         bf'8
                     }
                 }
                 {
                     \times 8/11 {
                         \grace {
-                            \ottava 1
                             b''''16
+                            ^ \markup { b }
                         }
-                        \ottava 0
                         bf'8
-                        \ottava 0
                         bf''8
-                        \ottava 1
                         af''''8
-                        \ottava 0
+                        ^ \markup { a }
                         a'8
                         r8
                         r4
-                        \ottava 1
                         c''''2
+                        ^ \markup { c }
                         ~
                     }
                 }
                 {
                     \times 2/3 {
                         \times 2/3 {
-                            \ottava 1
                             c''''2
-                            \ottava 1
                             a'''4
+                            ^ \markup { a }
                         }
-                        \ottava 0
                         bf'4
                         r4
                         \times 2/3 {
-                            \ottava 0
                             d''4
-                            \ottava 1
                             a'''2
+                            ^ \markup { a }
                         }
                     }
                 }
                 {
                     \times 8/11 {
-                        \ottava 0
                         a'8
                         \grace {
-                            \ottava 0
                             ef'''16
                         }
-                        \ottava 1
                         a'''4
+                        ^ \markup { a }
                         ~
-                        \ottava 1
                         a'''8
-                        \ottava 0
                         c'8
-                        \ottava 1
                         af'''8
                         \grace {
-                            \ottava 1
                             af'''16
                         }
-                        \ottava 1
                         af'''8
                         \grace {
-                            \ottava 1
                             g''''16
+                            ^ \markup { g }
                         }
-                        \ottava 0
                         ef'4
                         r8
-                        \ottava 0
                         bf'8
                     }
                 }
@@ -385,15 +302,12 @@
                     \times 8/13 {
                         r2..
                         r8
-                        \ottava 0
                         af''8
                         ~
-                        \ottava 0
                         af''8
-                        \ottava 1
                         g''''8
+                        ^ \markup { g }
                         ~
-                        \ottava 1
                         g''''4
                     }
                 }
@@ -433,75 +347,52 @@
                     \times 2/3 {
                         \time 4/4
                         r4
-                        \ottava 0
                         f,4
                         \times 2/3 {
-                            \ottava 0
                             f4
-                            \ottava 0
                             b,2
                             ~
                         }
-                        \ottava 0
                         b,2
                         ~
                     }
                 }
                 {
                     \times 8/11 {
-                        \ottava 0
                         b,4.
                         ~
-                        \ottava 0
                         b,4
-                        \ottava 0
                         bf8
                         r8
                         \grace {
-                            \ottava -1
                             f,,16
-                            \ottava 0
                             b,16
                         }
-                        \ottava 0
                         ef4
-                        \ottava 0
                         fs,8
-                        \ottava 0
                         f,8
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava 0
                         ef8
-                        \ottava 0
                         f8
-                        \ottava -1
                         bf,,8
                         ~
-                        \ottava -1
                         bf,,8
                         \grace {
-                            \ottava -1
                             g,,16
                         }
-                        \ottava 0
                         b,8
-                        \ottava 0
                         b,8
-                        \ottava -1
                         cs,,8
-                        \ottava 0
+                        _ \markup { c }
                         r4
                         r8
-                        \ottava 0
                         bf8
                         \grace {
-                            \ottava -1
                             g,,16
                         }
-                        \ottava 0
                         e8
                         r8
                     }
@@ -509,228 +400,159 @@
                 {
                     \times 8/13 {
                         r8
-                        \ottava 0
                         bf4
                         ~
-                        \ottava 0
                         bf8
-                        \ottava 0
                         e,8
                         ~
-                        \ottava 0
                         e,4
-                        \ottava -1
                         cs,,2
-                        \ottava 0
+                        _ \markup { c }
                         a,8
-                        \ottava 0
                         e8
                     }
                 }
                 {
                     \times 2/3 {
                         \times 2/3 {
-                            \ottava -1
                             b,,,4
-                            \ottava 0
+                            _ \markup { b }
                             r4
-                            \ottava -1
                             bf,,4
                             ~
                         }
                         \times 2/3 {
-                            \ottava -1
                             bf,,4
-                            \ottava 0
                             af4
                             r4
                         }
-                        \ottava 0
                         e4
-                        \ottava -1
                         fs,,4
                     }
                 }
                 {
                     \times 8/11 {
-                        \ottava 0
                         af8
-                        \ottava -1
                         g,,8
-                        \ottava -1
                         g,,8
-                        \ottava -1
                         g,,8
-                        \ottava 0
                         a,8
                         \grace {
-                            \ottava 0
                             f16
                         }
-                        \ottava 0
                         f8
-                        \ottava -1
                         bf,,8
                         ~
-                        \ottava -1
                         bf,,8
-                        \ottava 0
                         fs,8
                         \grace {
-                            \ottava 0
                             fs,16
                         }
-                        \ottava 0
                         e,4
                     }
                 }
                 {
                     \times 8/13 {
                         r8
-                        \ottava -1
                         g,,8
-                        \ottava -1
                         f,,8
                         ~
-                        \ottava -1
                         f,,2
                         ~
-                        \ottava -1
                         f,,8
-                        \ottava -1
                         b,,,8
-                        \ottava 0
+                        _ \markup { b }
                         r8
-                        \ottava 0
                         c,8
                         ~
-                        \ottava 0
                         c,8
-                        \ottava 0
                         af8
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava 0
                         a,8
                         r8
-                        \ottava -1
                         f,,8
                         ~
-                        \ottava -1
                         f,,2.
-                        \ottava 0
                         bf8
-                        \ottava 0
                         e8
                         ~
-                        \ottava 0
                         e8
-                        \ottava 0
                         af8
                         ~
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava 0
                         af4
                         \grace {
-                            \ottava 0
                             e16
                         }
-                        \ottava 0
                         f8
                         ~
-                        \ottava 0
                         f8
                         \grace {
-                            \ottava 0
                             bf16
                         }
-                        \ottava 0
                         b,8
                         ~
-                        \ottava 0
                         b,8
-                        \ottava -1
                         fs,,8
-                        \ottava 0
                         bf4
-                        \ottava 0
                         f2
                         ~
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava 0
                         f8
                         \grace {
-                            \ottava 0
                             e16
                         }
-                        \ottava 0
                         e,8
                         r8
                         r4
-                        \ottava -1
                         f,,8
-                        \ottava 0
                         b,8
-                        \ottava 0
                         c,8
-                        \ottava -1
                         f,,8
-                        \ottava 0
                         r8
-                        \ottava -1
                         fs,,8
                         ~
-                        \ottava -1
                         fs,,4
                     }
                 }
                 {
                     \times 4/7 {
                         \grace {
-                            \ottava 0
                             b,16
                         }
-                        \ottava -1
                         fs,,4
-                        \ottava -1
                         cs,,2
+                        _ \markup { c }
                         ~
-                        \ottava -1
                         cs,,4
-                        \ottava -1
                         fs,,4
                         ~
-                        \ottava -1
                         fs,,2
                         ~
                     }
                 }
                 {
-                    \ottava -1
                     fs,,4
-                    \ottava -1
                     cs,,4
+                    _ \markup { c }
                     ~
                     \times 4/5 {
-                        \ottava -1
                         cs,,4
-                        \ottava 0
                         fs,8
                         \grace {
-                            \ottava 0
                             ef16
                         }
-                        \ottava -1
                         b,,,8
-                        \ottava 0
+                        _ \markup { b }
                         r8
                     }
                 }
@@ -739,68 +561,47 @@
                         \grace {
                             s16 * 13/11
                         }
-                        \ottava 0
                         ef8
-                        \ottava 0
                         ef8
-                        \ottava -1
                         fs,,8
                         ~
-                        \ottava -1
                         fs,,4
-                        \ottava 0
                         c,4
-                        \ottava -1
                         fs,,8
-                        \ottava -1
                         g,,8
-                        \ottava 0
                         ef8
-                        \ottava 0
                         fs,8
                         r8
-                        \ottava 0
                         ef8
                     }
                 }
                 {
                     \times 8/13 {
-                        \ottava -1
                         b,,,4.
+                        _ \markup { b }
                         ~
-                        \ottava -1
                         b,,,8
-                        \ottava -1
                         bf,,8
                         ~
-                        \ottava -1
                         bf,,8
-                        \ottava 0
                         e8
                         r4
-                        \ottava 0
                         f,4
                         ~
-                        \ottava 0
                         f,8
-                        \ottava 0
                         ef8
                     }
                 }
                 {
                     \times 8/13 {
                         r8
-                        \ottava 0
                         fs,4
                         r4
-                        \ottava -1
                         b,,,8
-                        \ottava 0
+                        _ \markup { b }
                         e,8
                         r2
-                        \ottava -1
                         g,,8
-                        \ottava 0
                         f8
                     }
                 }
@@ -809,23 +610,18 @@
                         r4.
                         r4
                         r8
-                        \ottava -1
                         b,,,8
-                        \ottava 0
+                        _ \markup { b }
                         r4
                         r8
-                        \ottava -1
                         f,,8
-                        \ottava 0
                         bf8
-                        \ottava 0
                         e,8
                     }
                 }
                 {
-                    \ottava -1
                     cs,,4
-                    \ottava 0
+                    _ \markup { c }
                     r2.
                 }
             }
