@@ -6,6 +6,11 @@
 %#(set-default-paper-size "a4")
 #(set-global-staff-size 16)
 
+%{
+The flat-brackets code is adapted from David Nalesnik on the LilyPond mailing
+list:
+http://lilypond.1069038.n5.nabble.com/Horizontal-TupletBrackets-td158413.html#a158452
+%}
 #(define flat-brackets
    (lambda (grob)
      (let* ((pos (ly:tuplet-bracket::calc-positions grob))
@@ -15,22 +20,14 @@
                     (min (car pos) (cdr pos)))))
        (cons y y))))
 
-% #(define flat-beams
-%    (lambda (grob)
-%      (let* ((pos (ly:beam::calc-positions grob))
-%              (dir (ly:grob-property grob 'direction))
-%              (y (if (= UP dir)
-%                     (max (car pos) (cdr pos))
-%                     (min (car pos) (cdr pos)))))
-%        (cons y y))))
-
 \header {
   composer = \markup {
-    \override #'(font-name . "CMU Serif")
-    \fontsize #3 "Tsz Kiu Pang"
+    %\override #'(font-name . "CMU Serif")
+    %\fontsize #3 "Tsz Kiu Pang"
+    "Tsz Kiu Pang"
   }
   tagline = ##f
-  title = "Utsu"
+  title = "utsu"
   instrument = "For solo piano"
 }
 
@@ -86,4 +83,22 @@
   %      (padding . 100)
   %      (stretchability . 100))
   system-system-spacing.padding = #8
+  oddHeaderMarkup = \markup ""
+  evenHeaderMarkup = \markup ""
+
+  oddFooterMarkup = \markup \fill-line {
+    \concat {
+      "--"
+      \fromproperty #'page:page-number-string
+      "--"
+    }
+  }
+
+  evenFooterMarkup = \markup \fill-line {
+    \concat {
+      "--"
+      \fromproperty #'page:page-number-string
+      "--"
+    }
+  }
 }

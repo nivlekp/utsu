@@ -10,10 +10,6 @@
     \context PianoStaff = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
-        \with
-        {
-            \remove Time_signature_engraver
-        }
         <<
             \context Voice = "Piano RH Voice1"
             {
@@ -24,7 +20,6 @@
                     \override TupletBracket.direction = #down
                     \times 4/7 {
                         \ottava 1
-                        \time 4/4
                         ef'''2.
                         r2
                         r4
@@ -328,7 +323,6 @@
                     \override TupletBracket.direction = #up
                     \times 8/13 {
                         \ottava 1
-                        \time 4/4
                         g''''2..
                         r8
                         c''''8
@@ -651,16 +645,11 @@
             s1
         }
         \context Staff = "LH Staff"
-        \with
-        {
-            \remove Time_signature_engraver
-        }
         {
             \context Voice = "Piano LH Voice"
             {
                 {
                     \times 8/13 {
-                        \time 4/4
                         af,4
                         af,8
                         fs4

@@ -10,10 +10,6 @@
     \context PianoStaff = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
-        \with
-        {
-            \remove Time_signature_engraver
-        }
         <<
             \context Voice = "Piano RH Voice1"
             {
@@ -22,7 +18,6 @@
             {
                 {
                     \times 2/3 {
-                        \time 4/4
                         r16
                         ef''''16
                         ^ \markup { e }
@@ -416,16 +411,11 @@
             s1
         }
         \context Staff = "LH Staff"
-        \with
-        {
-            \remove Time_signature_engraver
-        }
         {
             \context Voice = "Piano LH Voice"
             {
                 {
                     \times 4/7 {
-                        \time 4/4
                         r4
                         b4
                         c,,4

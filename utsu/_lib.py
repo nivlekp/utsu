@@ -18,19 +18,19 @@ metronome_marks = abjad.OrderedDict(
 )
 
 
-def make_score_template():
+def make_score_template(attach_time_signature=False):
     piano_RH_staff = abjad.Staff(
         [abjad.Voice(name="Piano RH Voice1"), abjad.Voice(name="Piano RH Voice")],
         name="RH Staff",
         simultaneous=True,
     )
-    piano_RH_staff.remove_commands.append("Time_signature_engraver")
+    # piano_RH_staff.remove_commands.append("Time_signature_engraver")
     dynamics_staff = abjad.Context(lilypond_type="Dynamics", name="Dynamics")
     piano_LH_staff = abjad.Staff(
         [abjad.Voice(name="Piano LH Voice")],
         name="LH Staff",
     )
-    piano_LH_staff.remove_commands.append("Time_signature_engraver")
+    # piano_LH_staff.remove_commands.append("Time_signature_engraver")
     staff_group = abjad.StaffGroup(
         [piano_RH_staff, dynamics_staff, piano_LH_staff],
         name="Piano Staff Group",

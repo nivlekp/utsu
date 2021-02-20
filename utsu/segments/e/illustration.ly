@@ -10,10 +10,6 @@
     \context PianoStaff = "Piano Staff Group"
     <<
         \context Staff = "RH Staff"
-        \with
-        {
-            \remove Time_signature_engraver
-        }
         <<
             \context Voice = "Piano RH Voice1"
             {
@@ -23,7 +19,6 @@
                 {
                     \times 2/3 {
                         \ottava 1
-                        \time 4/4
                         r4
                         b''''8
                         ~
@@ -322,15 +317,10 @@
             s1
         }
         \context Staff = "LH Staff"
-        \with
-        {
-            \remove Time_signature_engraver
-        }
         {
             \context Voice = "Piano LH Voice"
             {
                 {
-                    \time 4/4
                     \clef "treble"
                     fs'4
                     ~

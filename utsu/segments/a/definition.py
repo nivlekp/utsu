@@ -80,6 +80,7 @@ segment_maker = utsu.SegmentMaker(
     clefs=["treble", "treble", "bass"],
     ottava_handlers=ottava_handlers,
     stem_directions=[abjad.Up, abjad.Down, None],
+    attach_time_signature=True,
 )
 
 if __name__ == "__main__":

@@ -24,6 +24,7 @@ class SegmentMaker(abjad.SegmentMaker):
         ottava_handlers=None,
         clouds=None,
         dynamic_maker=None,
+        attach_time_signature=False,
     ):
         super(SegmentMaker, self).__init__()
         self._lilypond_file = None
@@ -85,9 +86,10 @@ class SegmentMaker(abjad.SegmentMaker):
         if not all(isinstance(cloud, pang.Cloud) for cloud in self._clouds):
             raise Exception("clouds should be of the type Cloud")
         self._dynamic_maker = dynamic_maker
+        self._attach_time_signature = attach_time_signature
 
     def _make_score(self):
-        score = make_score_template()
+        score = make_score_template(self._attach_time_signature)
         self._score = score
 
     def _make_lilypond_file(self):
@@ -170,6 +172,9 @@ class SegmentMaker(abjad.SegmentMaker):
             if clef is not None:
                 first_leaf = abjad.select(result).leaf(0)
                 abjad.attach(clef, first_leaf)
+            if not self._attach_time_signature:
+                first_leaf = abjad.select(result).leaf(0)
+                abjad.detach(abjad.TimeSignature, first_leaf)
             self._override_directions(result, stem_direction)
             self._post_processing(results, cloud.voice_names)
         pang.pad_voices_with_grace_skips(all_single_results)
