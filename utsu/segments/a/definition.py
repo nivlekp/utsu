@@ -79,7 +79,7 @@ segment_maker = utsu.SegmentMaker(
     dynamic_maker=dynamic_maker,
     clefs=["treble", "treble", "bass"],
     ottava_handlers=ottava_handlers,
-    stem_directions=[abjad.Up, abjad.Down, None],
+    voice_numbers=[r"\voiceOne", r"\voiceTwo", None],
     attach_time_signature=True,
 )
 

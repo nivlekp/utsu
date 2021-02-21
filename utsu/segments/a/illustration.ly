@@ -14,13 +14,10 @@
             \context Voice = "Piano RH Voice1"
             {
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 4/7 {
                         \time 4/4
                         \clef "treble"
+                        \voiceTwo
                         cs'8.
                         ~
                         cs'8
@@ -32,16 +29,8 @@
                         c'4
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 4/7 {
                         c'8.
                         ~
@@ -59,16 +48,8 @@
                         r16
                         r8
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     r2
                     c'4
                     ~
@@ -80,16 +61,8 @@
                         c'16
                         r16
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     r4
                     \times 2/3 {
                         r8
@@ -103,16 +76,8 @@
                         r16
                     }
                     r4
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 2/3 {
                         r4
                         af'8
@@ -124,16 +89,8 @@
                         r4
                     }
                     r2
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     af'4
                     ~
                     \times 4/5 {
@@ -146,16 +103,8 @@
                         e'4
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 4/7 {
                         \grace {
                             s16
@@ -180,29 +129,13 @@
                         r16
                         r8
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     r2
                     e'2
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     e'4
                     ~
                     \times 2/3 {
@@ -213,16 +146,8 @@
                     }
                     bf'8
                     r2
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 2/3 {
                         r4
                         d'8
@@ -233,16 +158,8 @@
                         r4
                     }
                     r2
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \grace {
                         s16 * 4/7
                     }
@@ -259,43 +176,19 @@
                         c'4
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     c'1
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     c'2.
                     ~
                     c'16
                     b'8.
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 4/7 {
                         b'16
                         bf'8
@@ -313,16 +206,8 @@
                         af'8.
                         r4
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 2/3 {
                         r4
                         c'8
@@ -330,16 +215,8 @@
                     }
                     c'2.
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 2/3 {
                         c'8
                         bf'16
@@ -351,16 +228,8 @@
                         e'4
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     e'2
                     ~
                     e'8.
@@ -368,16 +237,8 @@
                     ~
                     b'4
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     b'4
                     r4
                     \times 4/7 {
@@ -386,16 +247,8 @@
                         r4
                     }
                     r4
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     r4
                     \times 2/3 {
                         r8
@@ -405,38 +258,23 @@
                     bf'8.
                     r16
                     r4
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #down
-                    \override Stem.direction = #down
-                    \override Tie.direction = #down
-                    \override TupletBracket.direction = #down
                     \times 2/3 {
                         r4
                         cs'8
                     }
                     r2.
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
-                R1
+                r1
             }
             \context Voice = "Piano RH Voice"
             {
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 4/7 {
                         \time 4/4
                         \clef "treble"
+                        \voiceOne
                         r16
                         ef''8
                         ~
@@ -457,16 +295,8 @@
                     }
                     d''4
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     d''4
                     \times 4/5 {
                         cs''8.
@@ -478,16 +308,8 @@
                         f''4
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 4/7 {
                         f''8.
                         r4
@@ -499,16 +321,8 @@
                     }
                     d''2
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     d''4
                     ~
                     \times 2/3 {
@@ -522,27 +336,11 @@
                         r4
                     }
                     r4
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     r1
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 2/3 {
                         r8
                         d''4
@@ -550,32 +348,16 @@
                     }
                     d''2.
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \grace {
                         s16 * 4/7
                     }
                     d''16
                     r8.
                     r2.
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     r2
                     \times 4/7 {
                         r16
@@ -591,16 +373,8 @@
                         cs''8
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     cs''2.
                     cs''8
                     ~
@@ -608,16 +382,8 @@
                         cs''8
                         ef''16
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     r4
                     \times 4/5 {
                         r8.
@@ -634,16 +400,8 @@
                         r16
                     }
                     r4
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \grace {
                         s16 * 4/7
                     }
@@ -655,16 +413,8 @@
                         a''4
                     }
                     r4
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 4/7 {
                         r8.
                         r16
@@ -681,16 +431,8 @@
                         r8
                     }
                     r2
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     cs''8.
                     r16
                     \times 4/7 {
@@ -710,16 +452,8 @@
                         f''8
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 2/3 {
                         f''8
                         r4
@@ -733,16 +467,8 @@
                     }
                     ef''2
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     ef''16
                     a''8.
                     ~
@@ -766,27 +492,11 @@
                         f''8.
                         r4
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     r1
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 4/7 {
                         r8.
                         r8
@@ -800,16 +510,8 @@
                     }
                     f''4
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     f''4
                     ~
                     \times 4/7 {
@@ -830,16 +532,8 @@
                     }
                     cs''4
                     ~
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 2/3 {
                         cs''8
                         r4
@@ -855,16 +549,8 @@
                         b''8
                         r4
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 4/7 {
                         r8.
                         r16
@@ -891,16 +577,8 @@
                         f''4
                         ~
                     }
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
                 {
-                    \override Rest.direction = #up
-                    \override Stem.direction = #up
-                    \override Tie.direction = #up
-                    \override TupletBracket.direction = #up
                     \times 2/3 {
                         f''16
                         b''8
@@ -914,10 +592,6 @@
                         r4
                     }
                     r2
-                    \revert Rest.direction
-                    \revert Stem.direction
-                    \revert Tie.direction
-                    \revert TupletBracket.direction
                 }
             }
         >>
@@ -954,6 +628,7 @@
                     \times 4/7 {
                         \time 4/4
                         \clef "bass"
+                        \oneVoice
                         r16
                         fs16
                         r16

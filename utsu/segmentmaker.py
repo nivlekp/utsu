@@ -18,7 +18,7 @@ class SegmentMaker(abjad.SegmentMaker):
         metronome_marks=None,
         time_signatures=None,
         clefs=None,
-        stem_directions=None,
+        voice_numbers=None,
         search_trees=None,
         use_full_measures=None,
         ottava_handlers=None,
@@ -49,14 +49,14 @@ class SegmentMaker(abjad.SegmentMaker):
             # self._clefs = [abjad.Clef(clef) for clef in self._clefs]
         else:
             self._clefs = [None] * len(self._metronome_marks)
-        if stem_directions is not None:
-            self._stem_directions = (
-                stem_directions
-                if isinstance(stem_directions, list)
-                else [stem_directions]
+        if voice_numbers is not None:
+            self._voice_numbers = (
+                voice_numbers
+                if isinstance(voice_numbers, list)
+                else [voice_numbers]
             )
         else:
-            self._stem_directions = [None] * len(self._metronome_marks)
+            self._voice_numbers = [None] * len(self._metronome_marks)
         if search_trees is not None:
             search_trees = (
                 search_trees if isinstance(search_trees, list) else [search_trees]
@@ -125,7 +125,7 @@ class SegmentMaker(abjad.SegmentMaker):
         for cloud, results in zip(self._clouds, all_results):
             for result, voice_name in zip(results, cloud.voice_names):
                 if len(result) < max_length:
-                    rest = abjad.MultimeasureRest()
+                    rest = abjad.Rest()
                     # TODO: at the moment just hard-coding
                     rest.written_duration = abjad.Duration((4, 4))
                     multimeasure_rests = [rest] * (max_length - len(result))
@@ -141,7 +141,7 @@ class SegmentMaker(abjad.SegmentMaker):
             tempo,
             time_signature,
             clef,
-            stem_direction,
+            voice_number,
             search_tree,
             use_full_measure,
         ) in zip(
@@ -149,7 +149,7 @@ class SegmentMaker(abjad.SegmentMaker):
             self._metronome_marks,
             self._time_signatures,
             self._clefs,
-            self._stem_directions,
+            self._voice_numbers,
             self._search_trees,
             self._use_full_measures,
         ):
@@ -175,39 +175,17 @@ class SegmentMaker(abjad.SegmentMaker):
             if not self._attach_time_signature:
                 first_leaf = abjad.select(result).leaf(0)
                 abjad.detach(abjad.TimeSignature, first_leaf)
-            self._override_directions(result, stem_direction)
+            if voice_number is not None:
+                literal = abjad.LilyPondLiteral(voice_number)
+                abjad.attach(literal, abjad.get.leaf(result, 0))
+            else:
+                literal = abjad.LilyPondLiteral(r"\oneVoice")
+                abjad.attach(literal, abjad.get.leaf(result, 0))
+            # self._override_directions(result, stem_direction)
             self._post_processing(results, cloud.voice_names)
         pang.pad_voices_with_grace_skips(all_single_results)
         self._segment_length = max_length
         self._extend_voices(all_results)
-
-    #     def _attach_ottava(self, leaf):
-    #         """
-    #         Attach ottava.
-    #         """
-    #         if leaf.written_pitch > highest_note_without_octava:
-    #             interval = abjad.NumberedInterval.from_pitch_carriers(
-    #                 abjad.NumberedPitch(highest_note_without_octava),
-    #                 leaf.written_pitch,
-    #             )
-    #             octaves = interval.octaves + 1
-    #             # For now, just make 8va
-    #             octaves = 1
-    #             abjad.attach(abjad.Ottava(n=octaves), leaf)
-    #             return True
-    #         elif leaf.written_pitch < lowest_note_without_octava:
-    #             interval = abjad.NumberedInterval.from_pitch_carriers(
-    #                 leaf.written_pitch,
-    #                 abjad.NumberedPitch(lowest_note_without_octava),
-    #             )
-    #             octaves = interval.octaves + 1
-    #             # For now, just make 8vb
-    #             octaves = 1
-    #             abjad.attach(abjad.Ottava(n=-octaves), leaf)
-    #             return True
-    #         else:
-    #             abjad.attach(abjad.Ottava(n=0), leaf)
-    #             return False
 
     def _get_staff_name(self, voice_name):
         return self._score[voice_name]._parent.name

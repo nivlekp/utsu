@@ -18,6 +18,7 @@
             {
                 {
                     \times 8/11 {
+                        \oneVoice
                         g'''8
                         r4
                         r2
@@ -306,7 +307,7 @@
                         g''''4
                     }
                 }
-                R1
+                r1
             }
         >>
         \context Dynamics = "Dynamics"
@@ -336,6 +337,7 @@
             {
                 {
                     \times 2/3 {
+                        \oneVoice
                         r4
                         f,4
                         \times 2/3 {

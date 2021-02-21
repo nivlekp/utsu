@@ -18,6 +18,7 @@
             {
                 {
                     \times 2/3 {
+                        \oneVoice
                         r16
                         ef''''16
                         ^ \markup { e }
@@ -416,6 +417,7 @@
             {
                 {
                     \times 4/7 {
+                        \oneVoice
                         r4
                         b4
                         c,,4
@@ -602,7 +604,7 @@
                         r2
                     }
                 }
-                R1
+                r1
             }
         }
     >>

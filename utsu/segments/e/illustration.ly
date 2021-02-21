@@ -19,6 +19,7 @@
                 {
                     \times 2/3 {
                         \ottava 1
+                        \oneVoice
                         r4
                         b''''8
                         ~
@@ -322,6 +323,7 @@
             {
                 {
                     \clef "treble"
+                    \oneVoice
                     fs'4
                     ~
                     fs'16
@@ -521,7 +523,7 @@
                     r16
                     r4
                 }
-                R1
+                r1
             }
         }
     >>
