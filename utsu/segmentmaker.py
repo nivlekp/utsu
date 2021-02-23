@@ -52,9 +52,7 @@ class SegmentMaker(abjad.SegmentMaker):
             self._clefs = [None] * len(self._metronome_marks)
         if voice_numbers is not None:
             self._voice_numbers = (
-                voice_numbers
-                if isinstance(voice_numbers, list)
-                else [voice_numbers]
+                voice_numbers if isinstance(voice_numbers, list) else [voice_numbers]
             )
         else:
             self._voice_numbers = [None] * len(self._metronome_marks)
