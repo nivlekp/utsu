@@ -25,6 +25,7 @@ class SegmentMaker(abjad.SegmentMaker):
         clouds=None,
         dynamic_maker=None,
         attach_time_signature=False,
+        attach_signature=False,
     ):
         super(SegmentMaker, self).__init__()
         self._lilypond_file = None
@@ -87,6 +88,7 @@ class SegmentMaker(abjad.SegmentMaker):
             raise Exception("clouds should be of the type Cloud")
         self._dynamic_maker = dynamic_maker
         self._attach_time_signature = attach_time_signature
+        self._attach_signature = attach_signature
 
     def _make_score(self):
         score = make_score_template(self._attach_time_signature)
@@ -220,6 +222,14 @@ class SegmentMaker(abjad.SegmentMaker):
         abjad.detach(abjad.TimeSignature, staff[0])
         staff = self._score["LH Staff"]
         abjad.detach(abjad.TimeSignature, staff[0])
+        if self._attach_signature:
+            staff = self._score["LH Staff"]
+            last_leaf = abjad.get.leaf(staff, -1)
+            signature = abjad.LilyPondLiteral(
+                r"\pang-signature",
+                format_slot="absolute_after",
+            )
+            abjad.attach(signature, last_leaf)
 
     def _make_dynamics(self):
         self._dynamic_maker(score=self._score, segment_length=self._segment_length)

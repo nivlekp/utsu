@@ -20,6 +20,16 @@ http://lilypond.1069038.n5.nabble.com/Horizontal-TupletBrackets-td158413.html#a1
                     (min (car pos) (cdr pos)))))
        (cons y y))))
 
+pang-signature = {
+    \once \override Score.RehearsalMark.direction = #down
+    \once \override Score.RehearsalMark.padding = 4
+    \mark \markup {
+        \with-dimensions-from \null
+        \fontsize #-2
+        "Keysborough, Victoria (September 2020 - February 2021)."
+    }
+}
+
 \header {
   composer = \markup {
     %\override #'(font-name . "CMU Serif")
@@ -34,7 +44,7 @@ http://lilypond.1069038.n5.nabble.com/Horizontal-TupletBrackets-td158413.html#a1
 \layout {
   indent = 0\cm
   ragged-last = ##t
-  \accidentalStyle neo-modern
+  \accidentalStyle forget
   \context {
     \Score
     %\override SpacingSpanner.strict-note-spacing = ##t
@@ -46,6 +56,7 @@ http://lilypond.1069038.n5.nabble.com/Horizontal-TupletBrackets-td158413.html#a1
   }
   \context {
     \Staff
+    %\override TupletNumber.text = #tuplet-number::calc-fraction-text
     \override Beam.damping = #+inf.0
     \override Beam.details.damping-direction-penalty = #0
     \override Beam.details.round-to-zero-slope = #0
@@ -71,7 +82,8 @@ http://lilypond.1069038.n5.nabble.com/Horizontal-TupletBrackets-td158413.html#a1
     \Dynamics
     % \override VerticalAxisGroup.staff-staff-spacing.basic-distance = #0
     % \override VerticalAxisGroup.staff-staff-spacing.padding = #0
-    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.basic-distance = #0
+    \override VerticalAxisGroup.nonstaff-relatedstaff-spacing.basic-distance = #10
+    \override DynamicText #'extra-offset = #'(1 . 0)
   }
 }
 

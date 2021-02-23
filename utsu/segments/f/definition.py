@@ -1,12 +1,12 @@
 import pang
 import utsu
 
-duration = 80
+duration = 60
 
-search_tree_rh = {2: {2: None, 3: None}, 3: {2: None}, 5: None, 7: None}
-search_tree_lh = {2: {2: None, 3: None}, 3: {2: None}, 5: None, 7: None}
+search_tree_rh = {2: {2: None, 3: None}, 3: {2: None}}
+search_tree_lh = {2: {2: None, 3: None}, 3: {2: None}}
 
-sieve = (utsu.sieves["C"] & utsu.sieves["B"]) | utsu.sieves["A"]
+sieve = utsu.sieves["C"] | (utsu.sieves["B"] & utsu.sieves["A"])
 
 pitch_set_rh = pang.gen_pitches_from_sieve(
     sieve=sieve,
@@ -21,24 +21,24 @@ pitch_set_lh = pang.gen_pitches_from_sieve(
 
 
 cloud_rh_voice = pang.Cloud(
-    arate=0.4,
-    srate=0.8,
+    arate=2.0,
+    srate=3.0,
     pitches=pitch_set_rh,
     duration=duration,
     queue_type="M/M/1",
     rest_threshold=0.0,
-    seed=81568,
+    seed=1866,
     voice_names=["Piano RH Voice"],
 )
 
 cloud_lh = pang.Cloud(
-    arate=0.4,
-    srate=0.8,
+    arate=2.0,
+    srate=3.0,
     pitches=pitch_set_lh,
     duration=duration,
-    queue_type="D/D/1",
+    queue_type="M/M/1",
     rest_threshold=0.0,
-    seed=774686841,
+    seed=87795767,
     voice_names=["Piano LH Voice"],
 )
 
@@ -48,10 +48,10 @@ ottava_handlers = {
     "LH Staff": pang.VerboseOttavaHandler(),
 }
 
-dynamic_maker = utsu.DynamicMaker(-2)
+dynamic_maker = utsu.DynamicMaker(-3)
 
 segment_maker = utsu.SegmentMaker(
-    name="e",
+    name="f",
     metronome_marks=[
         utsu.metronome_marks["60"],
         utsu.metronome_marks["60"],
@@ -63,6 +63,7 @@ segment_maker = utsu.SegmentMaker(
     clefs=[None, "treble"],
     ottava_handlers=ottava_handlers,
     dynamic_maker=dynamic_maker,
+    attach_signature=True,
 )
 
 
