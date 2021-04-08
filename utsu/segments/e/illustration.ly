@@ -1,8 +1,6 @@
 \version "2.20.0"
 \language "english"
-
 #(ly:set-option 'relative-includes #t)
-
 \include "../../stylesheets/stylesheet.ily"
 
 \context Score = "Piano Score"
@@ -17,7 +15,8 @@
             \context Voice = "Piano RH Voice"
             {
                 {
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         \ottava 1
                         \oneVoice
                         r4
@@ -26,7 +25,8 @@
                     }
                     b''''2
                     ~
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         b''''8
                         ef'''16
                         ~
@@ -37,7 +37,8 @@
                 {
                     ef'''2.
                     ~
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         ef'''16
                         bf'''8
                         ~
@@ -48,7 +49,8 @@
                 {
                     bf'''2.
                     ~
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         bf'''8.
                         ~
                         bf'''8
@@ -59,21 +61,24 @@
                     }
                 }
                 {
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         a''''8.
                         ~
                         a''''8
                         ef''''8
                         ~
                     }
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         ef''''4
                         ~
                         ef''''16
                         r16
                     }
                     r4
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         r8.
                         r16
                         a''''16
@@ -88,7 +93,8 @@
                     a''''8
                     b'''8
                     ~
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         b'''8
                         bf'''16
                         ~
@@ -99,7 +105,8 @@
                 {
                     bf'''4
                     ~
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         bf'''8.
                         ~
                         bf'''8
@@ -127,7 +134,8 @@
                 {
                     bf''''4
                     ~
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         bf''''8.
                         f''''4
                         ~
@@ -146,7 +154,8 @@
                 {
                     f''''2.
                     ~
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         f''''8.
                         f''''8
                         ~
@@ -156,7 +165,8 @@
                     f''''8
                     bf''''8
                     ~
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         bf''''8
                         r16
                         r8
@@ -164,17 +174,20 @@
                     r2
                 }
                 {
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         r4
                         f''''8
                         ~
                     }
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         f''''4
                         c''''8
                         ~
                     }
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         c''''16
                         r8
                         r4
@@ -183,7 +196,8 @@
                 }
                 {
                     r4
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         g'''16
                         r8
                         r8
@@ -195,42 +209,49 @@
                     r8.
                     a''''16
                     ~
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         a''''8
                         r4
                     }
                 }
                 {
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         r8.
                         r16
                         ef'''16
                         ~
                     }
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         ef'''8.
                         r16
                         f''''16
                         ~
                     }
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         f''''16
                         r8
                         r4
                     }
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         r8
                         fs'''4
                         ~
                     }
                 }
                 {
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         fs'''4
                         ef'''8
                         ~
                     }
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         ef'''4
                         b''''8
                         ~
@@ -238,7 +259,8 @@
                     b''''2
                 }
                 {
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         a''''16
                         r8
                         r8
@@ -246,7 +268,8 @@
                     r2.
                 }
                 {
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         r8
                         c''''16
                         ~
@@ -257,13 +280,15 @@
                     f''''2
                 }
                 {
-                    \times 4/7 {
+                    \times 4/7
+                    {
                         b''''8
                         r16
                         r4
                     }
                     r4
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         r16
                         f'''8
                         ~
@@ -276,14 +301,16 @@
                 {
                     f'''4
                     ~
-                    \times 2/3 {
+                    \times 2/3
+                    {
                         f'''4
                         ~
                         f'''16
                         af''''16
                         ~
                     }
-                    \times 4/5 {
+                    \times 4/5
+                    {
                         af''''16
                         r8
                         r8
