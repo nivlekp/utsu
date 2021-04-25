@@ -249,10 +249,10 @@
                     \times 8/11
                     {
                         \grace {
-                            b''''16
-                            ^ \markup { b }
+                            bf'16
                         }
-                        bf'8
+                        b''''8
+                        ^ \markup { b }
                         bf''8
                         af''''8
                         ^ \markup { a }
@@ -549,9 +549,9 @@
                     \times 4/7
                     {
                         \grace {
-                            b,16
+                            fs,,16
                         }
-                        fs,,4
+                        b,4
                         cs,,2
                         _ \markup { c }
                         ~

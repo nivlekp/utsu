@@ -851,10 +851,10 @@
                     \times 4/7
                     {
                         \grace {
-                            a,,,16
-                            _ \markup { a }
+                            fs,,16
                         }
-                        fs,,16
+                        a,,,16
+                        _ \markup { a }
                         g,8
                         ~
                         g,4
@@ -976,9 +976,9 @@
                     \times 4/7
                     {
                         \grace {
-                            f,16
+                            b16
                         }
-                        b8.
+                        f,8.
                         af8
                         cs,8
                         ~
@@ -1022,9 +1022,9 @@
                     \times 2/3
                     {
                         \grace {
-                            b,16
+                            g,16
                         }
-                        g,4
+                        b,4
                         c,,8
                         _ \markup { c }
                         ~
@@ -1200,15 +1200,15 @@
                     bf,,,4
                     _ \markup { b }
                     \grace {
-                        bf,16
+                        fs16
                     }
-                    fs4
+                    bf,4
                     ~
                 }
                 {
                     \times 4/7
                     {
-                        fs16
+                        bf,16
                         c,,8
                         _ \markup { c }
                         ~
