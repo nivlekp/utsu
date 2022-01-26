@@ -238,11 +238,11 @@ class SegmentMaker(abjad.SegmentMaker):
         deactivate: typing.List[abjad.Tag] = None,
         do_not_print_timing: bool = None,
         environment: str = None,
-        metadata: abjad.OrderedDict = None,
+        metadata: dict = None,
         midi: bool = None,
-        persist: abjad.OrderedDict = None,
-        previous_metadata: abjad.OrderedDict = None,
-        previous_persist: abjad.OrderedDict = None,
+        persist: dict = None,
+        previous_metadata: dict = None,
+        previous_persist: dict = None,
         remove: typing.List[abjad.Tag] = None,
         segment_directory=None,
         overwrite: bool = None,
@@ -250,10 +250,14 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         Runs segment-maker.
         """
-        self._metadata = abjad.OrderedDict(metadata)
-        self._persist = abjad.OrderedDict(persist)
-        self._previous_metadata = abjad.OrderedDict(previous_metadata)
-        self._previous_persist = abjad.OrderedDict(previous_persist)
+        self._metadata = {} if metadata is None else dict(metadata)
+        self._persist = {} if persist is None else dict(persist)
+        self._previous_metadata = (
+            {} if previous_metadata is None else dict(previous_persist)
+        )
+        self._previous_persist = (
+            {} if previous_persist is None else dict(previous_persist)
+        )
         self._segment_directory = segment_directory
         self._overwrite = overwrite
         self._make_score()
