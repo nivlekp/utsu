@@ -94,9 +94,12 @@ class SegmentMaker(abjad.SegmentMaker):
 
     def _make_lilypond_file(self):
         path = "../../stylesheets/stylesheet.ily"
-        lilypond_file = abjad.LilyPondFile(
-            items=[self._score], includes=[path], use_relative_includes=True
-        )
+        items = [
+            "#(ly:set-option 'relative-includes #t)",
+            fr'\include "{path}"',
+            self._score,
+        ]
+        lilypond_file = abjad.LilyPondFile(items=items)
         self._lilypond_file = lilypond_file
 
     @property
@@ -213,7 +216,7 @@ class SegmentMaker(abjad.SegmentMaker):
         with open("illustration.ly", "w") as file_pointer:
             file_pointer.write(abjad.lilypond(self._lilypond_file))
         with open("build.ly", "w") as file_pointer:
-            file_pointer.write(abjad.lilypond(self._lilypond_file.items[0]))
+            file_pointer.write(abjad.lilypond(self._lilypond_file.items[2]))
 
     def _configure_score(self):
         staff = self._score["RH Staff"]
