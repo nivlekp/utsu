@@ -94,9 +94,12 @@ class SegmentMaker(abjad.SegmentMaker):
 
     def _make_lilypond_file(self):
         path = "../../stylesheets/stylesheet.ily"
-        lilypond_file = abjad.LilyPondFile(
-            items=[self._score], includes=[path], use_relative_includes=True
-        )
+        items = [
+            "#(ly:set-option 'relative-includes #t)",
+            fr'\include "{path}"',
+            self._score,
+        ]
+        lilypond_file = abjad.LilyPondFile(items=items)
         self._lilypond_file = lilypond_file
 
     @property
@@ -213,7 +216,7 @@ class SegmentMaker(abjad.SegmentMaker):
         with open("illustration.ly", "w") as file_pointer:
             file_pointer.write(abjad.lilypond(self._lilypond_file))
         with open("build.ly", "w") as file_pointer:
-            file_pointer.write(abjad.lilypond(self._lilypond_file.items[0]))
+            file_pointer.write(abjad.lilypond(self._lilypond_file.items[2]))
 
     def _configure_score(self):
         staff = self._score["RH Staff"]
@@ -238,11 +241,11 @@ class SegmentMaker(abjad.SegmentMaker):
         deactivate: typing.List[abjad.Tag] = None,
         do_not_print_timing: bool = None,
         environment: str = None,
-        metadata: abjad.OrderedDict = None,
+        metadata: dict = None,
         midi: bool = None,
-        persist: abjad.OrderedDict = None,
-        previous_metadata: abjad.OrderedDict = None,
-        previous_persist: abjad.OrderedDict = None,
+        persist: dict = None,
+        previous_metadata: dict = None,
+        previous_persist: dict = None,
         remove: typing.List[abjad.Tag] = None,
         segment_directory=None,
         overwrite: bool = None,
@@ -250,10 +253,14 @@ class SegmentMaker(abjad.SegmentMaker):
         """
         Runs segment-maker.
         """
-        self._metadata = abjad.OrderedDict(metadata)
-        self._persist = abjad.OrderedDict(persist)
-        self._previous_metadata = abjad.OrderedDict(previous_metadata)
-        self._previous_persist = abjad.OrderedDict(previous_persist)
+        self._metadata = {} if metadata is None else dict(metadata)
+        self._persist = {} if persist is None else dict(persist)
+        self._previous_metadata = (
+            {} if previous_metadata is None else dict(previous_persist)
+        )
+        self._previous_persist = (
+            {} if previous_persist is None else dict(previous_persist)
+        )
         self._segment_directory = segment_directory
         self._overwrite = overwrite
         self._make_score()

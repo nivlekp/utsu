@@ -2,7 +2,6 @@
 \language "english"
 #(ly:set-option 'relative-includes #t)
 \include "../../stylesheets/stylesheet.ily"
-
 \context Score = "Piano Score"
 <<
     \context PianoStaff = "Piano Staff Group"
